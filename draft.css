@@ -412,7 +412,7 @@ body {
     display: flex;
     flex-direction: column;
 }
-.message.received {
+.message.received, .message.chainmail{
     background-color: gray;
     align-self: flex-start;
     color: white;

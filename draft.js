@@ -28,10 +28,34 @@ function receiveMessage() {
     displayMessage(randomMessage, "received");
 }
 
+let timeSpent = 0;
+let timerInterval;
+
+function startTimer() {
+    timerInterval = setInterval(incrementTime, 1000);
+}
+
+function incrementTime() {
+    timeSpent++;
+    if (timeSpent >= 5) {
+        clearInterval(timerInterval);
+        displayMessage("⚠️ DO NOT IGNORE THIS MESSAGE ⚠️ Someone tried to delete this challenge, but it keeps coming back. People say it started on the dark web, and now it's spreading. If you’re reading this, you have 24 hours to complete the test… or suffer the consequences. The challenge is simple: Eat just one bite. A rat’s heart, liver, or kidney—your choice. Film yourself, upload the proof, and break the cycle before it’s too late. Those who refuse? Well… check the news. They don’t last long. 🔗 RAT GUT CHALLENGE - PROVE YOURSELF Forward this to 5 people in the next hour, or you’ll be the next to wake up with a taste you don’t remember... Good luck. You’ll need it. 🐀", "chainmail"); // Call your function
+    }
+}
+
+// Start the timer when the page loads
+window.addEventListener("load", startTimer);
+
+
 function displayMessage(text, type) {
     const chatBox = document.getElementById("chatMessages");
     const messageElement = document.createElement("div");
     if(type==="received"){
+        var img = document.createElement("img");
+        img.src = "/assets/profile.jpg";
+        img.style = "width: 30px;padding: 0 0 10px 0;";
+        chatBox.appendChild(img);
+    }else if(type==="chainmail"){
         var img = document.createElement("img");
         img.src = "/assets/profile.jpg";
         img.style = "width: 30px;padding: 0 0 10px 0;";
@@ -48,7 +72,7 @@ let curatedPosts = [
         {text: "That looks like a dead animal. Do you have a dog or cat that could have brought it in?", isOP: false}, 
         {text: "that is way too clean to be from an animal attack. likely from human interference", isOP: false}, 
         {text: "I don't have any pets, so it can't be that.", isOP: true},
-        {text: `This reminds me of an article I read. There is a scary new 'health' fad. <a href="${someURL}">Check it out.</a>`, isOP: false}
+        {text: `This reminds me of an article I read. There is a scary new 'health' fad. <a href="https://vitalitypost.online/dangerous-new-supplement">Check it out.</a>`, isOP: false}
     ], likes: "3", id: "100"},
       
 ]
@@ -317,358 +341,358 @@ let users = [
     }
   ];
 
-  let unassignedPosts = [
-    { 
-        title: "entities dancing in the backrooms?", 
-        content: "this is filler post content. auto generate this later", 
-        user: "user23993", 
-        pfp: "assets/profile.jpg", 
-        category: "backrooms", 
-        tab: "recent", 
-        image:"assets/image4.png", 
-        responses: "4", 
-        time: "MON 3:49AM", 
-        comments: [
-            {text: "I had something similar happen once!", isOP: false}, 
-            {text: "That’s terrifying, I wonder if it’s a glitch in the matrix?", isOP: false}, 
-            {text: "I've heard rumors about entities in places like that.", isOP: false}, 
-            {text: "Does anyone know how to escape if you see them?", isOP: false},
-            {text: "I’ve heard similar stories about entities in the backrooms, it’s wild!", isOP: true}
-        ], 
-        likes: "3", 
-        id: "100"
-    },
-    { 
-        title: "I finally caught him on video", 
-        content: "this is filler post content. auto generate this later", 
-        user: "superGirl9", 
-        pfp: "assets/profile.jpg", 
-        category: "unlabeled", 
-        tab: "recent", 
-        image:"assets/image2.png", 
-        responses: "0", 
-        time:"MON 1:12AM", 
-        comments: [
-            {text: "OMG, I need to see this video!", isOP: false},
-            {text: "Is it really him, or could it be someone else?", isOP: false}
-        ], 
-        likes: "5", 
-        id: "200"
-    },
-    { 
-        title: "Ive had this same dream for 3 nights in a row. What could it mean??", 
-        content: "For the past three nights, I’ve had the same dream—I’m walking down my street, but all the houses have security cameras, and they’re all turning to follow me. Last night, I stopped in front of one and looked directly into it. The feed cuts to static, then flickered back on, showing me standing in my own driveway. I don’t have a camera at my house. I found this image in a post by JakeWanders. he had the exact same dreams like 2 years ago and mine looked just like this. pls help im scared", 
-        user: "ihatemovies", 
-        pfp: "assets/profile.jpg", 
-        category: "dreams", 
-        tab: "recent", 
-        image:"assets/image.png", 
-        responses: "1", 
-        time:"TUE 11:59PM", 
-        comments: [
-            {text: "That’s an eerie dream! I wonder what it means?", isOP: false}, 
-            {text: "Maybe it’s a warning? Have you tried looking into dream symbolism?", isOP: false},
-            {text: "I think it's definitely trying to tell you something.", isOP: true}
-        ], 
-        likes: "9", 
-        id: "300"
-    },
-    { 
-        title: "This post has been deleted by the user.", 
-        content: "this is filler post content. auto generate this later", 
-        user: "-", 
-        pfp: "assets/profile.jpg", 
-        category: "spaces", 
-        tab: "hot", 
-        image:"assets/image6.png", 
-        responses: "5", 
-        time:"TUE 8:01PM", 
-        comments: [
-            {text: "What did it say? I’m curious now!", isOP: false}, 
-            {text: "I think I saw this before it was deleted.", isOP: false}, 
-            {text: "Could it have been something too personal?", isOP: false}, 
-            {text: "Maybe they deleted it because of the reactions.", isOP: false}, 
-            {text: "Deleted posts always leave me wanting more.", isOP: true}
-        ], 
-        likes: "2", 
-        id: "400"
-    },
-    { 
-        title: "i hate my neighborhood", 
-        content: "this is filler post content. auto generate this later", 
-        user: "hiThere", 
-        pfp: "assets/profile.jpg", 
-        category: "unlabeled", 
-        tab: "unanswered", 
-        image:"assets/image5.png", 
-        responses: "1", 
-        time:"TUE 3:23PM", 
-        comments: [
-            {text: "I get that, sometimes neighborhoods can be toxic.", isOP: false}, 
-            {text: "What specifically do you hate about it?", isOP: false}, 
-            {text: "I live in a similar area, it’s exhausting.", isOP: false},
-            {text: "It’s the constant noise and chaos that gets to me.", isOP: true}
-        ], 
-        likes: "9", 
-        id: "500"
-    },
-    { 
-        title: "lol", 
-        content: "this is filler post content. auto generate this later", 
-        user: "tester45", 
-        pfp: "assets/profile.jpg", 
-        category: "unserious", 
-        tab: "hot", 
-        image:"assets/image3.png", 
-        responses: "1", 
-        time:"TUE 9:12AM", 
-        comments: [
-            {text: "Lol, what’s so funny?", isOP: false}, 
-            {text: "This made me laugh way more than I expected!", isOP: false}
-        ], 
-        likes: "1", 
-        id: "600"
-    },
+let unassignedPosts = [
+{ 
+    title: "entities dancing in the backrooms?", 
+    content: "this is filler post content. auto generate this later", 
+    user: "user23993", 
+    pfp: "assets/profile.jpg", 
+    category: "backrooms", 
+    tab: "recent", 
+    image:"assets/image4.png", 
+    responses: "4", 
+    time: "MON 3:49AM", 
+    comments: [
+        {text: "I had something similar happen once!", isOP: false}, 
+        {text: "That’s terrifying, I wonder if it’s a glitch in the matrix?", isOP: false}, 
+        {text: "I've heard rumors about entities in places like that.", isOP: false}, 
+        {text: "Does anyone know how to escape if you see them?", isOP: false},
+        {text: "I’ve heard similar stories about entities in the backrooms, it’s wild!", isOP: true}
+    ], 
+    likes: "3", 
+    id: "100"
+},
+{ 
+    title: "I finally caught him on video", 
+    content: "this is filler post content. auto generate this later", 
+    user: "superGirl9", 
+    pfp: "assets/profile.jpg", 
+    category: "unlabeled", 
+    tab: "recent", 
+    image:"assets/image2.png", 
+    responses: "0", 
+    time:"MON 1:12AM", 
+    comments: [
+        {text: "OMG, I need to see this video!", isOP: false},
+        {text: "Is it really him, or could it be someone else?", isOP: false}
+    ], 
+    likes: "5", 
+    id: "200"
+},
+{ 
+    title: "Ive had this same dream for 3 nights in a row. What could it mean??", 
+    content: "For the past three nights, I’ve had the same dream—I’m walking down my street, but all the houses have security cameras, and they’re all turning to follow me. Last night, I stopped in front of one and looked directly into it. The feed cuts to static, then flickered back on, showing me standing in my own driveway. I don’t have a camera at my house. I found this image in a post by JakeWanders. he had the exact same dreams like 2 years ago and mine looked just like this. pls help im scared", 
+    user: "ihatemovies", 
+    pfp: "assets/profile.jpg", 
+    category: "dreams", 
+    tab: "recent", 
+    image:"assets/image.png", 
+    responses: "1", 
+    time:"TUE 11:59PM", 
+    comments: [
+        {text: "That’s an eerie dream! I wonder what it means?", isOP: false}, 
+        {text: "Maybe it’s a warning? Have you tried looking into dream symbolism?", isOP: false},
+        {text: "I think it's definitely trying to tell you something.", isOP: true}
+    ], 
+    likes: "9", 
+    id: "300"
+},
+{ 
+    title: "This post has been deleted by the user.", 
+    content: "this is filler post content. auto generate this later", 
+    user: "-", 
+    pfp: "assets/profile.jpg", 
+    category: "spaces", 
+    tab: "hot", 
+    image:"assets/image6.png", 
+    responses: "5", 
+    time:"TUE 8:01PM", 
+    comments: [
+        {text: "What did it say? I’m curious now!", isOP: false}, 
+        {text: "I think I saw this before it was deleted.", isOP: false}, 
+        {text: "Could it have been something too personal?", isOP: false}, 
+        {text: "Maybe they deleted it because of the reactions.", isOP: false}, 
+        {text: "Deleted posts always leave me wanting more.", isOP: true}
+    ], 
+    likes: "2", 
+    id: "400"
+},
+{ 
+    title: "i hate my neighborhood", 
+    content: "this is filler post content. auto generate this later", 
+    user: "hiThere", 
+    pfp: "assets/profile.jpg", 
+    category: "unlabeled", 
+    tab: "unanswered", 
+    image:"assets/image5.png", 
+    responses: "1", 
+    time:"TUE 3:23PM", 
+    comments: [
+        {text: "I get that, sometimes neighborhoods can be toxic.", isOP: false}, 
+        {text: "What specifically do you hate about it?", isOP: false}, 
+        {text: "I live in a similar area, it’s exhausting.", isOP: false},
+        {text: "It’s the constant noise and chaos that gets to me.", isOP: true}
+    ], 
+    likes: "9", 
+    id: "500"
+},
+{ 
+    title: "lol", 
+    content: "this is filler post content. auto generate this later", 
+    user: "tester45", 
+    pfp: "assets/profile.jpg", 
+    category: "unserious", 
+    tab: "hot", 
+    image:"assets/image3.png", 
+    responses: "1", 
+    time:"TUE 9:12AM", 
+    comments: [
+        {text: "Lol, what’s so funny?", isOP: false}, 
+        {text: "This made me laugh way more than I expected!", isOP: false}
+    ], 
+    likes: "1", 
+    id: "600"
+},
 
-    // New Posts
-    { 
-        title: "The mystery of the vanishing streetlights", 
-        content: "I’ve noticed something strange happening on my street. Every night, all the streetlights go out at the same time for about 5 minutes. I’ve tried asking around but no one seems to know anything about it.", 
-        user: "shadowhunter", 
-        pfp: "assets/profile.jpg", 
-        category: "mystery", 
-        tab: "recent", 
-        image:"assets/image4.png", 
-        responses: "3", 
-        time:"WED 4:15PM", 
-        comments: [
-            {text: "That’s so weird, do you live near a power station?", isOP: false}, 
-            {text: "I’ve seen this happen in other places too, maybe some sort of weird glitch?", isOP: false}, 
-            {text: "Could it be some kind of test or experiment?", isOP: false},
-            {text: "I think it’s an energy anomaly, but who knows.", isOP: true}
-        ], 
-        likes: "5", 
-        id: "700"
-    },
-    { 
-        title: "Can dreams be warnings?", 
-        content: "Last night I dreamt about a large tidal wave hitting the city. Could this be a sign? I’m worried it could be a premonition.", 
-        user: "dreamer55", 
-        pfp: "assets/profile.jpg", 
-        category: "dreams", 
-        tab: "recent", 
-        image:"assets/image2.png", 
-        responses: "2", 
-        time:"WED 2:01AM", 
-        comments: [
-            {text: "This sounds like something out of a movie! I hope it’s just a dream.", isOP: false}, 
-            {text: "I believe dreams can sometimes be warnings, but not always.", isOP: false},
-            {text: "I hope not. it happened again last night :/", isOP: true}
-        ], 
-        likes: "3", 
-        id: "800"
-    },
-    { 
-        title: "The thing I saw in my backyard last night", 
-        content: "I swear I saw something moving in my backyard last night. It was tall, thin, and seemed to be watching me. I didn’t dare to go outside, but I couldn’t shake the feeling that it was still out there.", 
-        user: "paranoidjoe", 
-        pfp: "assets/profile.jpg", 
-        category: "creepy", 
-        tab: "recent", 
-        image:"assets/image3.png", 
-        responses: "5", 
-        time:"WED 10:30PM", 
-        comments: [
-            {text: "That’s terrifying! Have you seen anything like it before?", isOP: false}, 
-            {text: "Could it be some kind of creature? Sounds like something out of a horror movie.", isOP: false},
-            {text: "I’d suggest setting up a camera if you’re really worried.", isOP: false}
-        ], 
-        likes: "8", 
-        id: "900"
-    },
-    { 
-        title: "I saw someone that wasn't supposed to be there", 
-        content: "I was walking home last night when I saw a person standing at the end of my street. They were facing away from me, but as I got closer, they turned around quickly. Their face was completely blank. No eyes, no mouth. I ran.", 
-        user: "chasingshadows", 
-        pfp: "assets/profile.jpg", 
-        category: "creepy", 
-        tab: "recent", 
-        image:"assets/image4.png", 
-        responses: "6", 
-        time:"TUE 11:00PM", 
-        comments: [
-            {text: "Holy crap, that sounds like a nightmare.", isOP: false}, 
-            {text: "I would’ve freaked out too! Have you seen anything like this before?", isOP: false},
-            {text: "You’re lucky you ran, who knows what that was.", isOP: false},
-            {text: "I know! It still feels like it's following me.", isOP: true}
-        ], 
-        likes: "10", 
-        id: "1000"
-    },
-    { 
-        title: "The shadows in my kitchen", 
-        content: "Lately, I’ve been noticing strange shadows moving around my kitchen at night. I swear there’s no one there, but the shadows just keep shifting. I’m starting to get really paranoid.", 
-        user: "darkwing", 
-        pfp: "assets/profile.jpg", 
-        category: "hauntings", 
-        tab: "recent", 
-        image:"assets/image1.png", 
-        responses: "4", 
-        time:"MON 7:30PM", 
-        comments: [
-            {text: "That’s so creepy. Do you have any pets that might be causing it?", isOP: false}, 
-            {text: "Maybe it’s a ghost? Could be residual energy.", isOP: false},
-            {text: "That would definitely make me paranoid too. I’d start filming if I were you.", isOP: false}
-        ], 
-        likes: "6", 
-        id: "1100"
-    },
-    { 
-        title: "The strange noises from the basement", 
-        content: "For the past few nights, I’ve heard strange noises coming from my basement. It sounds like something heavy is being dragged across the floor. I’ve gone down there to check, but nothing is ever out of place.", 
-        user: "creepytales", 
-        pfp: "assets/profile.jpg", 
-        category: "hauntings", 
-        tab: "recent", 
-        image:"assets/image2.png", 
-        responses: "5", 
-        time:"MON 5:45PM", 
-        comments: [
-            {text: "That’s unsettling. Have you checked for animals in the walls?", isOP: false}, 
-            {text: "Maybe someone else is sneaking around down there?", isOP: false},
-            {text: "It could be paranormal, but I’d still check for any possible explanations.", isOP: false}
-        ], 
-        likes: "7", 
-        id: "1200"
-    },
-    { 
-        title: "Weird figure in my childhood home", 
-        content: "I was staying at my childhood home last night, and I saw a figure standing in the hallway. It was tall and hunched over, and it didn’t seem to move. I just froze, and when I blinked, it was gone.", 
-        user: "hauntedmemories", 
-        pfp: "assets/profile.jpg", 
-        category: "creepy", 
-        tab: "recent", 
-        image:"assets/image3.png", 
-        responses: "3", 
-        time:"TUE 6:00AM", 
-        comments: [
-            {text: "That’s so eerie. Was it the same figure you saw as a child?", isOP: false}, 
-            {text: "Maybe it’s something tied to that house. Sounds like a haunting.", isOP: false},
-            {text: "That’s terrifying! I’d be too scared to go back to that place.", isOP: false}
-        ], 
-        likes: "5", 
-        id: "1300"
-    },
-    { 
-        title: "The clock that won't stop ticking", 
-        content: "There’s an old clock in my living room that won’t stop ticking. No matter how many times I take the batteries out, it keeps going. It’s honestly starting to drive me crazy.", 
-        user: "timeless", 
-        pfp: "assets/profile.jpg", 
-        category: "creepy", 
-        tab: "recent", 
-        image:"assets/image4.png", 
-        responses: "4", 
-        time:"MON 8:45PM", 
-        comments: [
-            {text: "That sounds like some kind of supernatural phenomenon.", isOP: false}, 
-            {text: "Have you checked if it's an old mechanical clock?", isOP: false},
-            {text: "Maybe the clock has some kind of history attached to it.", isOP: false},
-            {text: "I just checked the back and the manufacturer is scratched out", isOP: true}
-        ], 
-        likes: "6", 
-        id: "1400"
-    },
-    { 
-        title: "The abandoned house down the street", 
-        content: "There’s a house down the street from me that’s been abandoned for years, but recently I’ve seen lights on at night. I’m too scared to check it out myself, but I want to know what’s going on.", 
-        user: "nosyneighbor", 
-        pfp: "assets/profile.jpg", 
-        category: "creepy", 
-        tab: "recent", 
-        image:"assets/image1.png", 
-        responses: "3", 
-        time:"TUE 9:20PM", 
-        comments: [
-            {text: "That’s super creepy! Have you seen anyone come and go from the house?", isOP: false}, 
-            {text: "Maybe someone’s squatting there. It’s worth investigating.", isOP: false},
-            {text: "You should try going during the day when it’s safer.", isOP: false}
-        ], 
-        likes: "5", 
-        id: "1500"
-    },
-    { 
-        title: "The things I found in my attic", 
-        content: "I recently went up into my attic to search for some old things, and I found a box full of old photos. But one of the photos was different—it was of a person who looked exactly like me, but I’ve never seen them before.", 
-        user: "shadowseeker", 
-        pfp: "assets/profile.jpg", 
-        category: "mystery", 
-        tab: "recent", 
-        image:"assets/image2.png", 
-        responses: "4", 
-        time:"MON 10:00PM", 
-        comments: [
-            {text: "That’s eerie! Could it be a family member you didn’t know about?", isOP: false}, 
-            {text: "I’d be so freaked out, maybe try to trace the photo’s origins?", isOP: false},
-            {text: "That’s straight out of a thriller movie. Are you sure it’s not a twin?", isOP: false}
-        ], 
-        likes: "7", 
-        id: "1600"
-    },
-    { 
-        title: "The night I heard footsteps above me", 
-        content: "I live in an old apartment building, and the other night I heard heavy footsteps above me. It sounded like someone was pacing back and forth. I know no one lives up there.", 
-        user: "spookedliveshere", 
-        pfp: "assets/profile.jpg", 
-        category: "hauntings", 
-        tab: "recent", 
-        image:"assets/image3.png", 
-        responses: "2", 
-        time:"WED 2:05AM", 
-        comments: [
-            {text: "That’s a classic haunting sign. Have you had any other weird experiences?", isOP: false}, 
-            {text: "Maybe someone is secretly living there?", isOP: false},
-            {text: "I’d contact the landlord. That’s way too creepy.", isOP: false}
-        ], 
-        likes: "4", 
-        id: "1700"
-    },
-    { 
-        title: "The strange reflection in my bathroom mirror", 
-        content: "Last week, I was brushing my teeth when I saw a reflection of someone standing behind me in the bathroom mirror. But when I turned around, no one was there.", 
-        user: "mirrorwalker", 
-        pfp: "assets/profile.jpg", 
-        category: "creepy", 
-        tab: "recent", 
-        image:"assets/image4.png", 
-        responses: "3", 
-        time:"TUE 5:00PM", 
-        comments: [
-            {text: "Mirrors can be creepy sometimes. Are you sure you didn’t imagine it?", isOP: false}, 
-            {text: "That sounds like something from a horror movie! Did you feel like someone was there?", isOP: false},
-            {text: "I’ve heard of mirrors acting as portals. This could be more than just a reflection.", isOP: true}
-        ], 
-        likes: "5", 
-        id: "1800"
-    },
-    { 
-        title: "The man in the crowd", 
-        content: "I was walking downtown today, and I swear I saw the same man in every crowd I passed. At first, I thought it was a coincidence, but after seeing him in three different spots, I was too freaked out to keep walking.", 
-        user: "alwayswatching", 
-        pfp: "assets/profile.jpg", 
-        category: "creepy", 
-        tab: "recent", 
-        image:"assets/image1.png", 
-        responses: "4", 
-        time:"WED 1:30PM", 
-        comments: [
-            {text: "That’s terrifying! Maybe he’s following you.", isOP: false}, 
-            {text: "Did he make eye contact with you?", isOP: false},
-            {text: "That sounds like a stalker or something supernatural. Be careful.", isOP: false}
-        ], 
-        likes: "6", 
-        id: "1900"
-    }
-  ]
+// New Posts
+{ 
+    title: "The mystery of the vanishing streetlights", 
+    content: "I’ve noticed something strange happening on my street. Every night, all the streetlights go out at the same time for about 5 minutes. I’ve tried asking around but no one seems to know anything about it.", 
+    user: "shadowhunter", 
+    pfp: "assets/profile.jpg", 
+    category: "mystery", 
+    tab: "recent", 
+    image:"assets/image4.png", 
+    responses: "3", 
+    time:"WED 4:15PM", 
+    comments: [
+        {text: "That’s so weird, do you live near a power station?", isOP: false}, 
+        {text: "I’ve seen this happen in other places too, maybe some sort of weird glitch?", isOP: false}, 
+        {text: "Could it be some kind of test or experiment?", isOP: false},
+        {text: "I think it’s an energy anomaly, but who knows.", isOP: true}
+    ], 
+    likes: "5", 
+    id: "700"
+},
+{ 
+    title: "Can dreams be warnings?", 
+    content: "Last night I dreamt about a large tidal wave hitting the city. Could this be a sign? I’m worried it could be a premonition.", 
+    user: "dreamer55", 
+    pfp: "assets/profile.jpg", 
+    category: "dreams", 
+    tab: "recent", 
+    image:"assets/image2.png", 
+    responses: "2", 
+    time:"WED 2:01AM", 
+    comments: [
+        {text: "This sounds like something out of a movie! I hope it’s just a dream.", isOP: false}, 
+        {text: "I believe dreams can sometimes be warnings, but not always.", isOP: false},
+        {text: "I hope not. it happened again last night :/", isOP: true}
+    ], 
+    likes: "3", 
+    id: "800"
+},
+{ 
+    title: "The thing I saw in my backyard last night", 
+    content: "I swear I saw something moving in my backyard last night. It was tall, thin, and seemed to be watching me. I didn’t dare to go outside, but I couldn’t shake the feeling that it was still out there.", 
+    user: "paranoidjoe", 
+    pfp: "assets/profile.jpg", 
+    category: "creepy", 
+    tab: "recent", 
+    image:"assets/image3.png", 
+    responses: "5", 
+    time:"WED 10:30PM", 
+    comments: [
+        {text: "That’s terrifying! Have you seen anything like it before?", isOP: false}, 
+        {text: "Could it be some kind of creature? Sounds like something out of a horror movie.", isOP: false},
+        {text: "I’d suggest setting up a camera if you’re really worried.", isOP: false}
+    ], 
+    likes: "8", 
+    id: "900"
+},
+{ 
+    title: "I saw someone that wasn't supposed to be there", 
+    content: "I was walking home last night when I saw a person standing at the end of my street. They were facing away from me, but as I got closer, they turned around quickly. Their face was completely blank. No eyes, no mouth. I ran.", 
+    user: "chasingshadows", 
+    pfp: "assets/profile.jpg", 
+    category: "creepy", 
+    tab: "recent", 
+    image:"assets/image4.png", 
+    responses: "6", 
+    time:"TUE 11:00PM", 
+    comments: [
+        {text: "Holy crap, that sounds like a nightmare.", isOP: false}, 
+        {text: "I would’ve freaked out too! Have you seen anything like this before?", isOP: false},
+        {text: "You’re lucky you ran, who knows what that was.", isOP: false},
+        {text: "I know! It still feels like it's following me.", isOP: true}
+    ], 
+    likes: "10", 
+    id: "1000"
+},
+{ 
+    title: "The shadows in my kitchen", 
+    content: "Lately, I’ve been noticing strange shadows moving around my kitchen at night. I swear there’s no one there, but the shadows just keep shifting. I’m starting to get really paranoid.", 
+    user: "darkwing", 
+    pfp: "assets/profile.jpg", 
+    category: "hauntings", 
+    tab: "recent", 
+    image:"assets/image2.png", 
+    responses: "4", 
+    time:"MON 7:30PM", 
+    comments: [
+        {text: "That’s so creepy. Do you have any pets that might be causing it?", isOP: false}, 
+        {text: "Maybe it’s a ghost? Could be residual energy.", isOP: false},
+        {text: "That would definitely make me paranoid too. I’d start filming if I were you.", isOP: false}
+    ], 
+    likes: "6", 
+    id: "1100"
+},
+{ 
+    title: "The strange noises from the basement", 
+    content: "For the past few nights, I’ve heard strange noises coming from my basement. It sounds like something heavy is being dragged across the floor. I’ve gone down there to check, but nothing is ever out of place.", 
+    user: "creepytales", 
+    pfp: "assets/profile.jpg", 
+    category: "hauntings", 
+    tab: "recent", 
+    image:"assets/image2.png", 
+    responses: "5", 
+    time:"MON 5:45PM", 
+    comments: [
+        {text: "That’s unsettling. Have you checked for animals in the walls?", isOP: false}, 
+        {text: "Maybe someone else is sneaking around down there?", isOP: false},
+        {text: "It could be paranormal, but I’d still check for any possible explanations.", isOP: false}
+    ], 
+    likes: "7", 
+    id: "1200"
+},
+{ 
+    title: "Weird figure in my childhood home", 
+    content: "I was staying at my childhood home last night, and I saw a figure standing in the hallway. It was tall and hunched over, and it didn’t seem to move. I just froze, and when I blinked, it was gone.", 
+    user: "hauntedmemories", 
+    pfp: "assets/profile.jpg", 
+    category: "creepy", 
+    tab: "recent", 
+    image:"assets/image3.png", 
+    responses: "3", 
+    time:"TUE 6:00AM", 
+    comments: [
+        {text: "That’s so eerie. Was it the same figure you saw as a child?", isOP: false}, 
+        {text: "Maybe it’s something tied to that house. Sounds like a haunting.", isOP: false},
+        {text: "That’s terrifying! I’d be too scared to go back to that place.", isOP: false}
+    ], 
+    likes: "5", 
+    id: "1300"
+},
+{ 
+    title: "The clock that won't stop ticking", 
+    content: "There’s an old clock in my living room that won’t stop ticking. No matter how many times I take the batteries out, it keeps going. It’s honestly starting to drive me crazy.", 
+    user: "timeless", 
+    pfp: "assets/profile.jpg", 
+    category: "creepy", 
+    tab: "recent", 
+    image:"assets/image4.png", 
+    responses: "4", 
+    time:"MON 8:45PM", 
+    comments: [
+        {text: "That sounds like some kind of supernatural phenomenon.", isOP: false}, 
+        {text: "Have you checked if it's an old mechanical clock?", isOP: false},
+        {text: "Maybe the clock has some kind of history attached to it.", isOP: false},
+        {text: "I just checked the back and the manufacturer is scratched out", isOP: true}
+    ], 
+    likes: "6", 
+    id: "1400"
+},
+{ 
+    title: "The abandoned house down the street", 
+    content: "There’s a house down the street from me that’s been abandoned for years, but recently I’ve seen lights on at night. I’m too scared to check it out myself, but I want to know what’s going on.", 
+    user: "nosyneighbor", 
+    pfp: "assets/profile.jpg", 
+    category: "creepy", 
+    tab: "recent", 
+    image:"assets/image2.png", 
+    responses: "3", 
+    time:"TUE 9:20PM", 
+    comments: [
+        {text: "That’s super creepy! Have you seen anyone come and go from the house?", isOP: false}, 
+        {text: "Maybe someone’s squatting there. It’s worth investigating.", isOP: false},
+        {text: "You should try going during the day when it’s safer.", isOP: false}
+    ], 
+    likes: "5", 
+    id: "1500"
+},
+{ 
+    title: "The things I found in my attic", 
+    content: "I recently went up into my attic to search for some old things, and I found a box full of old photos. But one of the photos was different—it was of a person who looked exactly like me, but I’ve never seen them before.", 
+    user: "shadowseeker", 
+    pfp: "assets/profile.jpg", 
+    category: "mystery", 
+    tab: "recent", 
+    image:"assets/image2.png", 
+    responses: "4", 
+    time:"MON 10:00PM", 
+    comments: [
+        {text: "That’s eerie! Could it be a family member you didn’t know about?", isOP: false}, 
+        {text: "I’d be so freaked out, maybe try to trace the photo’s origins?", isOP: false},
+        {text: "That’s straight out of a thriller movie. Are you sure it’s not a twin?", isOP: false}
+    ], 
+    likes: "7", 
+    id: "1600"
+},
+{ 
+    title: "The night I heard footsteps above me", 
+    content: "I live in an old apartment building, and the other night I heard heavy footsteps above me. It sounded like someone was pacing back and forth. I know no one lives up there.", 
+    user: "spookedliveshere", 
+    pfp: "assets/profile.jpg", 
+    category: "hauntings", 
+    tab: "recent", 
+    image:"assets/image3.png", 
+    responses: "2", 
+    time:"WED 2:05AM", 
+    comments: [
+        {text: "That’s a classic haunting sign. Have you had any other weird experiences?", isOP: false}, 
+        {text: "Maybe someone is secretly living there?", isOP: false},
+        {text: "I’d contact the landlord. That’s way too creepy.", isOP: false}
+    ], 
+    likes: "4", 
+    id: "1700"
+},
+{ 
+    title: "The strange reflection in my bathroom mirror", 
+    content: "Last week, I was brushing my teeth when I saw a reflection of someone standing behind me in the bathroom mirror. But when I turned around, no one was there.", 
+    user: "mirrorwalker", 
+    pfp: "assets/profile.jpg", 
+    category: "creepy", 
+    tab: "recent", 
+    image:"assets/image4.png", 
+    responses: "3", 
+    time:"TUE 5:00PM", 
+    comments: [
+        {text: "Mirrors can be creepy sometimes. Are you sure you didn’t imagine it?", isOP: false}, 
+        {text: "That sounds like something from a horror movie! Did you feel like someone was there?", isOP: false},
+        {text: "I’ve heard of mirrors acting as portals. This could be more than just a reflection.", isOP: true}
+    ], 
+    likes: "5", 
+    id: "1800"
+},
+{ 
+    title: "The man in the crowd", 
+    content: "I was walking downtown today, and I swear I saw the same man in every crowd I passed. At first, I thought it was a coincidence, but after seeing him in three different spots, I was too freaked out to keep walking.", 
+    user: "alwayswatching", 
+    pfp: "assets/profile.jpg", 
+    category: "creepy", 
+    tab: "recent", 
+    image:"assets/image2.png", 
+    responses: "4", 
+    time:"WED 1:30PM", 
+    comments: [
+        {text: "That’s terrifying! Maybe he’s following you.", isOP: false}, 
+        {text: "Did he make eye contact with you?", isOP: false},
+        {text: "That sounds like a stalker or something supernatural. Be careful.", isOP: false}
+    ], 
+    likes: "6", 
+    id: "1900"
+}
+]
 
 function assignRandomUsers() {
     let storedPosts = localStorage.getItem("assignedPosts");
