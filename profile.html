@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://use.typekit.net/aov2moj.css">
     <script src="draft.js" defer></script>
 </head>
-<body id="identifier-homepage">
+<body id="identifier-profilepage">
     <div class="top-content-div-to-make-fixed">
         <div class="top-content">
             <div class="left">
@@ -93,67 +93,20 @@
             </div>
         </div>
         <div class="middle-content">
-            <div class="featured">
-                <div class="featured-member">
-                    <div class="box">
-                        <div class="title-skinny">Featured Member</div>
-                        <img class="profile-picture" src="/assets/profile.jpg">
-                        <div class="username">stargirl99</div>
-                    </div>
-                </div>
-                <div class="featured-post">
-                    <div class="box">
-                        <div class="title-skinny">Post Of The Week</div>
-                        <div class="green-box">
-                            <div class="name-and-time">
-                                <div class="username">aPerson</div>
-                                <div class="time">FRI 10:23PM</div>
-                            </div>
-                            <div class="content-preview">
-                                <div class="post-text">
-                                    Anyone know what kind of bug this is? My dad said it has too many legs to...
-                                </div>
-                                <div class="read-more">Read More</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="posts">
+            <div class="profile-section">
                 <div class="box">
-                    <div class="tabs">
-                        <div class="tab active" data-tab="recent" onclick="filterPosts('recent', event)">Recent</div>
-                        <div class="tab" data-tab="online" onclick="filterPosts('online', event)">Your Rooms</div>
-                        <div class="tab" data-tab="hot" onclick="filterPosts('hot', event)">Hot</div>
-                        <div class="tab" data-tab="unanswered" onclick="filterPosts('unanswered', event)">Unanswered</div>
-                    </div>
-                    <div class="posts-list" id="posts"></div>
+                    <div class="title-skinny" id="profile-page-title"></div>
+                    <div id="profile-info"></div>
                 </div>
             </div>
         </div>
         <div class="right-content">
-            <div class="news">
+            <div class="see-similar">
                 <div class="box">
-                    <div class="title-skinny">Newsfeed</div>
-                    <div class="news-content">
-                        <div class="news-poster">Moderator</div>
-                        <div class="news-post">All Is In Mercury is having a meetup! Join our mailing list for details.</div>
-                        <br>
-                        <div class="news-poster">Moderator</div>
-                        <div class="news-post">Due to the increase in bot accounts, we will now require new users wait 7 days before making a new post. They will s...</div>
-                    </div>
-                    </div>
-            </div>
-            <div class="chat">
-                <div class="chat-container">
-                    <div class="title-skinny">Chat</div>
-                    <div class="chat-messages" id="chatMessages"></div>
-                    <div class="chat-input">
-                        <input type="text" id="messageInput" placeholder="Type message...">
-                        <button onclick="sendMessage()">SEND</button>
-                    </div>
+                    <div class="title-skinny">Friends</div>
+                    <div class="friends-list" id="friends-list"></div>
                 </div>
-            </div>
+            </div> 
         </div>
     </div>
     

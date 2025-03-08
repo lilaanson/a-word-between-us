@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://use.typekit.net/aov2moj.css">
     <script src="draft.js" defer></script>
 </head>
-<body id="identifier-homepage">
+<body id="identifier-signUpPage">
     <div class="top-content-div-to-make-fixed">
         <div class="top-content">
             <div class="left">
@@ -60,7 +60,7 @@
                     <div>
                         <div class="username">yourUsername</div>
                         <div class="intro-signup-options hide-when-account">
-                            <span id="sign-up">Sign up</span> | <span id="log-in">Log in</span>
+                            <span class="sign-up">Sign up</span> | <span class="log-in">Log in</span>
                         </div>
                         <div class="edit-toolbar not-logged-in-to-hide">Edit Toolbar</div>
                     </div>
@@ -92,69 +92,57 @@
                 </ul>
             </div>
         </div>
-        <div class="middle-content">
-            <div class="featured">
-                <div class="featured-member">
-                    <div class="box">
-                        <div class="title-skinny">Featured Member</div>
-                        <img class="profile-picture" src="/assets/profile.jpg">
-                        <div class="username">stargirl99</div>
-                    </div>
+        <div class="log-in-area">
+            <div class="box">
+                <!-- Log In Section -->
+                <div id="log-in-options" class="form-section">
+                    <h2>Log In</h2>
+                    <form id="login">
+                        <label for="login-username">Username:</label>
+                        <input type="text" id="login-username" name="username" required>
+                        <label for="login-password">Password:</label>
+                        <input type="password" id="login-password" name="password" required>
+                        <button type="submit">Log In</button>
+                    </form>
+                    <p id="login-error" style="color: red; display: none;">Account not found.</p>
+                    <button id="switch-to-signup">Sign Up</button>
                 </div>
-                <div class="featured-post">
-                    <div class="box">
-                        <div class="title-skinny">Post Of The Week</div>
-                        <div class="green-box">
-                            <div class="name-and-time">
-                                <div class="username">aPerson</div>
-                                <div class="time">FRI 10:23PM</div>
-                            </div>
-                            <div class="content-preview">
-                                <div class="post-text">
-                                    Anyone know what kind of bug this is? My dad said it has too many legs to...
-                                </div>
-                                <div class="read-more">Read More</div>
+        
+                <!-- Sign Up Section -->
+                <div id="sign-up-options" class="form-section">
+                    <h2>Sign Up</h2>
+                    <form id="signup">
+                        <label for="signup-username">Username:</label>
+                        <input type="text" id="signup-username" name="username" required>
+                        
+                        <label for="signup-firstname">First Name:</label>
+                        <input type="text" id="signup-firstname" name="firstname" required>
+                        
+                        <label for="signup-dob">Date of Birth:</label>
+                        <input type="date" id="signup-dob" name="dob" required>
+                        
+                        <label for="signup-password">Password:</label>
+                        <input type="password" id="signup-password" name="password" required>
+        
+                        <!-- Terms of Service -->
+                        <div class="tos-container">
+                            <label for="tos">
+                                <input type="checkbox" id="tos" name="tos" required>
+                                I agree to the <a href="#terms">Terms of Service</a>
+                            </label>
+                            <div id="terms" class="tos-box">
+                                <p>Terms of Service content...</p>
+                                <!-- Add more terms here -->
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="posts">
-                <div class="box">
-                    <div class="tabs">
-                        <div class="tab active" data-tab="recent" onclick="filterPosts('recent', event)">Recent</div>
-                        <div class="tab" data-tab="online" onclick="filterPosts('online', event)">Your Rooms</div>
-                        <div class="tab" data-tab="hot" onclick="filterPosts('hot', event)">Hot</div>
-                        <div class="tab" data-tab="unanswered" onclick="filterPosts('unanswered', event)">Unanswered</div>
-                    </div>
-                    <div class="posts-list" id="posts"></div>
+        
+                        <button type="submit">Sign Up</button>
+                    </form>
+                    <button id="switch-to-login">Log In</button>
                 </div>
             </div>
         </div>
-        <div class="right-content">
-            <div class="news">
-                <div class="box">
-                    <div class="title-skinny">Newsfeed</div>
-                    <div class="news-content">
-                        <div class="news-poster">Moderator</div>
-                        <div class="news-post">All Is In Mercury is having a meetup! Join our mailing list for details.</div>
-                        <br>
-                        <div class="news-poster">Moderator</div>
-                        <div class="news-post">Due to the increase in bot accounts, we will now require new users wait 7 days before making a new post. They will s...</div>
-                    </div>
-                    </div>
-            </div>
-            <div class="chat">
-                <div class="chat-container">
-                    <div class="title-skinny">Chat</div>
-                    <div class="chat-messages" id="chatMessages"></div>
-                    <div class="chat-input">
-                        <input type="text" id="messageInput" placeholder="Type message...">
-                        <button onclick="sendMessage()">SEND</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     </div>
     
 </body>
