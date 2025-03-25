@@ -11,15 +11,12 @@
 <body id="identifier-signUpPage">
     <div class="top-content-div-to-make-fixed">
         <div class="top-content">
-            <div class="left">
+            <!-- <div class="left">
                 <div class="box"></div>
-            </div>
+            </div> -->
             <div class="right">
-                <div class="banner">
-                    <img src="/assets/bannerCropped.png" class="img">
-                </div>
-                <div class="nav">
-                    <div class="nav-main">
+                
+                    <!-- <div class="nav-main">
                         <a href="#" class="nav-item">Home</a>
                         <a href="#" class="nav-item">Profile</a>
                         <a href="#" class="nav-item">News</a>
@@ -28,41 +25,33 @@
                         <a href="#" class="nav-item">Rooms</a>
                         <a href="#" class="nav-item">Trending</a>
                     </div>
-                    <div class="shop">
-                        <div class="icon">
-                            <img src="/assets/shop-icon.png" class="img">
-                        </div>
-                        <div class="text">
-                            shop
-                        </div>
-                    </div>
-                    <div class="premium">
-                        <div class="icon">
-                            <img src="/assets/prem-icon.png" class="img">
-                        </div>
-                        <div class="text">
-                            premium
-                        </div>
-                    </div>
+                     -->
+                <div class="top-stuff">
+                    <img src="assets/rainbow.gif" class="rainbow">
+                    <img class="welcome" src="assets/welcomePink.gif">
+                    <img src="assets/rainbow.gif" class="rainbow">
                 </div>
-                <div class="top-line">
+                    <!-- <div class="top-line">
                     <hr style="height:0.1px;border-width:0;color:#f8faf0;background-color:#f8faf0">
-                </div>
+                </div> -->
+
             </div>
         </div>
     </div>
     <div class="main-content">
-        <div class="left-nav">
+        <div class="left-nav"><div class="make-post click-for-new-post">
+            <div>+ Make A New Post</div>
+        </div>
+        <div class="post-error">
+        </div>
             <!-- Profile Section -->
             <div class="sidebar">
                 <div class="profile">
-                    <img class="not-logged-in-to-hide" src="/assets/profile.jpg" alt="Profile Picture">
                     <div>
-                        <div class="username">yourUsername</div>
+                        <div class="username self">yourUsername</div>
                         <div class="intro-signup-options hide-when-account">
-                            <span class="sign-up">Sign up</span> | <span class="log-in">Log in</span>
+                            <span class="sign-up">SIGN UP</span> | <span class="log-in">LOG IN</span>
                         </div>
-                        <div class="edit-toolbar not-logged-in-to-hide">Edit Toolbar</div>
                     </div>
                 </div>
 
@@ -96,6 +85,7 @@
             <div class="box">
                 <!-- Log In Section -->
                 <div id="log-in-options" class="form-section">
+                    <p class="error-message">You must be logged in to view that page.</p>
                     <h2>Log In</h2>
                     <form id="login">
                         <label for="login-username">Username:</label>

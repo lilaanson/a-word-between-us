@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlphaCast - The Ultimate Podcast</title>
+    <link rel="stylesheet" href="https://use.typekit.net/aov2moj.css">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: "tt-commons-pro-thin", sans-serif;
+            font-weight: 100;
+            font-style: normal;
+            background-color: #111;
+            color: white;
+            text-align: center;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 50%; /* Center the navbar horizontally */
+            transform: translateX(-50%); /* Adjust for exact centering */
+            width: 70%;
+            background: black;
+            padding: 20px;
+            display: flex;
+            justify-content: space-around; /* Space between items */
+            align-items: center; /* Centers items vertically */
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: WHITE;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .navbar a:hover {
+            color: yellow;
+        }
+
+        /* Sections */
+        .section {
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            font-weight: bold;
+        }
+        .name {
+            font-size: 70px; /* Adjust to make it fit better */
+            font-family: "tt-commons-pro", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            margin: 0 20px; /* Optional: adds space on sides */
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="#home">ABOUT</a>
+        <div class="name">THIS GUY</div>
+        <a href="#guests">EPISODES</a>
+    </div>
+
+    <!-- Sections -->
+    <div id="home" class="section">ABOUT</div>
+    <p>Welcome to AlphaCast – the podcast where we dive deep into the stories that matter. I'm Simon (or Sim, if you prefer), and I started this journey to explore the topics and people that fascinate me. Whether it's uncovering the latest trends or chatting with guests who bring unique perspectives, AlphaCast is all about having real conversations. Stick around, and let's dive into something new.</p>
+    <div id="guests" class="section">EPISODES</div>
+
+</body>
+</html>

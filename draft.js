@@ -3,17 +3,19 @@ var postId
 var postRoom 
 var pageType
 var who 
+var whereDidYouComeFrom
+var canIStart = false;
 
 function sendMessage() {
             const input = document.getElementById("messageInput");
     const text = input.value.trim();
     if (text === "") return;
     
-    displayMessage(text, "sent");
+    displayMessage(text,false, "sent");
     input.value = "";
 
     // Simulate a fake response after a short delay
-    setTimeout(receiveMessage, Math.random() * 3000 + 1000);
+    setTimeout(receiveMessage, Math.random() * 9000 + 3000);
 }
 
 function receiveMessage() {
@@ -25,56 +27,235 @@ function receiveMessage() {
         "I know you"
     ];
     const randomMessage = botMessages[Math.floor(Math.random() * botMessages.length)];
-    displayMessage(randomMessage, "received");
+    displayMessage(randomMessage, false, "received");
 }
 
 let timeSpent = 0;
 let timerInterval;
 
+if (!localStorage.getItem("startTime")) {
+    localStorage.setItem("startTime", Date.now());
+}
+
+function imNewHowLongDoIHaveToWait() {
+    let startTime = localStorage.getItem("startTime");
+    let elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+
+    requestAnimationFrame(imNewHowLongDoIHaveToWait);
+}
+
+
+function canYouJustTellMe() {
+    let startTime = localStorage.getItem("startTime");
+
+    if (!startTime) return "24:00:00"; // Default to full 24 hours if no start time is set
+
+    let elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+    let remainingTime = 86400 - elapsedTime;
+
+    if (remainingTime <= 0) return "00:00:00"; // If time is up, return 0
+
+    let hours = Math.floor(remainingTime / 3600);
+    let minutes = Math.floor((remainingTime % 3600) / 60);
+    let seconds = remainingTime % 60;
+
+    // Format with leading zeros if needed
+    return `${String(hours).padStart(2, '0')} hours, ${String(minutes).padStart(2, '0')} minutes.`;
+}
+
+function stopTryingToPost(){
+    var hasAccount = localStorage.getItem("hasAccount"); 
+    if(!hasAccount){
+        window.location.href = `logIn.html?method=click`;  
+    }else{
+        var postError = document.querySelector(".post-error")
+        var moveMeSidebar = document.querySelector(".sidebar")
+        moveMeSidebar.style = "margin-top:135px;"
+        var timeRemaining = canYouJustTellMe()
+        console.log(timeRemaining)
+        postError.textContent = `New users must wait 24 hours before making their first post. Time remaining: ${timeRemaining}`
+        postError.style = "display:block;"
+    }
+}
+
+
+
 function startTimer() {
     timerInterval = setInterval(incrementTime, 1000);
 }
-
+var hasMailBeenSent = false;
 function incrementTime() {
-    timeSpent++;
-    if (timeSpent >= 5) {
+    console.log(timeSpent)
+    timeSpent++
+    if (timeSpent >= 10) {
         clearInterval(timerInterval);
-        displayMessage("⚠️ DO NOT IGNORE THIS MESSAGE ⚠️ Someone tried to delete this challenge, but it keeps coming back. People say it started on the dark web, and now it's spreading. If you’re reading this, you have 24 hours to complete the test… or suffer the consequences. The challenge is simple: Eat just one bite. A rat’s heart, liver, or kidney—your choice. Film yourself, upload the proof, and break the cycle before it’s too late. Those who refuse? Well… check the news. They don’t last long. 🔗 RAT GUT CHALLENGE - PROVE YOURSELF Forward this to 5 people in the next hour, or you’ll be the next to wake up with a taste you don’t remember... Good luck. You’ll need it. 🐀", "chainmail"); // Call your function
+        hasMailBeenSent = true;
+        displayMessage("⚠️ DO NOT IGNORE THIS MESSAGE ⚠️ Someone tried to delete this challenge, but it keeps coming back. People say it started on the dark web, and now it's spreading. If you’re reading this, you have 24 hours to complete the test… or suffer the consequences. The challenge is simple: Eat just one bite. A rat’s heart, liver, or kidney—your choice. Film yourself, upload the proof, and break the cycle before it’s too late. Those who refuse? Well… check the news. They don’t last long. 🔗 RAT GUT CHALLENGE - PROVE YOURSELF Forward this to 5 people in the next hour, or you’ll be the next to wake up with a taste you don’t remember... Good luck. You’ll need it. 🐀", false, "chainmail"); // Call your function
+        timeMoreMessages();
     }
 }
 
-// Start the timer when the page loads
-window.addEventListener("load", startTimer);
 
 
-function displayMessage(text, type) {
-    const chatBox = document.getElementById("chatMessages");
-    const messageElement = document.createElement("div");
-    if(type==="received"){
-        var img = document.createElement("img");
-        img.src = "/assets/profile.jpg";
-        img.style = "width: 30px;padding: 0 0 10px 0;";
-        chatBox.appendChild(img);
-    }else if(type==="chainmail"){
-        var img = document.createElement("img");
-        img.src = "/assets/profile.jpg";
-        img.style = "width: 30px;padding: 0 0 10px 0;";
-        chatBox.appendChild(img);
+
+
+
+function displayMessage(text, time, type) {
+    if(document.getElementById("identifier-homepage")){
+        const chatBox = document.getElementById("chatMessages");
+        const messageElement = document.createElement("div");
+        if(type==="received"){
+            var img = document.createElement("div");
+            var selectedUser = users[Math.floor(Math.random() * users.length)];
+            var pfpText = selectedUser.username.charAt(0); 
+            img.textContent = pfpText
+            img.classList.add("pfp")
+            img.style = "width: 30px;padding: 0 0 10px 0;";
+            messageElement.classList.add("message", type);
+            messageElement.innerHTML = `<span class="username okay-wow-stalking-profiles" data-type="other" data-user="${selectedUser.username}">${selectedUser.username}:</span> ${text}` + `<div class="timestamp">${new Date().toLocaleTimeString()}</div>`;
+            chatBox.appendChild(messageElement);
+        }else if(type==="chainmail"){
+            var img = document.createElement("div");
+            var selectedUser = users[Math.floor(Math.random() * users.length)];
+            var pfpText = selectedUser.username.charAt(0); 
+            img.textContent = pfpText
+            img.classList.add("pfp")
+            img.style = "width: 30px;padding: 0 0 10px 0;";
+            messageElement.classList.add("message", type);
+            messageElement.innerHTML = `<span class="username okay-wow-stalking-profiles" data-type="other" data-user="${selectedUser.username}">${selectedUser.username}:</span> ${text}` + `<div class="timestamp">${new Date().toLocaleTimeString()}</div>`;
+            chatBox.appendChild(messageElement);
+            chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll to latest message
+        }else if(type==="previous"){
+            var img = document.createElement("div");
+            var selectedUser = users[Math.floor(Math.random() * users.length)];
+            var pfpText = selectedUser.username.charAt(0); 
+            img.textContent = pfpText
+            img.classList.add("pfp")
+            img.style = "width: 30px;padding: 0 0 10px 0;";
+            messageElement.classList.add("message", type);
+            messageElement.innerHTML = `<span class="username okay-wow-stalking-profiles" data-type="other" data-user="${selectedUser.username}">${selectedUser.username}:</span> ${text}` + `<div class="timestamp">${time}</div>`;
+            chatBox.appendChild(messageElement);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }else{
+            messageElement.classList.add("message", type);
+            messageElement.innerHTML = text + `<div class="timestamp">${new Date().toLocaleTimeString()}</div>`;
+            chatBox.appendChild(messageElement);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+        
     }
-    messageElement.classList.add("message", type);
-    messageElement.innerHTML = text + `<div class="timestamp">${new Date().toLocaleTimeString()}</div>`;
-    chatBox.appendChild(messageElement);
-    chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll to latest message
 }
+let previousMessages = [
+    { content: "Thanks for stopping by! Always great to see new faces here. 👁️", timestamp: "1 months ago" },
+    { content: "did anyone see the lights just now", timestamp: "1 months ago" },
+    { content: "You're always welcome here! Let me know if you come across anything strange. 👀", timestamp: "1 months ago" },
+    { content: "New post just went up in the mystery room. Anyone else been hearing that low hum at night?", timestamp: "1 months ago" },
+    { content: "I love this community so much 🖤", timestamp: "1 months ago" },
+    { content: "We love you too! Stay safe out there. 👁️", timestamp: "1 months ago" },
+    { content: "I LOVE THIS COMMUNITY SO MUCH!!!", timestamp: "3 weeks ago" },
+    { content: "We love you MORE! 🖤", timestamp: "3 weeks ago" },
+    { content: "Just created the new rooms yall asked for, let me know if they don't show up", timestamp: "2 weeks ago" },
+    { content: "anyone online", timestamp: "2 weeks ago" },
+    { content: "me", timestamp: "2 weeks ago" },
+    { content: "New month, hears to another month of uncovering the truth!", timestamp: "1 weeks ago" },
+    { content: "u guys r conspiracy theorists", timestamp: "1 weeks ago" },
+    { content: "Just put together a collection of weird things caught on my cctv.", timestamp: "1 weeks ago" },
+    { content: "so?", timestamp: "1 weeks ago" },
+    { content: "yo", timestamp: "5 days ago" },
+    { content: "Hey, friend! Seen anything strange lately?", timestamp: "5 days" },
+    { content: "Started a new thread about that old house by the lake. People say it’s been abandoned for decades, but I saw a light in the window last night.", timestamp: "4 days ago" },
+    { content: "hii", timestamp: "4 days ago" },
+    { content: "Hey there!", timestamp: "4 days ago" },
+    { content: "Anyone else getting weird messages in their inbox? Looks like bot accounts.", timestamp: "3 days ago" },
+    { content: "yes chainmail", timestamp: "1 days ago" },
+    { content: "yes dev isnt doing anything so", timestamp: "1 days ago" },
+    { content: "Did anyone else get a message from a deleted account? The timestamp was like all zeros.", timestamp: "11:30:05 AM" },
+    { content: "sometimes i get messages from people im friended with, i thinink its accounts getting hacked", timestamp: "1:43:15 PM" },
+    { content: "ok wait i just got a mssg from someone named void... there's no prof pic or antnitng??", timestamp: "2:23:27 PM" }
+];
+
+let additionalMessages = [
+    { content: "wtf?????", timestamp: "1:32:10 PM" },
+    { content: "nah, if I see one more of these, I'm legit blocking people", timestamp: "1:32:45 PM" },
+    { content: "for real, who in their right mind would eat a rat’s heart??", timestamp: "1:33:12 PM" },
+    { content: "man, I’m not even forwarding that. I’d rather wake up with the taste of... whatever that was 😩", timestamp: "1:33:40 PM" },
+    { content: "LMAO, you think these chainmail threats are real? 😂", timestamp: "1:34:02 PM" },
+    { content: "nah, some of them are just creepy, but still. That one about the rat? I’m good, fam", timestamp: "1:34:30 PM" },
+    { content: "imagine being the person who started this... how bored do you have to be? 🙄", timestamp: "1:35:05 PM" },
+    { content: "did anyone actually try it though? I’m kinda curious... but also, not really", timestamp: "1:35:38 PM" },
+    { content: "I bet it’s just some sick joke, but still... I’m not chancing it. Not after the ‘wake up tasting rat’ part 😂", timestamp: "1:36:02 PM" },
+    { content: "if I wake up with a rat taste in my mouth, I’m starting a new chainmail challenge... called the 'stop sending me this crap' challenge 🤣", timestamp: "1:36:35 PM" }
+];
+
+let continuedMessages = [
+    { content: "yo, have y’all played that new flash game? I’m addicted", timestamp: "1:32:10 PM" },
+    { content: "yo, have y’all played that new flash game? I’m addicted", timestamp: "1:32:10 PM" },
+    { content: "flash games were like, peak entertainment. I spent hours on addictinggames.com", timestamp: "1:32:45 PM" },
+    { content: "YES! I’m still lowkey obsessed with that one where you’re a tank shooting stuff", timestamp: "1:33:12 PM" },
+    { content: "I think that game was called 'Battle City,' right? Classic", timestamp: "1:33:40 PM" },
+    { content: "nah, the real winner is 'Stick RPG.' I’ve played that game way too much", timestamp: "1:34:02 PM" },
+    { content: "lol, true. But what about 'The Impossible Quiz'? I almost broke my computer trying to finish that one", timestamp: "1:34:30 PM" },
+    { content: "don’t even remind me about that quiz. I spent a whole day on it", timestamp: "1:35:05 PM" },
+    { content: "yo, I finally got past that one question about the duck. Took me forever", timestamp: "1:35:38 PM" },
+    { content: "haha, I remember those flash ads popping up on every site, trying to sell you those 'free ringtone' downloads", timestamp: "1:36:02 PM" },
+    { content: "man, I got like 20 ringtones from those ads, and half of them were terrible", timestamp: "1:36:35 PM" },
+    { content: "honestly though, having a custom ringtone made me feel like a king", timestamp: "1:37:00 PM" },
+    { content: "I had that 'Numb' by Linkin Park ringtone for so long, haha, I was so proud of it", timestamp: "1:37:30 PM" },
+    { content: "oh, I had 'In the End' as my ringtone for a minute too. I was living my angsty teen dream", timestamp: "1:37:55 PM" },
+    { content: "bruh, those were the days. I miss when AIM away messages were a whole vibe", timestamp: "1:38:15 PM" },
+    { content: "LMAO, I had the most dramatic away message. It was always some weird MySpace lyric", timestamp: "1:38:45 PM" }
+];
+
+
+let messageIndex=0;
+
+let unrelatedIndex = 0;
+
+function timeMoreMessages() {
+    if (messageIndex < additionalMessages.length && hasMailBeenSent) {
+        let nextMessage = additionalMessages[messageIndex];
+
+        displayMessage(nextMessage.content,false,"received")
+        // Increment the index to send the next message
+        messageIndex++;
+
+        // between 5 and 30 seconds (5000 - 30000 ms)
+        let randomDelay = Math.floor(Math.random() * 250000) + 50000;
+
+        // Set the next message to be sent after the random delay
+        setTimeout(timeMoreMessages, randomDelay);
+    }
+}
+
+function timeMoreUnrelatedMessages() {
+    if (unrelatedIndex < continuedMessages.length) {
+        let nextMessage = continuedMessages[unrelatedIndex];
+        displayMessage(nextMessage.content,false,"received")
+        // Increment the index to send the next message
+        unrelatedIndex++;
+
+        // between 5 and 30 seconds (5000 - 30000 ms)
+        let randomDelay = Math.floor(Math.random() * 250000) + 50000; //25000) + 5000;
+
+        // Set the next message to be sent after the random delay
+        setTimeout(timeMoreUnrelatedMessages, randomDelay);
+    }
+}
+
+
 
 let curatedPosts = [
-    { title: "Weird finding", content: "Found this in the trash after my dad's 'poker night'. Any idea what it is?", user: "user23993", pfp: "assets/profile.jpg", category: "unlabeled", tab: "recent", image:"assets/image4.png", responses: "4", time: "MON 2:29AM", comments: [
-        {text: "That looks like a dead animal. Do you have a dog or cat that could have brought it in?", isOP: false}, 
-        {text: "that is way too clean to be from an animal attack. likely from human interference", isOP: false}, 
+    { title: "Weird finding", content: "Found this in the trash after my dad's 'poker night'. Any idea what it is?", user: "user23993", pfp: "assets/profile.jpg", category: "unlabeled", tab: "recent", image:"assets/trashCan.png", responses: "4", time: "MON 2:29AM", comments: [
+        {text: "That looks like a dead animal. Do you have a dog or cat that could have brought it in?", isOP: false, who:"testPerson"}, 
+        {text: "that is way too clean to be from an animal attack. likely from human interference", isOP: false, who:"testPerson"}, 
         {text: "I don't have any pets, so it can't be that.", isOP: true},
-        {text: `This reminds me of an article I read. There is a scary new 'health' fad. <a href="https://vitalitypost.online/dangerous-new-supplement">Check it out.</a>`, isOP: false}
-    ], likes: "3", id: "100"},
-      
+        {text: `This reminds me of an article I read. There is a scary new 'health' fad. <a href="https://vitalitypost.online/dangerous-new-supplement" target="_blank">Check it out.</a>`, isOP: false, who:"testPerson"}
+    ], likes: "3", id: "2"},
+    { title: "has anyone heard of this urban legend?", content: "i have this picture of it but i don't know what it's called so i can't find much info online", user: "ElLobo00", pfp: "assets/profile.jpg", category: "urban legends", tab: "recent", image:"assets/loversRoots.png", responses: "2", time: "SUN 3:23PM", comments: [
+        {text: "Yes it is based off of a tree by my hometown.", isOP: false, who:"testPerson"}, 
+        {text: "where?", isOP: true}, 
+        {text: "Boulder Colorado up by Chautauqua. Hard to recognize now because too many people hung around there. If you PM me I can give you the exact location.", isOP: false, who:"testPerson"}
+    ], likes: "12", id: "3"}
 ]
 
 let users = [
@@ -548,19 +729,20 @@ let unassignedPosts = [
     id: "1100"
 },
 { 
-    title: "The strange noises from the basement", 
-    content: "For the past few nights, I’ve heard strange noises coming from my basement. It sounds like something heavy is being dragged across the floor. I’ve gone down there to check, but nothing is ever out of place.", 
+    title: "My ghost is nice!!!", 
+    content: "I have been experiencing paranormal things for the past few years like banging, doors closing, things like that. but i think my ghost is friendly. I went to bed yesterday having a nap. And all my plates in my kitchen were not clean and all untidy. I woke up and when i went in the kitchen they were all put back on the shelves and clean like they just came out of the dishwasher. I had another experience today where I was super cold, all of a sudden my blanket fell ontop of me. Idk how since it was a good 5ft away from me but it kinda just fell on me. If things like this happen to me anymore i actually wont be mad or scared lol", 
     user: "creepytales", 
     pfp: "assets/profile.jpg", 
     category: "hauntings", 
     tab: "recent", 
-    image:"assets/image2.png", 
+    image:false, 
     responses: "5", 
     time:"MON 5:45PM", 
     comments: [
-        {text: "That’s unsettling. Have you checked for animals in the walls?", isOP: false}, 
-        {text: "Maybe someone else is sneaking around down there?", isOP: false},
-        {text: "It could be paranormal, but I’d still check for any possible explanations.", isOP: false}
+        {text: "That sounds cute I have one that follows me sometimes I see signs it's around me I can't see it but I know when it's around me and it has saved my life a few times 💕", isOP: false}, 
+        {text: "Wow!", isOP: false},
+        {text: "Whhhaaaaaaaaaaaa?", isOP: false},
+        {text: "In some ways, I have experienced the same thing. I grew up in a cemetery setting, and I have no issues setting existential boundaries. In some cultures, folks who can manage this are considered gatekeepers between the living and the dead. If you feel drawn to embracing this talent, do it for yourself.", isOP: false}
     ], 
     likes: "7", 
     id: "1200"
@@ -700,6 +882,7 @@ function assignRandomUsers() {
     if (storedPosts) {
         return JSON.parse(storedPosts); // Use existing assignments
     } else {
+
         //calculate responses
         unassignedPosts.forEach(post => {
             // Count the number of comments in the current post
@@ -708,20 +891,26 @@ function assignRandomUsers() {
             // Update the 'responses' field with the number of comments
             post.responses = commentCount.toString();
         });
+
+        curatedPosts.forEach(post => {
+            const commentCount = post.comments.length;
+            post.responses = commentCount.toString();
+    
+        });
+
         let updatedPosts = unassignedPosts.map(post => {
             const randomUser = users[Math.floor(Math.random() * users.length)];
             return { ...post, user: randomUser.username, pfp: randomUser.pfp };
         });
-        
+        updatedPosts = [...updatedPosts, ...curatedPosts];
         localStorage.setItem("assignedPosts", JSON.stringify(updatedPosts)); // Store data
         return updatedPosts;
     }
 }
 
 
+
 var postsData = assignRandomUsers(users, unassignedPosts)
-
-
 
 
 function filterPosts(tab, event = null) {
@@ -749,24 +938,53 @@ function filterPosts(tab, event = null) {
     const postsContainer = document.getElementById('posts');
     postsContainer.innerHTML = "";
     postsData.filter(post => post.tab === tab).forEach(post => {
-        postsContainer.innerHTML += `
-            <div class='post'>
-                <div class="img-side">
-                    <img data-id="${post.id}" class="post-preview-img click-for-postpage" src="${post.image}">
-                </div>
-                <div class="post-details-side">
-                    <div class="username-and-cat">
-                        <div class="username"><div class="username-text">${post.user}</div></div>
-                        <div data-room="${post.category}" class="cat click-for-roompage"> ${post.category}</div>
-                        <img class="door" src="assets/door-green.png">
+        if(post.image!=false){
+            postsContainer.innerHTML += `
+                <div class='post'>
+                    <div class="img-side">
+                        <img data-id="${post.id}" class="post-preview-img click-for-postpage" src="${post.image}">
                     </div>
-                    <div data-id="${post.id}" class="post-preview-text click-for-postpage">${post.title}</div>
-                    <div class="responses-and-time">
-                        <div data-id="${post.id}" class="responses click-for-postpage">${post.responses} responses</div>
-                        <div class="time">${post.time}</div>
+                    <div class="post-details-side">
+                        <div class="username-and-cat">
+                            <div class="username"><div data-type="other" data-user="${post.user}" class="username-text okay-wow-stalking-profiles">${post.user}</div></div>
+                            <div data-room="${post.category}" class="cat click-for-roompage"> ${post.category}</div>
+                            <!-- <img class="door" src="assets/door-green.png"> -->
+                        </div>
+                        <div data-id="${post.id}" class="post-preview-text click-for-postpage">${post.title}</div>
+                        <div class="responses-and-time">
+                            <div data-id="${post.id}" class="responses click-for-postpage">${post.responses} responses</div>
+                            <div class="time">${post.time}</div>
+                        </div>
                     </div>
-                </div>
-            </div>`;
+                </div>`;
+        }else{
+            var replaceImage;
+            users.forEach(person=>{
+                if(person.username === post.user){
+                    var pfpText = person.username.charAt(0); 
+                    replaceImage = pfpText;
+                    
+                }
+            })
+            postsContainer.innerHTML += `
+                <div class='post'>
+                    <div class="img-side replace-image">
+                        <div data-id="${post.id}" class="post-preview-img replaced-image click-for-postpage">${replaceImage}</div>
+                    </div>
+                    <div class="post-details-side">
+                        <div class="username-and-cat">
+                            <div class="username"><div data-type="other" data-user="${post.user}" class="username-text okay-wow-stalking-profiles">${post.user}</div></div>
+                            <div data-room="${post.category}" class="cat click-for-roompage"> ${post.category}</div>
+                            <!-- <img class="door" src="assets/door-green.png"> -->
+                        </div>
+                        <div data-id="${post.id}" class="post-preview-text click-for-postpage">${post.title}</div>
+                        <div class="responses-and-time">
+                            <div data-id="${post.id}" class="responses click-for-postpage">${post.responses} responses</div>
+                            <div class="time">${post.time}</div>
+                        </div>
+                    </div>
+                </div>`;
+        }
     });
 }
 
@@ -775,12 +993,54 @@ window.onload = function () {
     if (document.getElementById("identifier-homepage")) {
         filterPosts("recent");
     }
+    previousMessages.forEach(message =>{
+        displayMessage(message.content, message.timestamp, "previous");
+    })
 };
+
+function doStartThings(){
+    if(!localStorage.getItem("haveIStartedMessages")){
+        timeMoreUnrelatedMessages();
+        startTimer()
+        localStorage.setItem("haveIStartedMessages",true)
+    }
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     //FIRST ROUND LOCAL STORAGE: POPULATING ACCOUNT ON FIRST LOAD
     //change: will these ever need to be used outside the function?
+    var clearIt = document.querySelector(".clear-it")
+    var clearMe = document.querySelector(".clear-me")
+    if(clearIt && !localStorage.getItem("hasHadIntro")){
+        document.body.style.overflow = 'hidden';
+        document.querySelector(".top-content").style = "padding-right:15px;"
+        clearIt.addEventListener('click', (event) =>{
+            localStorage.setItem("hasHadIntro",true);
+            clearMe.style.display = "none"
+            document.body.style.overflow = '';
+            document.querySelector(".top-content").style = "padding-right:0px;"
+            doStartThings()
+        })   
+    }else if (clearMe){
+        clearMe.style = "display:none;"
+    }
     allowFriendship();
+    var POTW = findAPostOfTheWeek();
+    if(document.getElementById("POTW")){
+        weHaveAWinner(POTW)
+    }
+    var postError = document.querySelector(".post-error")
+    var moveMeSidebar = document.querySelector(".sidebar")
+    moveMeSidebar.style = "margin-top:55px;"
+    if(document.body.id !=="identifier-signUpPage"){
+        let currentURL = window.location.href;
+    
+        if (currentURL) {  
+            localStorage.setItem("whereDidYouComeFrom", currentURL);
+            console.log("Stored URL:", localStorage.getItem("whereDidYouComeFrom"));
+        }
+    }
+
 
     // enter debugging room
 
@@ -803,16 +1063,22 @@ document.addEventListener("DOMContentLoaded", function () {
  
     const allUsernames = document.querySelectorAll(".profile .username");
     if (hasAccount) {
+        if (!localStorage.getItem("startTime")) {
+            localStorage.setItem("startTime", Date.now());
+            requestAnimationFrame(imNewHowLongDoIHaveToWait)
+        }
         console.log(`Welcome back, ${user.username}!`);
         hideWhenAccount.forEach(toHide => {
             toHide.style = "display: none;"
         })
         allUsernames.forEach(element => {
-            element.textContent = user.username
-            element.style = "text-decoration: underline;"
-            element.style = "font-weight: lighter; color: #f8faf0; "
+            element.textContent = `Welcome, ${user.username}!`
+            element.style = "text-decoration: none;"
+            element.style = "font-weight: lighter; color: #c62734; "
         });
-    } else {
+    } else if(!document.getElementById("identifier-homepage") && !document.getElementById("identifier-signUpPage")){
+        window.location.href = `logIn.html?method=click`;
+    } else{ //meaning they are on homepage or sign up page
         console.log("No user found. Redirecting...");
         hideWhenAccount.forEach(toHide => {
             toHide.style = "display: block;"
@@ -823,7 +1089,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         allUsernames.forEach(element => {
             element.textContent = "Not logged in."
-            element.style = "text-decoration: none; font-weight: lighter; color: #f8faf0; " //change when styling of links is decided
+            element.style = "text-decoration: none; font-weight: lighter; color: #c62734; " //change when styling of links is decided
         });
     }
 
@@ -835,7 +1101,7 @@ document.addEventListener("DOMContentLoaded", function () {
     postRoom = urlParams.get("room"); // Get post ID from URL
     pageType = urlParams.get("type"); // data-type (edit-profile and member) and data-user (user will be self or others username)
     who = urlParams.get("user")
-
+    method = urlParams.get("method")
 
 
     // Ensure the postId is treated as a number
@@ -846,6 +1112,15 @@ document.addEventListener("DOMContentLoaded", function () {
         var ogId = post.id
     }
 
+    var pickUsers = document.querySelectorAll(".username-to-randomize");
+    if (pickUsers){
+        pickUsers.forEach(instance => {
+            let randomIndex = Math.floor(Math.random() * users.length);
+            winnerWinner = users[randomIndex];
+            instance.innerHTML = winnerWinner.username;
+            instance.dataset.user = winnerWinner.username;
+        });
+    }
 
     container.addEventListener("click", function (event) {
         
@@ -853,7 +1128,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const clickedPost = event.target.closest(".click-for-postpage"); 
         const clickedRoom = event.target.closest(".click-for-roompage");
         const clickedAdd = event.target.closest(".click-to-add");
-
+        const clickedProfile = event.target.closest(".okay-wow-stalking-profiles")
+        const newPost = event.target.closest(".click-for-new-post")
         if (clickedPost) {
             const postId = clickedPost.getAttribute("data-id");
             if (postId) {
@@ -863,7 +1139,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         } else if (clickedRoom){
             const postRoom = clickedRoom.getAttribute("data-room");
-            if (postRoom) {
+            if (postRoom != "unlabeled") {
                 window.location.href = `room.html?room=${postRoom}`;
             } else {
                 console.error("Room not found.");
@@ -875,7 +1151,17 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 console.error("Username not found.");
             }
-        } else {
+        }else if(clickedProfile){
+            const userType = clickedProfile.getAttribute("data-type");
+            const userWho = clickedProfile.getAttribute("data-user")
+            if (userType && userWho) {
+                window.location.href = `profile.html?type=${userType}&user=${userWho}`;
+            } else {
+                console.error("User not found.");
+            }
+        }else if(newPost){
+            stopTryingToPost()
+        }else {
             console.log("Clicked element is not part of a post.");
         }
 
@@ -942,12 +1228,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 } else {
                     friendText = "Added";
                 }
-
+                var pfpText = storedUsers[i].username.charAt(0); 
                 roomMemberArea.innerHTML += 
                 `<div class="pfp-and-info i-help-find-username">
-                    <div class="pfp"><img class="pfp-img" src="${storedUsers[i].pfp}"></div>
+                    <div class="pfp">${pfpText}</div>
                     <div class="username-and-friends">
-                        <div class="username">${storedUsers[i].username}</div>
+                        <div data-type="other" data-user="${storedUsers[i].username}" class="username okay-wow-stalking-profiles">${storedUsers[i].username}</div>
                         <div data-whoseFriendsCountShouldIUpdate="${storedUsers[i].username}" class="friends-count">${storedUsers[i].friendsCount} friends</div>
                     </div>
                     <div class="add-friend-area">
@@ -962,14 +1248,65 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //PROFILE PAGE ONLY
     if (document.getElementById("identifier-profilepage")) { //MIGHT WANT TO CHANGE LATER
+        //uncomment out later, right now there are no &s in url tho
+        //currently only set up to click other users
         if (!pageType || !who) {
-            document.getElementById("room-posts-list").innerHTML = "<p>User not found.</p>";
+            document.getElementById("profile-info").innerHTML = "<p>User not found.</p>";
             return;
+        }
+        if (pageType === "self"){
+            document.getElementById("profile-page-title").textContent = "Your Profile"
+        }else{
+            document.getElementById("profile-page-title").textContent = `User: ${who}`
+        }
+
+
+        const profileArea = document.getElementById("profile-info");
+        profileArea.innerHTML = "";
+
+        
+
+        const friendsList = document.getElementById('friends-list');
+        friendsList.innerHTML = "";
+
+        // Get the users array from localStorage (if it exists)
+        let storedUsers = JSON.parse(localStorage.getItem("usersInStorage")) || [];
+        console.log(storedUsers)
+        for (let i = 0; i < storedUsers.length; i++) {
+            if (storedUsers[i].added===true) {
+                var friendText;
+                if (storedUsers[i].added === false) {
+                    friendText = "+ add Friend";
+                } else {
+                    friendText = "Added";
+                }
+                var pfpText = storedUsers[i].username.charAt(0); 
+
+                friendsList.innerHTML += 
+                `<div class="pfp-and-info i-help-find-username">
+                    <div class="pfp">${pfpText}</div>
+                    <div class="username-and-friends">
+                        <div data-type="other" data-user="${storedUsers[i].username}" class="username okay-wow-stalking-profiles">${storedUsers[i].username}</div>
+                        <div data-whoseFriendsCountShouldIUpdate="${storedUsers[i].username}" class="friends-count">${storedUsers[i].friendsCount} friends</div>
+                    </div>
+                    <div class="add-friend-area">
+                        <div data-username="${storedUsers[i].username}" class="add-friend-button click-to-add">${friendText}</div>
+                    </div>
+                </div>`;
+            }
         }
     }
 
     //SIGN UP PAGE ONLY
     if (document.getElementById("identifier-signUpPage")) {
+        var errorMessage = document.querySelector(".error-message")
+        errorMessage.style = "display:none;"
+        if (method){
+            if (method==="click"){
+                console.log("tried to click without login")
+                errorMessage.style = "display:block;"
+            }
+        }
         const isSigningUp = JSON.parse(localStorage.getItem("isSigningUp")); // Retrieve the stored value
         var logInArea = document.getElementById("log-in-options");
         var signUpArea = document.getElementById("sign-up-options");
@@ -987,7 +1324,7 @@ document.addEventListener("DOMContentLoaded", function () {
         loginForm.addEventListener("submit", function (event) {
             event.preventDefault();
 
-            // Simulate a login failure (no account found)
+            // a login failure (no account found)
             loginError.style.display = "block"; // Show the error message
         });
 
@@ -1034,7 +1371,8 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem("hasAccount",true);
             localStorage.setItem("user", JSON.stringify(userData));
 
-            window.location.href = "draft.html";
+
+            window.location.href = localStorage.getItem("whereDidYouComeFrom");
 
 
             // signupForm.reset();
@@ -1047,6 +1385,26 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("log-in-options").style.display = "block";
         });
     }
+    //make unlabeled look unclickable
+    const observer = new MutationObserver(() => {
+        const elements = document.querySelectorAll('.click-for-roompage');
+        if (elements.length > 0) {
+    
+            for (let i = 0; i < elements.length; i++) {
+                const textContent = elements[i].textContent.trim();
+    
+                if (textContent === "unlabeled") {
+                    elements[i].style.color = "#c62734";
+                    elements[i].style.textDecoration = "none";
+                    elements[i].style.cursor = "default"
+                }
+            }
+    
+            observer.disconnect(); // Stop observing 
+        }
+    });
+    
+    observer.observe(document.body, { childList: true, subtree: true });
 });
 
 
@@ -1060,26 +1418,48 @@ function populatePost(postId) {
     }
     const container = document.getElementById('full-post-id');
     const commentArea = document.getElementById('comment-section');
+    var pfpText = activePost.user.charAt(0); 
     commentArea.innerHTML = ""
-    container.innerHTML += `
-    <div class='cat-and-time'>
-        <div data-room="${activePost.category}" class="cat click-for-roompage">${activePost.category}</div>
-        <img class="door" src="assets/door-green.png">
-        <div class="time">${activePost.time}</div>
-    </div>
-    <div class="pfp-and-username">
-        <img class="pfp" src="${activePost.pfp}">
-        <div class="username">${activePost.user}</div>
-    </div>
-    <div class="post-title">${activePost.title}</div>
-    <div class="post-content">${activePost.content}</div>
-    <img class="post-img" src="${activePost.image}">
-    <div class="metrics">
-        <img class="likes-img metric" src="assets/like.png">
-        <img class="share-img metric" src="assets/share.png">
-    </div>
-    <hr style="height:0.1px;border-width:0;color:#f8faf0;background-color:#f8faf0">
-    `;
+    if (activePost.image != false){
+        container.innerHTML += `
+        <div class='cat-and-time'>
+            <div data-room="${activePost.category}" class="cat click-for-roompage">${activePost.category}</div>
+                            <!-- <img class="door" src="assets/door-green.png"> -->
+            <div class="time">${activePost.time}</div>
+        </div>
+        <div class="pfp-and-username">
+            <div class="pfp">${pfpText}</div>
+            <div data-type="other" data-user="${activePost.user}" class="username okay-wow-stalking-profiles">${activePost.user}</div>
+        </div>
+        <div class="post-title">${activePost.title}</div>
+        <div class="post-content">${activePost.content}</div>
+        <img class="post-img" src="${activePost.image}">
+        <div class="metrics">
+            <img class="likes-img metric" src="assets/like.png">
+            <img class="share-img metric" src="assets/share.png">
+        </div>
+        <hr style="height:0.1px;border-width:0;color:#f8faf0;background-color:#f8faf0">
+        `;
+    }else{
+        container.innerHTML += `
+        <div class='cat-and-time'>
+            <div data-room="${activePost.category}" class="cat click-for-roompage">${activePost.category}</div>
+                            <!-- <img class="door" src="assets/door-green.png"> -->
+            <div class="time">${activePost.time}</div>
+        </div>
+        <div class="pfp-and-username">
+            <div class="pfp">${pfpText}</div>
+            <div data-type="other" data-user="${activePost.user}" class="username okay-wow-stalking-profiles">${activePost.user}</div>
+        </div>
+        <div class="post-title">${activePost.title}</div>
+        <div class="post-content">${activePost.content}</div>
+        <div class="metrics">
+            <img class="likes-img metric" src="assets/like.png">
+            <img class="share-img metric" src="assets/share.png">
+        </div>
+        <hr style="height:0.1px;border-width:0;color:#f8faf0;background-color:#f8faf0">
+        `;
+    }
     if (activePost.comments) {
     
         for (let j = 0; j < activePost.comments.length; j++) {
@@ -1087,22 +1467,36 @@ function populatePost(postId) {
             //see if its op
             let theUser;
             let thePfp;
+            let OPText;
+
             if (activePost.comments[j].isOP){
+                var pfpText = activePost.user.charAt(0); 
                 theUser = activePost.user
-                thePfp = activePost.pfp
+                thePfp = pfpText
+                OPText = "•  OP"
+            }else if(activePost.comments[j].who){ //not OP but assigned user
+                var pfpText = activePost.comments[j].who.charAt(0); 
+                thePfp = pfpText
+                theUser = activePost.comments[j].who
+                OPText = ""
             }else{
                 //pick a random user from users
                 let randomIndex = Math.floor(Math.random() * users.length);
                 theUser = users[randomIndex].username;
-                thePfp = users[randomIndex].pfp;
+                var pfpText = theUser.charAt(0); 
+                thePfp = pfpText
+                OPText = ""
             }
             commentArea.innerHTML += `
             <div class="a-comment">
                 <div class="comment-pfp-styler">
-                    <img class="pfp" src="${thePfp}">
+                    <div class="pfp">${thePfp}</div>
                 </div>
                 <div class="username-and-comment">
-                    <div class="username">${theUser}</div>
+                    <div class="username-and-op">
+                        <div data-type="other" data-user="${theUser}" class="username okay-wow-stalking-profiles">${theUser}</div>
+                        <div class="op">${OPText}</div>
+                    </div>
                     <div class="comment-content">${activePost.comments[j].text}</div>
                 </div>
             </div>
@@ -1146,24 +1540,51 @@ function populateSimilar(list){
     const postsContainer = document.getElementById('similar-posts');
     postsContainer.innerHTML = "";
     list.forEach(post => {
-        postsContainer.innerHTML += `
-            <div class='post'>
-                <div class="img-side">
-                    <img data-id="${post.id}" class="post-preview-img click-for-postpage" src="${post.image}">
-                </div>
-                <div class="post-details-side">
-                    <div class="username-and-cat">
-                        <div class="username"><div class="username-text">${post.user}</div></div>
-                        <div data-room="${post.category}" class="cat click-for-roompage"> ${post.category}</div>
-                        <img class="door" src="assets/door-green.png">
+        if(post.image!=false){
+            postsContainer.innerHTML += `
+                <div class='post'>
+                    <div class="img-side">
+                        <img data-id="${post.id}" class="post-preview-img click-for-postpage" src="${post.image}">
                     </div>
-                    <div data-id="${post.id}" class="post-preview-text click-for-postpage">${post.title}</div>
-                    <div class="responses-and-time">
-                        <div data-id="${post.id}" class="responses click-for-postpage">${post.responses} responses</div>
-                        <div class="time">${post.time}</div>
+                    <div class="post-details-side">
+                        <div class="username-and-cat">
+                            <div class="username"><div data-type="other" data-user="${post.user}" class="username-text okay-wow-stalking-profiles">${post.user}</div></div>
+                            <div data-room="${post.category}" class="cat click-for-roompage"> ${post.category}</div>
+                            <!-- <img class="door" src="assets/door-green.png"> -->
+                        </div>
+                        <div data-id="${post.id}" class="post-preview-text click-for-postpage">${post.title}</div>
+                        <div class="responses-and-time">
+                            <div data-id="${post.id}" class="responses click-for-postpage">${post.responses} responses</div>
+                            <div class="time">${post.time}</div>
+                        </div>
                     </div>
-                </div>
-            </div>`;
+                </div>`;
+        }else{
+            var replaceImage;
+            users.forEach(person=>{
+                if(person.username === post.user){
+                    replaceImage = person.pfp
+                }
+            })
+            postsContainer.innerHTML += `
+                <div class='post'>
+                    <div class="img-side">
+                        <img data-id="${post.id}" class="post-preview-img click-for-postpage" src="${replaceImage}">
+                    </div>
+                    <div class="post-details-side">
+                        <div class="username-and-cat">
+                            <div class="username"><div data-type="other" data-user="${post.user}" class="username-text okay-wow-stalking-profiles">${post.user}</div></div>
+                            <div data-room="${post.category}" class="cat click-for-roompage"> ${post.category}</div>
+                            <!-- <img class="door" src="assets/door-green.png"> -->
+                        </div>
+                        <div data-id="${post.id}" class="post-preview-text click-for-postpage">${post.title}</div>
+                        <div class="responses-and-time">
+                            <div data-id="${post.id}" class="responses click-for-postpage">${post.responses} responses</div>
+                            <div class="time">${post.time}</div>
+                        </div>
+                    </div>
+                </div>`;
+        }
     });
 }
 
@@ -1182,9 +1603,9 @@ function populateRoom(relevantPosts,roomTitle){
                 </div>
                 <div class="post-details-side">
                     <div class="username-and-cat">
-                        <div class="username"><div class="username-text">${post.user}</div></div>
+                        <div class="username"><div data-type="other" data-user="${post.user}" class="username-text okay-wow-stalking-profiles">${post.user}</div></div>
                         <div data-room="${post.category}" class="cat click-for-roompage"> ${post.category}</div>
-                        <img class="door" src="assets/door-green.png">
+                        <!-- <img class="door" src="assets/door-green.png"> -->
                     </div>
                     <div data-id="${post.id}" class="post-preview-text click-for-postpage">${post.title}</div>
                     <div class="responses-and-time">
@@ -1248,6 +1669,30 @@ function allowFriendship(withWhom) {
     
 }
 
+function findAPostOfTheWeek(){
+    let congratsYourePicked = postsData[Math.floor(Math.random() * postsData.length)];
+    let retrievePOTW = JSON.parse(localStorage.getItem("POTW"));
+
+    if (retrievePOTW) {
+        return retrievePOTW; 
+    } else {
+        localStorage.setItem("POTW", JSON.stringify(congratsYourePicked));
+        return JSON.parse(localStorage.getItem("POTW"));
+    }
+}
+
+function weHaveAWinner(itsYou){
+    var whereDoYouWantThis = document.getElementById("POTW")
+    whereDoYouWantThis.innerHTML = 
+        `<div class="name-and-time">
+            <div class="username">${itsYou.user}</div>
+        </div>
+        <div class="content-preview">
+            <div class="post-text">${itsYou.title}</div>
+            <div data-id="${itsYou.id}" class="read-more click-for-postpage">READ MORE</div>
+        </div>`
+}
+
 
 
 
@@ -1255,17 +1700,14 @@ function allowFriendship(withWhom) {
 // "username" should only be for the user, not any other user. so changing text content to not logged in can be changed back to just one thing and not f up every username on the site
 // keyword change to search for edits in the code
 // change mouse to cursor when appropriate
-// add room members
 // profile page
 //hide js frolm console when done
 //global chat instead
 //rooms page: click to add/remvoe self from room. rooms show up on 
 // old active tab
-//cant leave homepage if not logged in
-//be able to click on users to see their profile
-//inc friend count of other people if u add them
-//get rid of comments in the posts array and juyst count responses automatedly
 //make featured post and your rooms tab work
+//sign up and log in are ids in some places and classes in others
+//messages should persist on reload
 
 //START WITH:
-// 
+//
