@@ -142,7 +142,9 @@ body {
     position: relative;
     width:100%;
 }
-
+#signup{
+    max-width:20vw;
+}
 .profile {
     display: flex;
     align-items: center;
@@ -747,6 +749,8 @@ font-style: normal;
 
 /* login page */
 .log-in-area{
+    font-family: "newbery-sans-pro", sans-serif;
+
     margin: 10% auto auto auto;
     display: flex;
     justify-content: center;
@@ -797,6 +801,7 @@ input[type="date"] {
 }
 
 button {
+    font-family: "newbery-sans-pro", sans-serif;
     width: 50%;
     padding: 10px;
     margin-bottom: 10px;
@@ -975,6 +980,7 @@ button[type="button"]:hover {
 
 /* Base text styling */
 .welcome {
+    cursor: pointer;
     width: fit-content;
     font-family: 'Times New Roman', Times, serif;
     font-size: 2.5rem;

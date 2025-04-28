@@ -241,7 +241,12 @@ function timeMoreUnrelatedMessages() {
     }
 }
 
+let restrictedPost = [
+    { title: "This content is restricted for Admin level accounts or higher. ", content: "", user: "RESTRICTED", pfp: "assets/profile.jpg", category: "RESTRICTED", tab: "recent", image:"", responses: "0", time: "82 days ago", comments: [
 
+
+    ], likes: "3", id: "666"},
+]
 
 let curatedPosts = [
     { title: "Weird finding", content: `I found this in the trash after my dad's "poker night." Anyone know what it is? I'm scared.`, user: "user23993", pfp: "assets/profile.jpg", category: "unlabeled", tab: "recent", image:"assets/trashCan.png", responses: "4", time: "2 days ago", comments: [
@@ -252,7 +257,7 @@ let curatedPosts = [
         {text: "It is kind of a vague weekly get together. I heard another guy call it bible study and someone else call it band practice. I figured they just kinda switch activites.", isOP: true},
         {text: "Wouldn't you hear them?", isOP: false},
         {text: "Our basement has crazy sound proofing I think", isOP: true},
-        {text: `This reminds me of a "health fad" I was reading about. The website isn't that credible so I thought it was fake. <a href="https://vitalitypost.online/dangerous-new-supplement" target="_blank">It's here</a>`, isOP: false},
+        {text: `This reminds me of a "health fad" I was reading about. The website isn't that credible so I thought it was fake. <a href="http://allisinmercury.online/chris/king" target="_blank">Here's the link</a>`, isOP: false},
         {text: "Oh ew. I don't think my dad would fall for a chris king scam, but maybe some of the other guys in the group.", isOP: true},
         {text: `I doubt King would get away with selling anything with blood on it. Even if it is a "supplement"`, isOP: false},
         {text: "Can you peak in on the next poker night?", isOP: false},
@@ -572,7 +577,7 @@ let users = [
         friendsCount: 2,
         location: "Ethergate",
         bio: "You think you're alone online? Think again.",
-        rooms: ["Backrooms", "Technology"]
+        rooms: ["Urban Legends", "Questions"]
       },
       {
         username: "an_anonymous_person2",
@@ -581,7 +586,7 @@ let users = [
         friendsCount: 7,
         location: "Ethergate",
         bio: "You think you're alone online? Think again.",
-        rooms: ["Backrooms", "Technology"]
+        rooms: ["Questions", "Urban Legends"]
       },
       {
         username: "ElLobo00",
@@ -590,7 +595,7 @@ let users = [
         friendsCount: 7,
         location: "Ethergate",
         bio: "You think you're alone online? Think again.",
-        rooms: ["Backrooms", "Technology"]
+        rooms: ["Urban Legends", "Experiences"]
       },
       {
         username: "user23993",
@@ -599,7 +604,7 @@ let users = [
         friendsCount: 7,
         location: "Ethergate",
         bio: "You think you're alone online? Think again.",
-        rooms: ["Backrooms", "Technology"]
+        rooms: []
       },
       {
         username: "ree-purr",
@@ -608,7 +613,7 @@ let users = [
         friendsCount: 7,
         location: "Ethergate",
         bio: "You think you're alone online? Think again.",
-        rooms: ["Backrooms", "Technology"]
+        rooms: ["Experiences"]
       },
       {
         username: "noob1988",
@@ -617,7 +622,7 @@ let users = [
         friendsCount: 7,
         location: "Ethergate",
         bio: "You think you're alone online? Think again.",
-        rooms: ["Backrooms", "Technology"]
+        rooms: ["Paranormal", "Urban Legends"]
       },
       {
         username: "Spiritual_Athlete",
@@ -635,7 +640,7 @@ let users = [
         friendsCount: 28,
         location: "Ethergate",
         bio: "You think you're alone online? Think again.",
-        rooms: ["Backrooms", "Technology"]
+        rooms: []
       },
       {
         username: "Few_Strength_4938",
@@ -644,7 +649,7 @@ let users = [
         friendsCount: 12,
         location: "Ethergate",
         bio: "You think you're alone online? Think again.",
-        rooms: ["Backrooms", "Technology"]
+        rooms: ["Paranormal", "Experiences","Questions","Technology"]
       },
       {
         username: "thecouponnerd",
@@ -653,7 +658,7 @@ let users = [
         friendsCount: 23,
         location: "Ethergate",
         bio: "You think you're alone online? Think again.",
-        rooms: ["Backrooms", "Technology"]
+        rooms: ["Paranormal", "Experiences"]
       },
       {
         username: "Medical_Reach_589",
@@ -662,7 +667,7 @@ let users = [
         friendsCount: 11,
         location: "Ethergate",
         bio: "You think you're alone online? Think again.",
-        rooms: ["Backrooms", "Technology"]
+        rooms: ["Backrooms", "Paranormal"]
       },
       {
         username: "BookGnomeNoel",
@@ -671,7 +676,7 @@ let users = [
         friendsCount: 2,
         location: "Ethergate",
         bio: "You think you're alone online? Think again.",
-        rooms: ["Backrooms", "Technology"]
+        rooms: ["Paranormal"]
       },
       {
         username: "MrMummah",
@@ -680,7 +685,7 @@ let users = [
         friendsCount: 0,
         location: "Ethergate",
         bio: "You think you're alone online? Think again.",
-        rooms: ["Backrooms", "Technology"]
+        rooms: []
       },
       {
         username: "xoxo_nara",
@@ -689,7 +694,7 @@ let users = [
         friendsCount: 1,
         location: "Ethergate",
         bio: "You think you're alone online? Think again.",
-        rooms: ["Backrooms", "Technology"]
+        rooms: ["Paranormal", "Technology"]
       },
       {
         username: "Nanoshas",
@@ -707,7 +712,7 @@ let users = [
         friendsCount: 33,
         location: "Ethergate",
         bio: "You think you're alone online? Think again.",
-        rooms: ["Backrooms", "Technology"]
+        rooms: ["Technology"]
       },
       {
         username: "no_pen_6695",
@@ -716,7 +721,7 @@ let users = [
         friendsCount: 14,
         location: "Ethergate",
         bio: "You think you're alone online? Think again.",
-        rooms: ["Backrooms", "Technology"]
+        rooms: ["Backrooms", "Questions"]
       },
       {
         username: "MADREX2000",
@@ -725,7 +730,7 @@ let users = [
         friendsCount: 12,
         location: "Ethergate",
         bio: "You think you're alone online? Think again.",
-        rooms: ["Backrooms", "Technology"]
+        rooms: ["Questions"]
       },
       {
         username: "TheOddityCollector",
@@ -734,7 +739,7 @@ let users = [
         friendsCount: 8,
         location: "Ethergate",
         bio: "You think you're alone online? Think again.",
-        rooms: ["Backrooms", "Technology"]
+        rooms: ["Experiences", "Technology"]
       },
       {
         username: "defiant_two",
@@ -743,7 +748,7 @@ let users = [
         friendsCount: 6,
         location: "Ethergate",
         bio: "You think you're alone online? Think again.",
-        rooms: ["Backrooms", "Technology"]
+        rooms: ["Experiences", "Technology"]
       },
       {
         username: "ZonkedWizard",
@@ -752,7 +757,7 @@ let users = [
         friendsCount: 3,
         location: "Ethergate",
         bio: "You think you're alone online? Think again.",
-        rooms: ["Backrooms", "Technology"]
+        rooms: ["Experiences", "Hauntings"]
       },
       {
         username: "cowboypunkstarcactus",
@@ -761,7 +766,7 @@ let users = [
         friendsCount: 4,
         location: "Ethergate",
         bio: "You think you're alone online? Think again.",
-        rooms: ["Backrooms", "Technology"]
+        rooms: ["Backrooms", "Hauntings"]
       },
       {
         username: "Dankersin",
@@ -770,7 +775,7 @@ let users = [
         friendsCount: 2,
         location: "Ethergate",
         bio: "You think you're alone online? Think again.",
-        rooms: ["Backrooms", "Technology"]
+        rooms: ["Hantings", "Technology"]
       },
 
   ];
@@ -862,7 +867,7 @@ let unassignedPosts = [
     comments: [
         {text: "That’s an eerie dream! I wonder what it means?", isOP: false}, 
         {text: "Maybe it’s a warning? Have you tried looking into dream symbolism?", isOP: false},
-        {text: "I think it's definitely trying to tell you something.", isOP: true}
+        {text: "I think it's definitely trying to tell you something.", isOP: false}
     ], 
     likes: "9", 
     id: "300"
@@ -945,7 +950,7 @@ let unassignedPosts = [
     pfp: "assets/profile.jpg", 
     category: "mystery", 
     tab: "recent", 
-    image:"assets/image4.png", 
+    image:false, 
     responses: "3", 
     time:"17 days ago", 
     comments: [
@@ -962,9 +967,9 @@ let unassignedPosts = [
     "Anyway, on this night we were hanging out as usual when suddenly we heard an ear piercing squal/ screech coming from the barley field beside us. It was so loud and high pitched that it took our attention in an instant. It had a feeling of panic about it yet it was kinda funny to our young minds. We decided to go investigate thinking it was a pig or an injured animal of some description. So in our youthful excitement we burrow through the hedgerow and start running towards the origin of the sound all laughing in excitement. The barley was ready to be plucked from the earth so it was high. Up past our waists so we couldn't see anything that may be on the ground injured. As we get close to where the sound Is coming from it suddenly stopped. We stop and look at each other laughing then it starts again but now it is originating from the point of the field which we first entered. We exchanged glances in confusion before sprinting towards the sound believing it must be a scared injured animal. Then the sound stops before immediately starting again directly behind us... this time it sounded ominous and the feeling changed. The sound then stopped again, starting instantly but way way off in the distance. It moved towards us at speeds way too fast for an animal. Just as it reached us it stopped and again came from the totally different end of field hurtling towards us in pitch black. Now we are frightened.. this is not an injured animal. We've no idea what it is. The sound then seems to stop and start from everywhere, moving with incredible speeds all around us, covering huge distances in seconds. Without saying a word, we all run as fast as possible back to the hedgerow, which we entered. All the while, this loud, screeching, wailing moves all around us. My younger brother begins crying in fear as we all rush to get back into our neighbourhood under street lights near our home. As soon as we cross the threshold. The high-pitched screaming chasing behind us stopped at the border. We were all physically shaken and scared now. My little brother was hysterical for weeks, refusing to go back into the field even during a sunny day.A few years later, my brother would tragically die suddenly in that house. Many strange sightings of a withered woman were reported around those fields over the years. If anyone is familiar with the legend of the banshee, let me know what you think. This occurred in Ireland, as you've probably guessed.", 
     user: "GlimmerWitch", 
     pfp: "assets/profile.jpg", 
-    category: "experience", 
+    category: "experiences", 
     tab: "recent", 
-    image:"assets/image2.png", 
+    image:false, 
     responses: "2", 
     time:"18 days ago", 
     comments: [
@@ -1000,7 +1005,7 @@ let unassignedPosts = [
     pfp: "assets/profile.jpg", 
     category: "hauntings", 
     tab: "recent", 
-    image:"assets/image4.png", 
+    image:false, 
     responses: "6", 
     time:"21 days ago", 
     comments: [
@@ -1025,7 +1030,7 @@ let unassignedPosts = [
     pfp: "assets/profile.jpg", 
     category: "unlabeled", 
     tab: "recent", 
-    image:"assets/image2.png", 
+    image:false, 
     responses: "4", 
     time:"21 days ago", 
     comments: [
@@ -1167,7 +1172,7 @@ Their shots, like Cupid’s arrow when I saw you.`,
 That happened 15 years ago and I didn't remember until today...that was because I turned on the news and this is what it said: "Parents please be careful there is a Bogeyman out there taking children from the ages of 3-11 years old. Well have more information after the break".`, 
     user: "spookedliveshere", 
     pfp: "assets/profile.jpg", 
-    category: "experience", 
+    category: "experiences", 
     tab: "recent", 
     image:false, 
     responses: "2", 
@@ -1188,7 +1193,7 @@ That happened 15 years ago and I didn't remember until today...that was because 
     content: "Since I was really young, about 5 or so, I've been able to see and talk to spirits. There was one night at a friends house that I stopped breathing in my sleep. My girlfriend watching over me shook me to wake me. When I came to, there was an impossible to be human handprint across my chest. My eyes changed from green to grey and I flipped out on everyone. That same night, I witness a cross flipping and saw something in the corner of the room staring at me. I'm not afraid of the dark, I refuse to ever be alone, but yet I still love scary movies.", 
     user: "Void.exe", 
     pfp: "assets/profile.jpg", 
-    category: "experience", 
+    category: "experiences", 
     tab: "recent", 
     image:false, 
     responses: "3", 
@@ -1204,7 +1209,7 @@ That happened 15 years ago and I didn't remember until today...that was because 
     content: "My wife was smoking, felt way too high saying she was going to die, telling me she loves me and to tell everyone else she loves them. Jokingly says “This is the end, this is the end” and at that second my power went out. I froze and didn’t want to move.", 
     user: "thecouponnerd", 
     pfp: "assets/profile.jpg", 
-    category: "experience", 
+    category: "experiences", 
     tab: "recent", 
     image:false, 
     responses: "4", 
@@ -1220,7 +1225,7 @@ That happened 15 years ago and I didn't remember until today...that was because 
     content: ` i̞̟̫̺ͭ̒ͭͣn͉̠̙͉̗̺̋̋̔ͧ̊t̘̟̼̉̈́͐͋͌̊o͎̜̓̇ͫ̉͊ͨ͊ t̘̟̼̉̈́͐͋͌̊h͚̖̜̍̃͐e̮̟͈̣̖̰̩̹͈̾ͨ̑͑ d̥̝̮͙͈͂̐̇ͮ̏̔̀̚ͅe̮̟͈̣̖̰̩̹͈̾ͨ̑͑v̪̩̜̜̙̜ͨ̽̄i̞̟̫̺ͭ̒ͭͣl͕͖͉̭̰ͬ̍ͤ͆̊ͨs̪̭̱̼̼̉̈́ͪ͋̽̚ y͉̝͖̻̯ͮ̒̂ͮ͋ͫͨo͎̜̓̇ͫ̉͊ͨ͊u̟͎̲͕̼̳͉̲ͮͫͭ̋ͭ͛ͣ̈ g͎͚̥͎͔͕ͥ̿o͎̜̓̇ͫ̉͊ͨ͊ d̥̝̮͙͈͂̐̇ͮ̏̔̀̚ͅe̮̟͈̣̖̰̩̹͈̾ͨ̑͑e̮̟͈̣̖̰̩̹͈̾ͨ̑͑p̱̱̬̻̞̩͎̌ͦ̏ d̥̝̮͙͈͂̐̇ͮ̏̔̀̚ͅo͎̜̓̇ͫ̉͊ͨ͊w̠̘̗͖̮̥ͣ̽ͫ͂n͉̠̙͉̗̺̋̋̔ͧ̊ b͎̣̫͈̥̗͒͌̃͑̔̾ͅe̮̟͈̣̖̰̩̹͈̾ͨ̑͑l͕͖͉̭̰ͬ̍ͤ͆̊ͨo͎̜̓̇ͫ̉͊ͨ͊w̠̘̗͖̮̥ͣ̽ͫ͂ i̞̟̫̺ͭ̒ͭͣn͉̠̙͉̗̺̋̋̔ͧ̊ a̘̫͈̭͌͛͌̇̇̍ d̥̝̮͙͈͂̐̇ͮ̏̔̀̚ͅa̘̫͈̭͌͛͌̇̇̍r̼̯̤̈ͭ̃ͨ̆k̲̱̠̞̖ͧ̔͊̇̽̿̑ͯͅ w̠̘̗͖̮̥ͣ̽ͫ͂o͎̜̓̇ͫ̉͊ͨ͊r̼̯̤̈ͭ̃ͨ̆l͕͖͉̭̰ͬ̍ͤ͆̊ͨd̥̝̮͙͈͂̐̇ͮ̏̔̀̚ͅ w̠̘̗͖̮̥ͣ̽ͫ͂h͚̖̜̍̃͐e̮̟͈̣̖̰̩̹͈̾ͨ̑͑r̼̯̤̈ͭ̃ͨ̆e̮̟͈̣̖̰̩̹͈̾ͨ̑͑ n͉̠̙͉̗̺̋̋̔ͧ̊o͎̜̓̇ͫ̉͊ͨ͊ o͎̜̓̇ͫ̉͊ͨ͊n͉̠̙͉̗̺̋̋̔ͧ̊e̮̟͈̣̖̰̩̹͈̾ͨ̑͑s̪̭̱̼̼̉̈́ͪ͋̽̚ s̪̭̱̼̼̉̈́ͪ͋̽̚a̘̫͈̭͌͛͌̇̇̍f̳͉̼͉̙͔͈̂̉e̮̟͈̣̖̰̩̹͈̾ͨ̑͑ i̞̟̫̺ͭ̒ͭͣn͉̠̙͉̗̺̋̋̔ͧ̊ t̘̟̼̉̈́͐͋͌̊h͚̖̜̍̃͐e̮̟͈̣̖̰̩̹͈̾ͨ̑͑ w̠̘̗͖̮̥ͣ̽ͫ͂o͎̜̓̇ͫ̉͊ͨ͊r̼̯̤̈ͭ̃ͨ̆l͕͖͉̭̰ͬ̍ͤ͆̊ͨd̥̝̮͙͈͂̐̇ͮ̏̔̀̚ͅ w̠̘̗͖̮̥ͣ̽ͫ͂e̮̟͈̣̖̰̩̹͈̾ͨ̑͑ s̪̭̱̼̼̉̈́ͪ͋̽̚h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍l͕͖͉̭̰ͬ̍ͤ͆̊ͨl͕͖͉̭̰ͬ̍ͤ͆̊ͨ w̠̘̗͖̮̥ͣ̽ͫ͂i̞̟̫̺ͭ̒ͭͣp̱̱̬̻̞̩͎̌ͦ̏e̮̟͈̣̖̰̩̹͈̾ͨ̑͑ o͎̜̓̇ͫ̉͊ͨ͊u̟͎̲͕̼̳͉̲ͮͫͭ̋ͭ͛ͣ̈t̘̟̼̉̈́͐͋͌̊ t̘̟̼̉̈́͐͋͌̊h͚̖̜̍̃͐e̮̟͈̣̖̰̩̹͈̾ͨ̑͑ a̘̫͈̭͌͛͌̇̇̍l͕͖͉̭̰ͬ̍ͤ͆̊ͨi̞̟̫̺ͭ̒ͭͣe̮̟͈̣̖̰̩̹͈̾ͨ̑͑n͉̠̙͉̗̺̋̋̔ͧ̊ r̼̯̤̈ͭ̃ͨ̆a̘̫͈̭͌͛͌̇̇̍c͔ͣͦ́́͂ͅe̮̟͈̣̖̰̩̹͈̾ͨ̑͑ i̞̟̫̺ͭ̒ͭͣn͉̠̙͉̗̺̋̋̔ͧ̊ m̘͈̺̪͓ͩ͂̾ͪ̀̋y͉̝͖̻̯ͮ̒̂ͮ͋ͫͨ s̪̭̱̼̼̉̈́ͪ͋̽̚o͎̜̓̇ͫ̉͊ͨ͊u̟͎̲͕̼̳͉̲ͮͫͭ̋ͭ͛ͣ̈l͕͖͉̭̰ͬ̍ͤ͆̊ͨ s̪̭̱̼̼̉̈́ͪ͋̽̚o͎̜̓̇ͫ̉͊ͨ͊m̘͈̺̪͓ͩ͂̾ͪ̀̋e̮̟͈̣̖̰̩̹͈̾ͨ̑͑t̘̟̼̉̈́͐͋͌̊h͚̖̜̍̃͐i̞̟̫̺ͭ̒ͭͣm̘͈̺̪͓ͩ͂̾ͪ̀̋g͎͚̥͎͔͕ͥ̿ s̪̭̱̼̼̉̈́ͪ͋̽̚t̘̟̼̉̈́͐͋͌̊r̼̯̤̈ͭ̃ͨ̆o͎̜̓̇ͫ̉͊ͨ͊n͉̠̙͉̗̺̋̋̔ͧ̊g͎͚̥͎͔͕ͥ̿ k̲̱̠̞̖ͧ̔͊̇̽̿̑ͯͅe̮̟͈̣̖̰̩̹͈̾ͨ̑͑e̮̟͈̣̖̰̩̹͈̾ͨ̑͑p̱̱̬̻̞̩͎̌ͦ̏s̪̭̱̼̼̉̈́ͪ͋̽̚ m̘͈̺̪͓ͩ͂̾ͪ̀̋e̮̟͈̣̖̰̩̹͈̾ͨ̑͑ o͎̜̓̇ͫ̉͊ͨ͊n͉̠̙͉̗̺̋̋̔ͧ̊ h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐h͚̖̜̍̃͐h͚̖̜̍̃͐h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍j͇̗̲̞̪̹̝̫̞ͬ͐̀ͧ̿a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐j͇̗̲̞̪̹̝̫̞ͬ͐̀ͧ̿a̘̫͈̭͌͛͌̇̇̍j͇̗̲̞̪̹̝̫̞ͬ͐̀ͧ̿a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐h͚̖̜̍̃͐h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐h͚̖̜̍̃͐h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐h͚̖̜̍̃͐h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍j͇̗̲̞̪̹̝̫̞ͬ͐̀ͧ̿a̘̫͈̭͌͛͌̇̇̍`, 
     user: "Few_Strength_4938", 
     pfp: "assets/profile.jpg", 
-    category: "experience", 
+    category: "experiences", 
     tab: "recent", 
     image:false, 
     responses: "4", 
@@ -1256,7 +1261,7 @@ That happened 15 years ago and I didn't remember until today...that was because 
     content:"Ok so my sisters friend came over to spend thend the night and we play this game called man hunt where you hide in your neighborhood at night and try to find each other and I was finder so 1 hr passes by and I'm at the local park and I have a stick and note this ( i am a 12 year old boy who is scared) so it's dark my phone died and i tried to call for my sister i screamed and screamed but no answer so then i see a shadow i think it's my sister and i run to the shadow and it's gone now realizing I'm farther away from my family i get scared so i lay on the playground in the light and I'm thinking of all of the possibilities that could happen to me so then I see a shadow and it's my sister and I'm relieved but as we were walking home I look back and see that same shadow but this time I see a face I was scared and I'm not that fast. I ran home as fast as humanly possible and we were all home safe...",  
     user: "Medical_Reach_589", 
     pfp: "assets/profile.jpg", 
-    category: "experience", 
+    category: "experiences", 
     tab: "recent", 
     image:false, 
     responses: "4", 
@@ -1442,7 +1447,7 @@ but if your uncle showed up it doesnt matter what clothing hes wearing you can s
         {text: "OP wya???", isOP: false},
         {text: "lowkey a little worried", isOP: false},
         {text: "He lost the fight fs", isOP: false},
-        {text: "I found this in the room", isOP: true, attachment: "partyCaught.mp4"},
+        {text: "I found this in the room", isOP: true, attachment: "/assets/partyCaught.mp4"},
         {text: "Holy shit what did you do", isOP: false},
         {text: "I didn't fucking do anything! That was in the room when I got there. I only fucking looked for the guy because you all said to.", isOP: true},
         {text: "I don't want to be connected to this. I didn't do anything. I don't even know the guy.", isOP: true},
@@ -1777,7 +1782,9 @@ document.addEventListener("DOMContentLoaded", function () {
     container.addEventListener("click", function (event) {
         
         // Look for the closest .post element with data-id
+        const clickedHome = event.target.closest(".click-for-homepage");
         const clickedPost = event.target.closest(".click-for-postpage"); 
+        const clickedRestricted = event.target.closest(".click-for-restricted")
         const clickedRoom = event.target.closest(".click-for-roompage");
         const clickedAdd = event.target.closest(".click-to-add");
         const clickedProfile = event.target.closest(".okay-wow-stalking-profiles")
@@ -1789,6 +1796,9 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 console.error("No data-id found.");
             }
+        }else if (clickedHome){
+            window.location.href="index.html"
+        
         } else if (clickedRoom){
             const postRoom = clickedRoom.getAttribute("data-room");
             if (postRoom != "unlabeled") {
@@ -1810,6 +1820,8 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 console.error("User not found.");
             }
+        }else if (clickedRestricted){
+            window.location.href = `post.html?id=666`;
         }else if(newPost){
             stopTryingToPost()
         }else {
@@ -1839,9 +1851,11 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
         //how is this working ????
-        matchedPosts = findSimilar(titleWords,postsData,ogId)
-        if (matchedPosts){
-            populateSimilar(matchedPosts)
+        if (postId != "666"){
+            matchedPosts = findSimilar(titleWords,postsData,ogId)
+            if (matchedPosts){
+                populateSimilar(matchedPosts)
+            }
         }
 
         if (isNaN(numericPostId)) {
@@ -2063,15 +2077,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 function populatePost(postId) {
-    //find correct array item using postId
     var activePost;
-    for (var i = 0; i < postsData.length; i++) {
-        if (parseInt(postsData[i].id) === postId) {
-            activePost = postsData[i];
-        }
+    if (postId === 666){
+        activePost = restrictedPost[0]
+
+    }else{
+        for (var i = 0; i < postsData.length; i++) {
+            if (parseInt(postsData[i].id) === postId) {
+                activePost = postsData[i];
+            }
+        }  
     }
+    //find correct array item using postId
     const container = document.getElementById('full-post-id');
     const commentArea = document.getElementById('comment-section');
+    const chatInput = document.getElementById('chat-input');
     var pfpText = activePost.user.charAt(0); 
     commentArea.innerHTML = ""
     if(activePost.image==="video"){
@@ -2124,8 +2144,8 @@ function populatePost(postId) {
         <hr style="height:0.1px;border-width:0;color:#444;background-color:#444">
         `;
     }
-    if (activePost.comments) {
-    
+    if (activePost.comments && postId != 666) {
+        commentArea.style = "display:block;"
         let updated = false; // Flag to track if we made changes
         
         for (let j = 0; j < activePost.comments.length; j++) {
@@ -2195,6 +2215,9 @@ function populatePost(postId) {
         
     } else {
         console.log(`No comments for post: "${activePost.title}"`);
+        commentArea.style = "display:none;"
+        chatInput.style = "display:none";
+
     }
 }
 
