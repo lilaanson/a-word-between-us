@@ -636,7 +636,143 @@ let users = [
         location: "Ethergate",
         bio: "You think you're alone online? Think again.",
         rooms: ["Backrooms", "Technology"]
-      }
+      },
+      {
+        username: "Few_Strength_4938",
+        added: false,
+        pfp: "assets/profile.jpg",
+        friendsCount: 12,
+        location: "Ethergate",
+        bio: "You think you're alone online? Think again.",
+        rooms: ["Backrooms", "Technology"]
+      },
+      {
+        username: "thecouponnerd",
+        added: false,
+        pfp: "assets/profile.jpg",
+        friendsCount: 23,
+        location: "Ethergate",
+        bio: "You think you're alone online? Think again.",
+        rooms: ["Backrooms", "Technology"]
+      },
+      {
+        username: "Medical_Reach_589",
+        added: false,
+        pfp: "assets/profile.jpg",
+        friendsCount: 11,
+        location: "Ethergate",
+        bio: "You think you're alone online? Think again.",
+        rooms: ["Backrooms", "Technology"]
+      },
+      {
+        username: "BookGnomeNoel",
+        added: false,
+        pfp: "assets/profile.jpg",
+        friendsCount: 2,
+        location: "Ethergate",
+        bio: "You think you're alone online? Think again.",
+        rooms: ["Backrooms", "Technology"]
+      },
+      {
+        username: "MrMummah",
+        added: false,
+        pfp: "assets/profile.jpg",
+        friendsCount: 0,
+        location: "Ethergate",
+        bio: "You think you're alone online? Think again.",
+        rooms: ["Backrooms", "Technology"]
+      },
+      {
+        username: "xoxo_nara",
+        added: false,
+        pfp: "assets/profile.jpg",
+        friendsCount: 1,
+        location: "Ethergate",
+        bio: "You think you're alone online? Think again.",
+        rooms: ["Backrooms", "Technology"]
+      },
+      {
+        username: "Nanoshas",
+        added: false,
+        pfp: "assets/profile.jpg",
+        friendsCount: 21,
+        location: "Ethergate",
+        bio: "You think you're alone online? Think again.",
+        rooms: ["Backrooms", "Technology"]
+      },
+      {
+        username: "antlercult",
+        added: false,
+        pfp: "assets/profile.jpg",
+        friendsCount: 33,
+        location: "Ethergate",
+        bio: "You think you're alone online? Think again.",
+        rooms: ["Backrooms", "Technology"]
+      },
+      {
+        username: "no_pen_6695",
+        added: false,
+        pfp: "assets/profile.jpg",
+        friendsCount: 14,
+        location: "Ethergate",
+        bio: "You think you're alone online? Think again.",
+        rooms: ["Backrooms", "Technology"]
+      },
+      {
+        username: "MADREX2000",
+        added: false,
+        pfp: "assets/profile.jpg",
+        friendsCount: 12,
+        location: "Ethergate",
+        bio: "You think you're alone online? Think again.",
+        rooms: ["Backrooms", "Technology"]
+      },
+      {
+        username: "TheOddityCollector",
+        added: false,
+        pfp: "assets/profile.jpg",
+        friendsCount: 8,
+        location: "Ethergate",
+        bio: "You think you're alone online? Think again.",
+        rooms: ["Backrooms", "Technology"]
+      },
+      {
+        username: "defiant_two",
+        added: false,
+        pfp: "assets/profile.jpg",
+        friendsCount: 6,
+        location: "Ethergate",
+        bio: "You think you're alone online? Think again.",
+        rooms: ["Backrooms", "Technology"]
+      },
+      {
+        username: "ZonkedWizard",
+        added: false,
+        pfp: "assets/profile.jpg",
+        friendsCount: 3,
+        location: "Ethergate",
+        bio: "You think you're alone online? Think again.",
+        rooms: ["Backrooms", "Technology"]
+      },
+      {
+        username: "cowboypunkstarcactus",
+        added: false,
+        pfp: "assets/profile.jpg",
+        friendsCount: 4,
+        location: "Ethergate",
+        bio: "You think you're alone online? Think again.",
+        rooms: ["Backrooms", "Technology"]
+      },
+      {
+        username: "Dankersin",
+        added: false,
+        pfp: "assets/profile.jpg",
+        friendsCount: 2,
+        location: "Ethergate",
+        bio: "You think you're alone online? Think again.",
+        rooms: ["Backrooms", "Technology"]
+      },
+
   ];
 
 let unassignedPosts = [
@@ -698,7 +834,7 @@ let unassignedPosts = [
     content: "i don’t know how to start this off really but i want help figuring out a situation that happened to me a few years ago in my grandmothers basement. It all started when my grandmother went on vacation with my brother (he lived with her). i stayed in his bedroom which was in the basement. Ever since i was small that basement freaked me out. I was staying for a week and a few days passed then one night i woke up from my sleep feeling off idk what woke me up but something did i laid back down trying to go back to sleep then i heard knocking on the front door i got up and headed up the stairs and then the knocking got more and more aggressive i ran to the door thinking “oh god something happened” i dont remember what compelled me but i unlocked the door and opened it without checking who it was outside (i never do this. im very cautious). i stepped outside like REALLY stepped out like i was at the end of the driveway. At this point i was freaking out and went back in and locked the door. i convinced myself i heard something and went back to bed. i don’t know when i fell asleep but i did. not for long tho it was still pitch black out by the time i was woken up again. i was woken up by the sound of someone whispering terrified i frozen in bed and realized it was coming from the little window by the ceiling of the basement. i just stared for a second thinking my neighbors were outside but then i heard a women say my name then a man then a women almost like people were taking turns whispering my name into the window. i got so scared i just sat there crying. i don’t remember when or how but i ended up asleep again. i called my mom explaining what happened in the morning. ever since then i couldn’t figure out if it was a dream or if it was real. Let me say that i felt everything during this the cold cement on my feet and everything i touched. if you have any idea let me know what you think 🤷‍♀️", 
     user: "PaintSmudge", 
     pfp: "assets/profile.jpg", 
-    category: "question", 
+    category: "questions", 
     tab: "recent", 
     image:"assets/image2.png", 
     responses: "0", 
@@ -736,7 +872,7 @@ let unassignedPosts = [
     content: "", 
     user: "RogueSyntax", 
     pfp: "assets/profile.jpg", 
-    category: "question", 
+    category: "questions", 
     tab: "hot", 
     image:false, 
     responses: "5", 
@@ -805,7 +941,7 @@ let unassignedPosts = [
 { 
     title: "｡𖦹°‧", 
     content: "(｡◕‿‿◕｡)(｡◕‿‿◕｡)", 
-    user: "VaporGhost", 
+    user: "antlercult", 
     pfp: "assets/profile.jpg", 
     category: "mystery", 
     tab: "recent", 
@@ -843,7 +979,7 @@ let unassignedPosts = [
     content: "", 
     user: "paranoidjoe", 
     pfp: "assets/profile.jpg", 
-    category: "question", 
+    category: "questions", 
     tab: "recent", 
     image:false, 
     responses: "5", 
@@ -950,7 +1086,7 @@ let unassignedPosts = [
         "Thanks so much! Hughs and kisses<3 ", 
     user: "BadgerByte", 
     pfp: "assets/profile.jpg", 
-    category: "question", 
+    category: "questions", 
     tab: "recent", 
     image:false, 
     responses: "4", 
@@ -1066,7 +1202,7 @@ That happened 15 years ago and I didn't remember until today...that was because 
 { 
     title: "My wife has powers", 
     content: "My wife was smoking, felt way too high saying she was going to die, telling me she loves me and to tell everyone else she loves them. Jokingly says “This is the end, this is the end” and at that second my power went out. I froze and didn’t want to move.", 
-    user: "CherryLemon", 
+    user: "thecouponnerd", 
     pfp: "assets/profile.jpg", 
     category: "experience", 
     tab: "recent", 
@@ -1082,7 +1218,7 @@ That happened 15 years ago and I didn't remember until today...that was because 
 { 
     title: "(::)&:&.:/:):):)",
     content: ` i̞̟̫̺ͭ̒ͭͣn͉̠̙͉̗̺̋̋̔ͧ̊t̘̟̼̉̈́͐͋͌̊o͎̜̓̇ͫ̉͊ͨ͊ t̘̟̼̉̈́͐͋͌̊h͚̖̜̍̃͐e̮̟͈̣̖̰̩̹͈̾ͨ̑͑ d̥̝̮͙͈͂̐̇ͮ̏̔̀̚ͅe̮̟͈̣̖̰̩̹͈̾ͨ̑͑v̪̩̜̜̙̜ͨ̽̄i̞̟̫̺ͭ̒ͭͣl͕͖͉̭̰ͬ̍ͤ͆̊ͨs̪̭̱̼̼̉̈́ͪ͋̽̚ y͉̝͖̻̯ͮ̒̂ͮ͋ͫͨo͎̜̓̇ͫ̉͊ͨ͊u̟͎̲͕̼̳͉̲ͮͫͭ̋ͭ͛ͣ̈ g͎͚̥͎͔͕ͥ̿o͎̜̓̇ͫ̉͊ͨ͊ d̥̝̮͙͈͂̐̇ͮ̏̔̀̚ͅe̮̟͈̣̖̰̩̹͈̾ͨ̑͑e̮̟͈̣̖̰̩̹͈̾ͨ̑͑p̱̱̬̻̞̩͎̌ͦ̏ d̥̝̮͙͈͂̐̇ͮ̏̔̀̚ͅo͎̜̓̇ͫ̉͊ͨ͊w̠̘̗͖̮̥ͣ̽ͫ͂n͉̠̙͉̗̺̋̋̔ͧ̊ b͎̣̫͈̥̗͒͌̃͑̔̾ͅe̮̟͈̣̖̰̩̹͈̾ͨ̑͑l͕͖͉̭̰ͬ̍ͤ͆̊ͨo͎̜̓̇ͫ̉͊ͨ͊w̠̘̗͖̮̥ͣ̽ͫ͂ i̞̟̫̺ͭ̒ͭͣn͉̠̙͉̗̺̋̋̔ͧ̊ a̘̫͈̭͌͛͌̇̇̍ d̥̝̮͙͈͂̐̇ͮ̏̔̀̚ͅa̘̫͈̭͌͛͌̇̇̍r̼̯̤̈ͭ̃ͨ̆k̲̱̠̞̖ͧ̔͊̇̽̿̑ͯͅ w̠̘̗͖̮̥ͣ̽ͫ͂o͎̜̓̇ͫ̉͊ͨ͊r̼̯̤̈ͭ̃ͨ̆l͕͖͉̭̰ͬ̍ͤ͆̊ͨd̥̝̮͙͈͂̐̇ͮ̏̔̀̚ͅ w̠̘̗͖̮̥ͣ̽ͫ͂h͚̖̜̍̃͐e̮̟͈̣̖̰̩̹͈̾ͨ̑͑r̼̯̤̈ͭ̃ͨ̆e̮̟͈̣̖̰̩̹͈̾ͨ̑͑ n͉̠̙͉̗̺̋̋̔ͧ̊o͎̜̓̇ͫ̉͊ͨ͊ o͎̜̓̇ͫ̉͊ͨ͊n͉̠̙͉̗̺̋̋̔ͧ̊e̮̟͈̣̖̰̩̹͈̾ͨ̑͑s̪̭̱̼̼̉̈́ͪ͋̽̚ s̪̭̱̼̼̉̈́ͪ͋̽̚a̘̫͈̭͌͛͌̇̇̍f̳͉̼͉̙͔͈̂̉e̮̟͈̣̖̰̩̹͈̾ͨ̑͑ i̞̟̫̺ͭ̒ͭͣn͉̠̙͉̗̺̋̋̔ͧ̊ t̘̟̼̉̈́͐͋͌̊h͚̖̜̍̃͐e̮̟͈̣̖̰̩̹͈̾ͨ̑͑ w̠̘̗͖̮̥ͣ̽ͫ͂o͎̜̓̇ͫ̉͊ͨ͊r̼̯̤̈ͭ̃ͨ̆l͕͖͉̭̰ͬ̍ͤ͆̊ͨd̥̝̮͙͈͂̐̇ͮ̏̔̀̚ͅ w̠̘̗͖̮̥ͣ̽ͫ͂e̮̟͈̣̖̰̩̹͈̾ͨ̑͑ s̪̭̱̼̼̉̈́ͪ͋̽̚h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍l͕͖͉̭̰ͬ̍ͤ͆̊ͨl͕͖͉̭̰ͬ̍ͤ͆̊ͨ w̠̘̗͖̮̥ͣ̽ͫ͂i̞̟̫̺ͭ̒ͭͣp̱̱̬̻̞̩͎̌ͦ̏e̮̟͈̣̖̰̩̹͈̾ͨ̑͑ o͎̜̓̇ͫ̉͊ͨ͊u̟͎̲͕̼̳͉̲ͮͫͭ̋ͭ͛ͣ̈t̘̟̼̉̈́͐͋͌̊ t̘̟̼̉̈́͐͋͌̊h͚̖̜̍̃͐e̮̟͈̣̖̰̩̹͈̾ͨ̑͑ a̘̫͈̭͌͛͌̇̇̍l͕͖͉̭̰ͬ̍ͤ͆̊ͨi̞̟̫̺ͭ̒ͭͣe̮̟͈̣̖̰̩̹͈̾ͨ̑͑n͉̠̙͉̗̺̋̋̔ͧ̊ r̼̯̤̈ͭ̃ͨ̆a̘̫͈̭͌͛͌̇̇̍c͔ͣͦ́́͂ͅe̮̟͈̣̖̰̩̹͈̾ͨ̑͑ i̞̟̫̺ͭ̒ͭͣn͉̠̙͉̗̺̋̋̔ͧ̊ m̘͈̺̪͓ͩ͂̾ͪ̀̋y͉̝͖̻̯ͮ̒̂ͮ͋ͫͨ s̪̭̱̼̼̉̈́ͪ͋̽̚o͎̜̓̇ͫ̉͊ͨ͊u̟͎̲͕̼̳͉̲ͮͫͭ̋ͭ͛ͣ̈l͕͖͉̭̰ͬ̍ͤ͆̊ͨ s̪̭̱̼̼̉̈́ͪ͋̽̚o͎̜̓̇ͫ̉͊ͨ͊m̘͈̺̪͓ͩ͂̾ͪ̀̋e̮̟͈̣̖̰̩̹͈̾ͨ̑͑t̘̟̼̉̈́͐͋͌̊h͚̖̜̍̃͐i̞̟̫̺ͭ̒ͭͣm̘͈̺̪͓ͩ͂̾ͪ̀̋g͎͚̥͎͔͕ͥ̿ s̪̭̱̼̼̉̈́ͪ͋̽̚t̘̟̼̉̈́͐͋͌̊r̼̯̤̈ͭ̃ͨ̆o͎̜̓̇ͫ̉͊ͨ͊n͉̠̙͉̗̺̋̋̔ͧ̊g͎͚̥͎͔͕ͥ̿ k̲̱̠̞̖ͧ̔͊̇̽̿̑ͯͅe̮̟͈̣̖̰̩̹͈̾ͨ̑͑e̮̟͈̣̖̰̩̹͈̾ͨ̑͑p̱̱̬̻̞̩͎̌ͦ̏s̪̭̱̼̼̉̈́ͪ͋̽̚ m̘͈̺̪͓ͩ͂̾ͪ̀̋e̮̟͈̣̖̰̩̹͈̾ͨ̑͑ o͎̜̓̇ͫ̉͊ͨ͊n͉̠̙͉̗̺̋̋̔ͧ̊ h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐h͚̖̜̍̃͐h͚̖̜̍̃͐h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍j͇̗̲̞̪̹̝̫̞ͬ͐̀ͧ̿a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐j͇̗̲̞̪̹̝̫̞ͬ͐̀ͧ̿a̘̫͈̭͌͛͌̇̇̍j͇̗̲̞̪̹̝̫̞ͬ͐̀ͧ̿a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐h͚̖̜̍̃͐h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐h͚̖̜̍̃͐h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐h͚̖̜̍̃͐h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍h͚̖̜̍̃͐h͚̖̜̍̃͐a̘̫͈̭͌͛͌̇̇̍j͇̗̲̞̪̹̝̫̞ͬ͐̀ͧ̿a̘̫͈̭͌͛͌̇̇̍`, 
-    user: "CherryLemon", 
+    user: "Few_Strength_4938", 
     pfp: "assets/profile.jpg", 
     category: "experience", 
     tab: "recent", 
@@ -1101,7 +1237,7 @@ That happened 15 years ago and I didn't remember until today...that was because 
 { 
     title: ":)",
     content:"ehhehehehhehehehhehahhahehe...",
-    user: "CherryLemon", 
+    user: "MrMummah", 
     pfp: "assets/profile.jpg", 
     category: "unlabeled", 
     tab: "recent", 
@@ -1118,7 +1254,7 @@ That happened 15 years ago and I didn't remember until today...that was because 
 { 
     title: "I need to solve this",
     content:"Ok so my sisters friend came over to spend thend the night and we play this game called man hunt where you hide in your neighborhood at night and try to find each other and I was finder so 1 hr passes by and I'm at the local park and I have a stick and note this ( i am a 12 year old boy who is scared) so it's dark my phone died and i tried to call for my sister i screamed and screamed but no answer so then i see a shadow i think it's my sister and i run to the shadow and it's gone now realizing I'm farther away from my family i get scared so i lay on the playground in the light and I'm thinking of all of the possibilities that could happen to me so then I see a shadow and it's my sister and I'm relieved but as we were walking home I look back and see that same shadow but this time I see a face I was scared and I'm not that fast. I ran home as fast as humanly possible and we were all home safe...",  
-    user: "CherryLemon", 
+    user: "Medical_Reach_589", 
     pfp: "assets/profile.jpg", 
     category: "experience", 
     tab: "recent", 
@@ -1134,9 +1270,9 @@ That happened 15 years ago and I didn't remember until today...that was because 
 { 
     title: "Question",
     content:"I have a question about summoning a ghost.guys can you tell me how to summon a dead friend or relative?i want to summon my uncle not summon him talk to him somehow and to a friend that died.i dont want complicated stuff with rings of salt and this shit i have a picture and candles if that works",
-    user: "CherryLemon", 
+    user: "BookGnomeNoel", 
     pfp: "assets/profile.jpg", 
-    category: "experience", 
+    category: "questions", 
     tab: "recent", 
     image:false, 
     responses: "4", 
@@ -1221,21 +1357,24 @@ but if your uncle showed up it doesnt matter what clothing hes wearing you can s
 { 
     title: "Sleep app",
     content:"I recently downloaded one of those apps that tracks your sleeping, and it recorded this weird noise. Is this normal? Any guesses what it might be?",  
-    user: "CherryLemon", 
+    user: "Nanoshas", 
     pfp: "assets/profile.jpg", 
     category: "help", 
     tab: "recent", 
-    image:false, 
+    image:"video", 
+    video:"/assets/SleepRecording.mp3",
     responses: "4", 
     time:"9 days ago", 
     comments: [
+        {text: "Here is a screenshot from the app", isOP: true, attachment: "sleepappcrop.png"},
         {text: "I've got the same app and I've never heard anything like that. Do you have any roommates or pets who it could've recorded?", isOP: false},
         {text: "My girlfriend spent the night, but she left before I woke up in the morning so I never asked. She doesn’t really snore or talk in her sleep so I didn’t consider her.", isOP: true},  
         {text: "Have you asked her about it?", isOP: false},
         {text: "No.. I haven't heard from her since last night. I feel like I should figure out what the noise is before making accusations.", isOP: true},
         {text: "Maybe you have water in your microphone? Or something could've distorted the sound", isOP: false},
         {text: "I don't know why but it kind of sounds gorey", isOP: false},
-        {text: "Just took a shower and found this on my back. I don't know how it would be related, but I'm sure you conspiracy theorists will go crazy over it.", isOP: true},
+        {text: "Just took a shower and found this on my back. I don't know how it would be related, but I'm sure you conspiracy theorists will go crazy over it.", isOP: true, attachment: "bruiseselfie.png"},
+        {text: "", isOP: true, attachment:"bruiseback.png"},
         {text: "bug bite?", isOP: false},
         {text: "Ingrown hair I get them all the time on my back.", isOP: false},
 
@@ -1246,11 +1385,11 @@ but if your uncle showed up it doesnt matter what clothing hes wearing you can s
 { 
     title: "Is my girlfriend cheating on me?",
     content:"I'm convinced my girlfriend is cheating on me, she accidentally sent me this. I have D&D tonight so she knows I wouldn't be able to go out. She said the message was meant for a friend of hers.",  
-    user: "CherryLemon", 
+    user: "Nanoshas", 
     pfp: "assets/profile.jpg", 
     category: "help", 
     tab: "recent", 
-    image:false, 
+    image:"/assets/snapchat.jpeg", 
     responses: "4", 
     time:"15 days ago", 
     comments: [
@@ -1269,7 +1408,7 @@ but if your uncle showed up it doesnt matter what clothing hes wearing you can s
 { 
     title: "UPDATE: Investigating to see if my girlfriend is cheating on me",
     content:"It been a few hours since my last post, and it seems like my girlfriend is a house party. She never mentioned it to me, I'm gonna go and see what's up.",  
-    user: "CherryLemon", 
+    user: "Nanoshas", 
     pfp: "assets/profile.jpg", 
     category: "help", 
     tab: "recent", 
@@ -1291,7 +1430,7 @@ but if your uncle showed up it doesnt matter what clothing hes wearing you can s
         {text: "fuck, sorry. I had to get some air. I came back and neither of them are here. Maybe they left.", isOP: true},
         {text: "They are probably still fucking", isOP: false},
         {text: "fuck off dude", isOP: true},
-        {text: "She came back! But I don't see the other guy.", isOP: true},
+        {text: "She came back! But I don't see the other guy.", isOP: true, attachment:"/assets/partyReturn.mp4"},
         {text: "What did she put in her bra?", isOP: false},
         {text: "idk probably her vape", isOP: true},
         {text: "I'm going to look for this guy and give him a piece of my mind.", isOP: true},
@@ -1303,7 +1442,7 @@ but if your uncle showed up it doesnt matter what clothing hes wearing you can s
         {text: "OP wya???", isOP: false},
         {text: "lowkey a little worried", isOP: false},
         {text: "He lost the fight fs", isOP: false},
-        {text: "I found this in the room", isOP: true},
+        {text: "I found this in the room", isOP: true, attachment: "partyCaught.mp4"},
         {text: "Holy shit what did you do", isOP: false},
         {text: "I didn't fucking do anything! That was in the room when I got there. I only fucking looked for the guy because you all said to.", isOP: true},
         {text: "I don't want to be connected to this. I didn't do anything. I don't even know the guy.", isOP: true},
@@ -1389,7 +1528,8 @@ function filterPosts(tab, event = null) {
         //.reverse()
         .forEach(post => {
             if(post.image==="video"){
-                postsContainer.innerHTML += `
+                if (post.video.includes("youtube.com") || post.video.includes("youtu.be")) {
+                    postsContainer.innerHTML += `
                     <div class='post'>
                         
                         <div class="post-details-side">
@@ -1410,6 +1550,32 @@ function filterPosts(tab, event = null) {
                             </div>
                         </div>
                     </div>`;
+                  } else {
+                    postsContainer.innerHTML += `
+                            <div class='post'>
+                                
+                                <div class="post-details-side">
+                                    <div class="username-and-cat">
+                                        <div class="username"><div data-user="${post.user}" class="username-text okay-wow-stalking-profiles">${post.user}</div></div>
+                                        <div data-room="${post.category}" class="cat click-for-roompage"> ${post.category}</div>
+                                        <!-- <img class="door" src="assets/door-green.png"> -->
+                                    </div>
+                                        <div class="img-and-title">
+                                            <div data-id="${post.id}" class="post-preview-text click-for-postpage">${post.title}</div>
+            
+                                            <div class="img-side">
+                                                <audio controls data-id="${post.id}" class="post-preview-img click-for-postpage">
+                                                    <source src="${post.video}" type="audio/mpeg">
+                                                    Your browser does not support the audio element.
+                                                </audio>
+                                            </div>
+                                        </div>                        <div class="responses-and-time">
+                                        <div data-id="${post.id}" class="responses click-for-postpage">${post.responses} responses</div>
+                                        <div class="time">${post.time}</div>
+                                    </div>
+                                </div>
+                            </div>`;
+                  }                        
             }else if (post.image !== false) {
                 postsContainer.innerHTML += `
                     <div class='post'>
@@ -1922,9 +2088,6 @@ function populatePost(postId) {
         <div class="post-title">${activePost.title}</div>
         <div class="post-content">${activePost.content}</div>
         <iframe class="post-image" width="560" height="315" src="${activePost.video}"" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <div class="metrics">
-            <img class="likes-img metric" src="assets/like.png">
-        </div>
         <hr style="height:0.1px;border-width:0;color:#444;background-color:#444">`;
     }else if (activePost.image !== false){
 
@@ -1941,9 +2104,7 @@ function populatePost(postId) {
         <div class="post-title">${activePost.title}</div>
         <div class="post-content">${activePost.content}</div>
         <img class="post-img" src="${activePost.image}">
-        <div class="metrics">
-            <img class="likes-img metric" src="assets/like.png">
-        </div>
+
         <hr style="height:0.1px;border-width:0;color:#444;background-color:#444">
         `;
     }else{
@@ -1959,9 +2120,7 @@ function populatePost(postId) {
         </div>
         <div class="post-title">${activePost.title}</div>
         <div class="post-content">${activePost.content}</div>
-        <div class="metrics">
-            <img class="likes-img metric" src="assets/like.png">
-        </div>
+
         <hr style="height:0.1px;border-width:0;color:#444;background-color:#444">
         `;
     }
@@ -2309,7 +2468,7 @@ function populateOtherProfile(forThisGuy){
     postsData.forEach(post=>{
         if(post.user === forThisGuy){
             if(post.image==="video"){
-                postsContainer.innerHTML += `
+                putThemHere.innerHTML += `
                     <div class='post'>
                         
                         <div class="post-details-side">

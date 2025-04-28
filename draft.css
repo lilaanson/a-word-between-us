@@ -554,6 +554,7 @@ font-style: normal;
     width: fit-content;
     margin-right:0;
     padding-right:15px;
+    margin-left:15px;
 }
 .post-details-side{
     width:75%;
@@ -746,7 +747,7 @@ font-style: normal;
 
 /* login page */
 .log-in-area{
-    margin: 17% auto auto auto;
+    margin: 10% auto auto auto;
     display: flex;
     justify-content: center;
     align-items: center;
