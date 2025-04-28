@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHICKEN CHASE ROUND 1</title>
+  <style>
+    @font-face {
+      font-family: 'Matrix';
+      src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/fonts/HTML-CSS/TeX/otf/MathJax_Typewriter-Regular.otf');
+      font-weight: normal;
+      font-style: normal;
+    }
+    
+    body {
+      font-family: 'Courier New', monospace;
+      background-color: #000;
+      color: #0f0;
+      margin: 0;
+      padding: 0;
+      background-image: linear-gradient(0deg, rgba(0, 15, 0, 0.9), rgba(0, 0, 0, 0.9)), 
+                        url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%230f0' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: rgba(0, 20, 0, 0.8);
+      border: 2px solid #0f0;
+      box-shadow: 0 0 10px #0f0, inset 0 0 5px #0f0;
+      border-radius: 5px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #0f0, transparent);
+      animation: scan 3s linear infinite;
+    }
+    
+    @keyframes scan {
+      0% {
+        top: 0;
+      }
+      100% {
+        top: 100%;
+      }
+    }
+    
+    h1 {
+      color: #0f0;
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      text-shadow: 0 0 5px #0f0, 0 0 10px #0f0;
+      font-family: 'Matrix', 'Courier New', monospace;
+      letter-spacing: 2px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #0f0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    textarea {
+      width: 100%;
+      height: 100px;
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color: #000;
+      color: #0f0;
+      border: 1px solid #0f0;
+      border-radius: 0;
+      font-family: 'Courier New', monospace;
+      font-size: 16px;
+      resize: none;
+      box-shadow: 0 0 5px #0f0;
+    }
+    
+    textarea:focus {
+      outline: none;
+      box-shadow: 0 0 10px #0f0;
+    }
+    
+    .buttons {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 30px;
+      justify-content: center;
+    }
+    
+    button {
+      padding: 12px 25px;
+      cursor: pointer;
+      font-size: 16px;
+      font-family: 'Courier New', monospace;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 1px solid;
+      background-color: transparent;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+    
+    button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: all 0.5s;
+    }
+    
+    button:hover::before {
+      left: 100%;
+    }
+    
+    .chicken-btn {
+      border-color: #fc0;
+      color: #fc0;
+      box-shadow: 0 0 5px #fc0;
+    }
+    
+    .chicken-btn:hover {
+      background-color: rgba(255, 204, 0, 0.1);
+      box-shadow: 0 0 10px #fc0;
+    }
+    
+    .team-btn {
+      border-color: #0ff;
+      color: #0ff;
+      box-shadow: 0 0 5px #0ff;
+    }
+    
+    .team-btn:hover {
+      background-color: rgba(0, 255, 255, 0.1);
+      box-shadow: 0 0 10px #0ff;
+    }
+    
+    #result {
+      margin-top: 30px;
+      padding: 10px;
+      border: 1px solid #0f0;
+      background-color: rgba(0, 30, 0, 0.5);
+    }
+    
+    h3 {
+      color: #0f0;
+      margin-top: 0;
+      font-family: 'Matrix', 'Courier New', monospace;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 0 0 3px #0f0;
+    }
+    
+    .team {
+      background-color: rgba(0, 255, 255, 0.1);
+      border: 1px solid #0ff;
+      border-radius: 3px;
+      padding: 10px 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+    }
+    
+    .team h4 {
+      margin-top: 0;
+      color: #0ff;
+      text-shadow: 0 0 3px #0ff;
+    }
+    
+    .chickens {
+      background-color: rgba(255, 204, 0, 0.1);
+      border: 1px solid #fc0;
+      border-radius: 3px;
+      padding: 10px 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 0 5px rgba(255, 204, 0, 0.3);
+    }
+    
+    ul {
+      margin: 0;
+      padding-left: 20px;
+      list-style-type: square;
+    }
+    
+    li {
+      padding: 3px 0;
+    }
+    
+    .matrix-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.07;
+      pointer-events: none;
+    }
+    
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>CHICKEN CHASE ROUND 1</h1>
+    
+    <div>
+      <label for="namesInput">Enter agents (separated by commas):</label>
+      <textarea id="namesInput" placeholder="Agent_Smith, Neo, Trinity, Morpheus, Oracle, Tank, Dozer"></textarea>
+    </div>
+    
+    <!-- Hidden input to store selected chickens -->
+    <input type="hidden" id="selectedChickens" value="">
+    
+    <div class="buttons">
+      <button class="chicken-btn" onclick="selectChickens()">SELECT CHICKENS</button>
+      <button class="team-btn" onclick="createTeams()">Generate Teams</button>
+    </div>
+    
+    <div id="result"></div>
+  </div>
+
+  <div class="matrix-animation">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <script>
+    // Matrix animation
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    const characters = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+    
+    const rainDrops = [];
+    
+    for(let x = 0; x < columns; x++) {
+      rainDrops[x] = 1;
+    }
+    
+    const draw = () => {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      ctx.fillStyle = '#0f0';
+      ctx.font = fontSize + 'px monospace';
+      
+      for(let i = 0; i < rainDrops.length; i++) {
+        const text = characters.charAt(Math.floor(Math.random() * characters.length));
+        ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+        
+        if(rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          rainDrops[i] = 0;
+        }
+        rainDrops[i]++;
+      }
+    };
+    
+    setInterval(draw, 30);
+    
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    // Team maker functions
+    function selectChickens() {
+      // Get the input of names
+      const namesInput = document.getElementById('namesInput').value;
+      
+      // Parse names, removing empty entries
+      let names = namesInput.split(',')
+        .map(name => name.trim())
+        .filter(name => name.length > 0);
+      
+      // Check if we have enough names
+      if (names.length < 2) {
+        document.getElementById('result').innerHTML = "Please enter at least 2 agents to identify targets.";
+        return;
+      }
+      
+      // Check for duplicate names
+      const uniqueNames = [...new Set(names.map(name => name.toLowerCase()))];
+      if (uniqueNames.length !== names.length) {
+        document.getElementById('result').innerHTML = "Please ensure all agent identifiers are unique.";
+        return;
+      }
+      
+      // Secretly remove Lila and Nefeli from chicken candidates
+      const eligibleNames = names.filter(name => 
+        name.toLowerCase() !== "lila" && name.toLowerCase() !== "nefeli");
+      
+      if (eligibleNames.length < 2) {
+        document.getElementById('result').innerHTML = "Need at least 2 eligible agents to identify targets.";
+        return;
+      }
+      
+      // Create a copy of eligible names for shuffling
+      let shuffledNames = [...eligibleNames];
+      
+      // Shuffle the names
+      for (let i = shuffledNames.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledNames[i], shuffledNames[j]] = [shuffledNames[j], shuffledNames[i]];
+      }
+      
+      // Select the first two names as chickens
+      const chickens = shuffledNames.slice(0, 2);
+      
+      // Display the chickens
+      let resultHTML = "<h3>Identified Targets:</h3>";
+      resultHTML += `<div class="chickens"><ul>`;
+      chickens.forEach(chicken => {
+        resultHTML += `<li>${chicken}</li>`;
+      });
+      resultHTML += "</ul></div>";
+      
+      // Store chickens in hidden input for later use
+      document.getElementById('selectedChickens').value = JSON.stringify(chickens);
+      
+      document.getElementById('result').innerHTML = resultHTML;
+    }
+
+    function createTeams() {
+      // Get the input of names
+      const namesInput = document.getElementById('namesInput').value;
+      const teamSize = 3;
+      
+      // Parse names, removing empty entries
+      let names = namesInput.split(',')
+        .map(name => name.trim())
+        .filter(name => name.length > 0);
+      
+      // Check for duplicate names
+      const uniqueNames = [...new Set(names.map(name => name.toLowerCase()))];
+      if (uniqueNames.length !== names.length) {
+        document.getElementById('result').innerHTML = "Please ensure all agent identifiers are unique.";
+        return;
+      }
+      
+      // Get selected chickens from hidden input
+      let chickens = [];
+      const selectedChickensValue = document.getElementById('selectedChickens').value;
+      if (selectedChickensValue) {
+        chickens = JSON.parse(selectedChickensValue);
+      }
+      
+      // Remove chickens from the list of names
+      names = names.filter(name => !chickens.includes(name));
+      
+      // Secretly check if our special names are in the list
+      const name1Index = names.findIndex(name => name.toLowerCase() === "lila");
+      const name2Index = names.findIndex(name => name.toLowerCase() === "nefeli");
+      const name1Present = name1Index !== -1;
+      const name2Present = name2Index !== -1;
+      
+      // Create a copy of names for shuffling
+      let shuffledNames = [...names];
+      
+      // Secretly remove special names from the array if they're present
+      if (name1Present) {
+        shuffledNames.splice(name1Index, 1);
+      }
+      if (name2Present) {
+        // Adjust index if name2 comes after name1 in the original array
+        const adjustedName2Index = name1Present && name2Index > name1Index ? 
+          name2Index - 1 : name2Index;
+        shuffledNames.splice(adjustedName2Index, 1);
+      }
+      
+      // Shuffle the remaining names
+      for (let i = shuffledNames.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledNames[i], shuffledNames[j]] = [shuffledNames[j], shuffledNames[i]];
+      }
+      
+      // Calculate number of teams
+      const remainingPeople = shuffledNames.length + (name1Present ? 1 : 0) + (name2Present ? 1 : 0);
+      
+      if (remainingPeople === 0) {
+        document.getElementById('result').innerHTML = "<p>No agents available for team creation after target identification.</p>";
+        return;
+      }
+      
+      const numTeams = Math.ceil(remainingPeople / teamSize);
+      
+      // Create teams array
+      const teams = Array(numTeams).fill().map(() => []);
+      
+      // Secret: Add special names to the first team if they're in the list
+      if (name1Present && name2Present) {
+        teams[0].push("LILA", "NEFELI");
+      } else if (name1Present) {
+        teams[0].push("LILA");
+      } else if (name2Present) {
+        teams[0].push("NEFELI");
+      }
+      
+      // Distribute remaining people to teams
+      let currentTeamIndex = 0;
+      
+      for (const name of shuffledNames) {
+        // If current team is full, move to next team
+        if (teams[currentTeamIndex].length >= teamSize) {
+          currentTeamIndex = (currentTeamIndex + 1) % numTeams;
+        }
+        
+        // Secret: If first team has special members and would exceed size, move to next team
+        if (currentTeamIndex === 0 && 
+            ((name1Present || name2Present) && teams[0].length >= teamSize)) {
+          currentTeamIndex = 1;
+        }
+        
+        teams[currentTeamIndex].push(name);
+        currentTeamIndex = (currentTeamIndex + 1) % numTeams;
+      }
+      
+      // Display the chickens and teams
+      let resultHTML = "";
+      
+      if (chickens.length > 0) {
+        resultHTML += "<h3>Selected Chickens:</h3>";
+        resultHTML += `<div class="chickens"><ul>`;
+        chickens.forEach(chicken => {
+          resultHTML += `<li>${chicken}</li>`;
+        });
+        resultHTML += "</ul></div>";
+      }
+      
+      resultHTML += "<h3>Operative Teams:</h3>";
+      
+      teams.forEach((team, index) => {
+        if (team.length > 0) {
+          resultHTML += `<div class="team"><h4>Team ${index + 1}</h4><ul>`;
+          team.forEach(member => {
+            resultHTML += `<li>${member}</li>`;
+          });
+          resultHTML += "</ul></div>";
+        }
+      });
+      
+      document.getElementById('result').innerHTML = resultHTML;
+    }
+  </script>
+</body>
+</html>
