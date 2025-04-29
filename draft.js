@@ -270,7 +270,7 @@ let curatedPosts = [
 
 
     ], likes: "3", id: "2"},
-    { title: "has anyone heard of this urban legend?", content: "i have this picture of it but i don't know what it's called so i can't find much info online", user: "ElLobo00", pfp: "assets/profile.jpg", category: "urban legends", tab: "recent", image:"assets/loversRoots.png", responses: "2", time: "7 days ago", comments: [
+    { title: "has anyone heard of this urban legend?", content: "i have this picture of it but i can't find much info online", user: "ElLobo00", pfp: "assets/profile.jpg", category: "urban legends", tab: "recent", image:"assets/LOVERSROOTS2.png", responses: "2", time: "7 days ago", comments: [
         {text: "Yes it is based off of a tree by my hometown.", isOP: false, who:"an_anonymous_person2"}, 
         {text: "where?", isOP: true}, 
         {text: "Boulder Colorado up by Chautauqua. Hard to recognize now because too many people hung around there. If you PM me I can give you the exact location.", isOP: false, who:"an_anonymous_person2"},
@@ -278,23 +278,36 @@ let curatedPosts = [
         {text: "PLEASE", isOP: false}, 
         {text: "You should. I would if I wasn't 5 hours away ;/", isOP: false}, 
         {text: "okokokOK i will. but i am busy all week, ill try to go this weekend", isOP: false, who:"ree-purr"},
-        {text: "i think i am by the tree..", isOP: false, who:"ree-purr", attachment:"assets/nearTree.png"}, 
+        {text: "i think i am by the tree..", isOP: false, who:"ree-purr"}, 
         {text: "WHAT why are you actually doing it", isOP: false}, 
         {text: "finally lol", isOP: false},
+        {text: "SHOW A PIC IF UR NOT LYING", isOP: false},
         {text: "Look for the face <span data-user='ree-purr' class='username-text okay-wow-stalking-profiles'>@ree-purr</span>!!!! It should be near the bottom", isOP: false},  
         {text: "Be careful hun :( urban legends are no joke.", isOP: false}, 
         {text: "Chill it's literally a tree", isOP: false}, 
-        {text: "does this look right? it has the carving on it but i am nmot sure", isOP: false, who:"ree-purr", attachment:"assets/upClose.png"}, 
+        {text: "We gonna see her on the news tomorrow XD", isOP: false}, 
+        {text: "does this look right? its cut the same way but i am nmot sure", isOP: false, who:"ree-purr", attachment:"assets/treepic.png"}, 
         {text: "Look for the face!!! It should be near the bottom", isOP: false}, 
         {text: "idk how u noticed that lol i would have walked right by", isOP: false, who:"noob1988"},
         {text: "<span data-user='noob1988' class='username-text okay-wow-stalking-profiles'>@noob1988</span> Same. Or used it as a seat", isOP: false}, 
         {text: "Are you still there? Can you look for the face? <span data-user='ree-purr' class='username-text okay-wow-stalking-profiles'>@ree-purr</span>", isOP: false},  
-        {text: "yeah sorry i cant do this sorry. it looks too real im getting freaked out", isOP: false, who:"ree-purr", attachment:"assets/face.png"}, 
+        {text: "yeah sorry i cant do this sorry. it looks too real im getting freaked out", isOP: false, who:"ree-purr", attachment:"assets/TreeFound.mp4"}, 
         {text: "NOOOO", isOP: false}, 
         {text: "are you serious? it's not even real. rofl.", isOP: false}, 
         {text: "SOMEONE ELSE PLS GO im so curious now😭", isOP: false}, 
         {text: "My brother lives in Boulder and I will be there tomorrow. I'll go look, but I'm warning you guys I don't believe in any of this. <span data-user='an_anonymous_person2' class='username-text okay-wow-stalking-profiles'>@an_anonymous_person2</span> can you send me the coordinates?", isOP: false, who:"Spiritual_Athlete"}, 
         {text: "<span data-user='Spiritual_Athlete' class='username-text okay-wow-stalking-profiles'>@Spiritual_Athlete</span> Yup. Good luck. Just sent them.", isOP: false, who:"an_anonymous_person2"},
+        {text: "Has he gone yet?", isOP: false}, 
+        {text: "helloooooo??? <span data-user='Spiritual_Athlete' class='username-text okay-wow-stalking-profiles'>@Spiritual_Athlete</span>", isOP: false}, 
+        {text: "Relax y'all. Visit got delayed but I'm heading there today.", isOP: false, who:"Spiritual_Athlete"}, 
+        {text: "YAYYY UPDATE ASAP PLZ B)", isOP: false}, 
+        {text: "Okay, I think I'm in the same area.", isOP: false, who:"Spiritual_Athlete"}, 
+        {text: "Fuck this tree. Told y'all it's fake", isOP: false, who:"Spiritual_Athlete", attachment: "assets/TreeSearch2.mp4"}, 
+        {text: "hey did the tree just move????", isOP: false}, 
+        {text: "wait maybe?", isOP: false}, 
+        {text: "DON'T LEAVE TAKE A BETTER VID", isOP: false}, 
+        {text: "are you still there? ", isOP: false}, 
+
 
 
     ], likes: "12", id: "3"}
@@ -1113,13 +1126,13 @@ let unassignedPosts = [
     pfp: "assets/profile.jpg", 
     category: "creepy", 
     tab: "recent", 
-    image:false, 
+    image:"assets/eye.png", 
     responses: "3", 
     time:"27 days ago", 
     comments: [
-        {text: "No that’s something you planted, and that’s also not how you spell human", isOP: false}, 
+        {text: "No that’s a selfie you took, and that’s also not how you spell human", isOP: false}, 
         {text: "Lolz", isOP: false},
-        {text: "actually no thats fake you just put some scary looking eye's to get some likes. go rethink you idea's", isOP: false},
+        {text: "actually no thats fake you just put some scary filters to get some likes. go rethink you idea's", isOP: false},
         {text: "Ne", isOP: false},
         {text: "Extremely bad work", isOP: false},
         {text: "nice try lol", isOP: false},
@@ -1370,7 +1383,7 @@ but if your uncle showed up it doesnt matter what clothing hes wearing you can s
     image:"video", 
     video:"/assets/SleepRecording.mp3",
     responses: "4", 
-    time:"9 days ago", 
+    time:"23 days ago", 
     comments: [
         {text: "Here is a screenshot from the app", isOP: true, attachment: "assets/sleepappcrop.png"},
         {text: "I've got the same app and I've never heard anything like that. Do you have any roommates or pets who it could've recorded?", isOP: false},
@@ -1399,11 +1412,12 @@ but if your uncle showed up it doesnt matter what clothing hes wearing you can s
     responses: "4", 
     time:"15 days ago", 
     comments: [
+        {text:"Text she sent me: ", isOP: true, attachment:"assets/text.png"},
         {text: "what's that on the sink?", isOP: false},
         {text: "She has diabetes I think", isOP: true},  
         {text: "dude,,", isOP: false},
         {text: "Does she have her location on?", isOP: false, who: "Cerisette"},
-        {text: "Yeah she has snapmaps, why?", isOP: true},
+        {text: "Yeah I think I have it, why?", isOP: true},
         {text: "If she thinks you're staying home, it could be worth it to see where she is going.", isOP: false},
         {text: "Alright, I'll ask my DM if we can end the session early", isOP: true},
     
