@@ -401,22 +401,22 @@ font-style: normal;
     font-size: 14px;
     color: #f8faf0;
 }
-.chat{
+/* .chat{
     height:70%;
 
 
-}
+} */
 .chat-container {
     margin: 10px auto auto auto;
     width: 100%;
-    height: 80%;
+    height: 65%;
     /* border-radius: 10px; */
     border: 1px solid #c62734;
     box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
 
     /* background: linear-gradient(to bottom, #424242, #0a131e, #0a131e, #0a131e,#0a131e, #0a131e, #0a131e, #0a131e); */
     /* border: 1px solid #ccc; */
-    overflow: hidden;
+    /* overflow: hidden; */
     display: flex;
     flex-direction: column;
     background-color: #111;
