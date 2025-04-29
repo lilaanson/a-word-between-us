@@ -69,7 +69,8 @@ function stopTryingToPost(){
     }else{
         var postError = document.querySelector(".post-error")
         var moveMeSidebar = document.querySelector(".sidebar")
-        moveMeSidebar.style = "margin-top:135px;"
+        moveMeSidebar.style = "margin-top:155px;"
+        adImg.style = "width:12.1%;padding-top:17vw;position:fixed;pointer-events:none;"; 
         var timeRemaining = canYouJustTellMe()
         console.log(timeRemaining)
         postError.textContent = `New users must wait 24 hours before making their first post. Time remaining: ${timeRemaining}`
