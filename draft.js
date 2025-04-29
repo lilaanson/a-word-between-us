@@ -1539,11 +1539,11 @@ const ads = [
 
   adImg.src = randomAd;
   adImg.alt = "Advertisement"; 
-  adImg.style = "width:12.1%;padding-top:10vw;position:fixed"; 
+  adImg.style = "width:12.1%;padding-top:10vw;position:fixed;pointer-events:none;"; 
 
   adImgWide.src = randomAdWide;
   adImgWide.alt = "Advertisement"; 
-  adImgWide.style = "width:100%;margin-top:-80px;"; 
+  adImgWide.style = "width:100%;padding-top:10px;"; 
   
   // Append the img to the ad div
   adDiv.appendChild(adImg);
