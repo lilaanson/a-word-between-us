@@ -841,7 +841,7 @@ let unassignedPosts = [
     pfp: "assets/profile.jpg", 
     category: "questions", 
     tab: "recent", 
-    image:"assets/image2.png", 
+    image:false, 
     responses: "0", 
     time:"11 days ago", 
     comments: [
@@ -1112,7 +1112,7 @@ let unassignedPosts = [
     pfp: "assets/profile.jpg", 
     category: "creepy", 
     tab: "recent", 
-    image:"assets/image2.png", 
+    image:false, 
     responses: "3", 
     time:"27 days ago", 
     comments: [
@@ -1492,6 +1492,70 @@ function assignRandomUsers() {
         return updatedPosts;
     }
 }
+
+const ads = [
+    'assets/ad1.gif',
+    'assets/ad3.gif',
+    'assets/ad4.gif',
+    'assets/ad5.gif',
+    'assets/ad6.gif',
+    'assets/ad7.gif',
+    'assets/ad8.gif',
+    'assets/ad9.gif',
+    'assets/ad10.gif',
+    'assets/ad11.jpg',
+    'assets/ad12.gif',
+    'assets/ad13.gif',
+    'assets/ad14.gif',
+    'assets/ad15.gif',
+  ];
+
+  const adsWide = [
+    'assets/adWide1.gif',
+    'assets/adWide2.jpg',
+    'assets/adWide3.gif',
+    'assets/adWide4.gif',
+    'assets/adWide5.gif',
+    'assets/adWide6.gif',
+    'assets/adWide7.gif',
+    'assets/adWide8.gif',
+    'assets/adWide9.gif',
+    'assets/adWide10.gif',
+    'assets/adWide11.gif',
+  ]
+  
+  // Pick a random ad
+  const randomAd = ads[Math.floor(Math.random() * ads.length)];
+  const randomAdWide = adsWide[Math.floor(Math.random() * adsWide.length)];
+
+  // Create a new div to hold the ad
+  const adDiv = document.createElement('div');
+  const adDivWide = document.createElement('div');
+
+  
+  // Create the img element
+  const adImg = document.createElement('img');
+  const adImgWide = document.createElement('img');
+
+  adImg.src = randomAd;
+  adImg.alt = "Advertisement"; 
+  adImg.style = "width:12.1%;padding-top:10vw;position:fixed"; 
+
+  adImgWide.src = randomAdWide;
+  adImgWide.alt = "Advertisement"; 
+  adImgWide.style = "width:100%;margin-top:-80px;"; 
+  
+  // Append the img to the ad div
+  adDiv.appendChild(adImg);
+  adDivWide.appendChild(adImgWide);
+
+  
+  // Append the ad div to left-nav
+  const leftNav = document.querySelector('.left-nav');
+  leftNav.appendChild(adDiv);
+
+  const rightContent = document.querySelector('.right-content');
+  rightContent.appendChild(adDivWide);
 
 
 
