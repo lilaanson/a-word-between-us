@@ -1555,7 +1555,10 @@ const ads = [
   leftNav.appendChild(adDiv);
 
   const rightContent = document.querySelector('.right-content');
-  rightContent.appendChild(adDivWide);
+  if (rightContent){
+    rightContent.appendChild(adDivWide);
+
+  }
 
 
 
