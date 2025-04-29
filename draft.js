@@ -257,7 +257,7 @@ let curatedPosts = [
         {text: "It is kind of a vague weekly get together. I heard another guy call it bible study and someone else call it band practice. I figured they just kinda switch activites.", isOP: true},
         {text: "Wouldn't you hear them?", isOP: false},
         {text: "Our basement has crazy sound proofing I think", isOP: true},
-        {text: `This reminds me of a "health fad" I was reading about. The website isn't that credible so I thought it was fake. <a href="http://allisinmercury.online/chris/king" target="_blank">Here's the link</a>`, isOP: false},
+        {text: `This reminds me of a "health fad" I was reading about. The website isn't that credible so I thought it was fake. <a href="https://vitalitypost.online/dangerous-new-supplement" target="_blank">Here's the link</a>`, isOP: false},
         {text: "Oh ew. I don't think my dad would fall for a chris king scam, but maybe some of the other guys in the group.", isOP: true},
         {text: `I doubt King would get away with selling anything with blood on it. Even if it is a "supplement"`, isOP: false},
         {text: "Can you peak in on the next poker night?", isOP: false},
