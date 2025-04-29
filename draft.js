@@ -1540,7 +1540,7 @@ const ads = [
 
   adImg.src = randomAd;
   adImg.alt = "Advertisement"; 
-  adImg.style = "width:12.1%;padding-top:10vw;position:fixed;pointer-events:none;"; 
+  adImg.style = "width:12.1%;padding-top:12vw;position:fixed;pointer-events:none;"; 
 
   adImgWide.src = randomAdWide;
   adImgWide.alt = "Advertisement"; 
