@@ -1372,7 +1372,7 @@ but if your uncle showed up it doesnt matter what clothing hes wearing you can s
     responses: "4", 
     time:"9 days ago", 
     comments: [
-        {text: "Here is a screenshot from the app", isOP: true, attachment: "sleepappcrop.png"},
+        {text: "Here is a screenshot from the app", isOP: true, attachment: "assets/sleepappcrop.png"},
         {text: "I've got the same app and I've never heard anything like that. Do you have any roommates or pets who it could've recorded?", isOP: false},
         {text: "My girlfriend spent the night, but she left before I woke up in the morning so I never asked. She doesn’t really snore or talk in her sleep so I didn’t consider her.", isOP: true},  
         {text: "Have you asked her about it?", isOP: false},
@@ -1403,7 +1403,7 @@ but if your uncle showed up it doesnt matter what clothing hes wearing you can s
         {text: "She has diabetes I think", isOP: true},  
         {text: "dude,,", isOP: false},
         {text: "Does she have her location on?", isOP: false, who: "Cerisette"},
-        {text: "Yeah she has snapmaps, why?", isOP: false},
+        {text: "Yeah she has snapmaps, why?", isOP: true},
         {text: "If she thinks you're staying home, it could be worth it to see where she is going.", isOP: false},
         {text: "Alright, I'll ask my DM if we can end the session early", isOP: true},
     
