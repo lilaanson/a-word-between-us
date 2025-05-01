@@ -263,10 +263,9 @@ let curatedPosts = [
         {text: `I doubt King would get away with selling anything with blood on it. Even if it is a "supplement"`, isOP: false},
         {text: "Can you peak in on the next poker night?", isOP: false},
         {text: "Good idea! I'm kinda nervous around the basement but I will try to get a picture on Sunday", isOP: true},
-        {text: "ewwdsfk what?? They're all just standing", isOP: true},
-        {text: "Is that normal for your dad? This is really strange.", isOP: false},
-        {text: "Thats just dad stuff I think", isOP: true},
-        {text: "weird.", isOP: true},
+        {text: "ewwdsfk what?? They're all just standing", isOP: true, attachment:"assets/BasementClip.mp4"},
+        {text: "Is your dad a Pink Floyd fan by chance?", isOP: false},
+        {text: "idfk", isOP: true},
 
 
     ], likes: "3", id: "2"},
@@ -278,7 +277,7 @@ let curatedPosts = [
         {text: "PLEASE", isOP: false}, 
         {text: "You should. I would if I wasn't 5 hours away ;/", isOP: false}, 
         {text: "okokokOK i will. but i am busy all week, ill try to go this weekend", isOP: false, who:"ree-purr"},
-        {text: "i think i am by the tree..", isOP: false, who:"ree-purr"}, 
+        {text: "i think i am by the tree", isOP: false, who:"ree-purr", attachment:"assets/forest1.jpg"}, 
         {text: "WHAT why are you actually doing it", isOP: false}, 
         {text: "finally lol", isOP: false},
         {text: "SHOW A PIC IF UR NOT LYING", isOP: false},
@@ -301,12 +300,17 @@ let curatedPosts = [
         {text: "helloooooo??? <span data-user='Spiritual_Athlete' class='username-text okay-wow-stalking-profiles'>@Spiritual_Athlete</span>", isOP: false}, 
         {text: "Relax y'all. Visit got delayed but I'm heading there today.", isOP: false, who:"Spiritual_Athlete"}, 
         {text: "YAYYY UPDATE ASAP PLZ B)", isOP: false}, 
-        {text: "Okay, I think I'm in the same area.", isOP: false, who:"Spiritual_Athlete"}, 
+        {text: "Okay, I think I'm in the same area.", isOP: false, who:"Spiritual_Athlete", attachment:"assets/forest2.jpg"}, 
         {text: "Fuck this tree. Told y'all it's fake", isOP: false, who:"Spiritual_Athlete", attachment: "assets/TreeSearch2.mp4"}, 
         {text: "hey did the tree just move????", isOP: false}, 
         {text: "wait maybe?", isOP: false}, 
         {text: "DON'T LEAVE TAKE A BETTER VID", isOP: false}, 
         {text: "are you still there? ", isOP: false}, 
+        {text: "I took this video as I left. never fucking going there again.", isOP: false, who:"Spiritual_Athlete", attachment: "assets/TreeAttack.mp4"}, 
+        {text: "fakeee as hell rofl", isOP: false}, 
+        {text: "terrifying", isOP: false}, 
+        {text: "I don't care if you believe me, I know what I saw.", isOP: false, who:"Spiritual_Athlete"}, 
+
 
 
 
