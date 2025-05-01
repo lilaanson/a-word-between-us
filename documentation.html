@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Y2Horror - Project Documentation</title>
+    <link rel="stylesheet" href="https://use.typekit.net/aov2moj.css">
+
     <style>
         /* Base Styles */
         * {
@@ -13,7 +15,7 @@
         }
 
         body {
-            font-family: "Courier New", monospace;
+            font-family: "newbery-sans-pro", sans-serif;
             line-height: 1.6;
             color: #fff;
             background-color: #000;
@@ -47,7 +49,7 @@
         /* Header */
         header {
             background-color: #111;
-            border-bottom: 1px solid #f00;
+            border-bottom: 1px solid #c62734;;
             padding: 1rem;
             text-align: center;
             box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
@@ -56,14 +58,14 @@
         .logo {
             font-family: "Times New Roman", serif;
             font-size: 2.5rem;
-            color: #f00;
+            color: #c62734;;
             text-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
             letter-spacing: 3px;
             text-transform: uppercase;
         }
 
         .subtitle {
-            font-family: "Courier New", monospace;
+            font-family: "newbery-sans-pro", sans-serif;
             font-size: 1rem;
             color: #aaa;
             letter-spacing: 2px;
@@ -99,7 +101,7 @@
         }
 
         nav ul li a:hover {
-            background-color: #f00;
+            background-color: #c62734;;
             color: #000;
         }
 
@@ -120,16 +122,16 @@
         h2 {
             font-family: "Times New Roman", serif;
             font-size: a1.8rem;
-            color: #f00;
+            color: #c62734;;
             margin-bottom: 1rem;
             text-transform: uppercase;
-            border-left: 3px solid #f00;
+            border-left: 3px solid #c62734;;
             padding-left: 0.5rem;
         }
 
         h3 {
             font-size: 1.3rem;
-            color: #f00;
+            color: #c62734;;
             margin: 1.5rem 0 1rem 0;
         }
 
@@ -152,7 +154,7 @@
             background-color: #111;
             padding: 0.1rem 0.3rem;
             border: 1px solid #333;
-            color: #f00;
+            color: #c62734;;
         }
 
         pre {
@@ -162,7 +164,7 @@
             border: 1px solid #333;
             margin-bottom: 1rem;
             font-family: "Courier New", monospace;
-            color: #f00;
+            color: #c62734;;
         }
 
         /* Gallery */
@@ -182,7 +184,7 @@
 
         .gallery-item:hover {
             transform: scale(1.03);
-            border-color: #f00;
+            border-color: #c62734;;
         }
 
         .gallery-item img {
@@ -204,7 +206,7 @@
             text-align: center;
             padding: 1rem;
             color: #666;
-            border-top: 1px solid #f00;
+            border-top: 1px solid #c62734;;
         }
 
         /* Misc Elements */
@@ -238,7 +240,7 @@
 
         th {
             background-color: #111;
-            color: #f00;
+            color: #c62734;;
         }
 
         /* Button */
@@ -256,7 +258,7 @@
         }
 
         .btn:hover {
-            background-color: #f00;
+            background-color: #c62734;;
             color: #000;
         }
 
@@ -282,7 +284,7 @@
 
         .collapsible:after {
             content: '+';
-            color: #f00;
+            color: #c62734;
             font-weight: bold;
         }
 
@@ -300,6 +302,119 @@
             border-right: 1px solid #333;
             border-bottom: 1px solid #333;
         }
+        .welcome {
+            margin:auto;
+    cursor: pointer;
+    width: fit-content;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+    color: #c62734;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: relative;
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+  }
+  
+  /* Create two text copies for the glitch effect */
+  .welcome::before,
+  .welcome::after {
+    content: "ALL IS IN MERCURY";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  /* First distortion layer */
+  .welcome::before {
+    left: -2px;
+    text-shadow: 1px 0 red;
+    animation: static-noise-1 2s infinite linear alternate-reverse;
+    opacity: 0.5;
+  }
+  
+  /* Second distortion layer */
+  .welcome::after {
+    left: 2px;
+    text-shadow: -1px 0 blue;
+    animation: static-noise-2 3s infinite linear alternate-reverse;
+    opacity: 0.3;
+  }
+  
+  /* Simple noise animation 1 */
+  @keyframes static-noise-1 {
+    0% {
+      clip-path: inset(30% 0 68% 0);
+    }
+    20% {
+      clip-path: inset(63% 0 1% 0);
+    }
+    40% {
+      clip-path: inset(43% 0 12% 0);
+    }
+    60% {
+      clip-path: inset(25% 0 63% 0);
+    }
+    80% {
+      clip-path: inset(86% 0 5% 0);
+    }
+    100% {
+      clip-path: inset(93% 0 3% 0);
+    }
+  }
+  
+  /* Simple noise animation 2 */
+  @keyframes static-noise-2 {
+    0% {
+      clip-path: inset(59% 0 43% 0);
+    }
+    20% {
+      clip-path: inset(22% 0 34% 0);
+    }
+    40% {
+      clip-path: inset(49% 0 24% 0);
+    }
+    60% {
+      clip-path: inset(9% 0 77% 0);
+    }
+    80% {
+      clip-path: inset(89% 0 4% 0);
+    }
+    100% {
+      clip-path: inset(20% 0 41% 0);
+    }
+  }
+  
+  /* Add subtle flicker to main text */
+  .welcome {
+    animation: flicker 4s infinite;
+  }
+  
+  @keyframes flicker {
+    0%, 100% {
+      opacity: 1;
+    }
+    32% {
+      opacity: 1;
+    }
+    33% {
+      opacity: 0.9;
+    }
+    34% {
+      opacity: 1;
+    }
+    77% {
+      opacity: 1;
+    }
+    78% {
+      opacity: 0.9;
+    }
+    79% {
+      opacity: 1;
+    }
+  }
 
         /* Media Queries */
         @media screen and (max-width: 768px) {
@@ -319,67 +434,91 @@
 </head>
 <body>
     <header>
-        <div class="logo">ALL IS IN MERCURY</div>
+        <div class="logo welcome">ALL IS IN MERCURY</div>
         <div class="subtitle">CAPSTONE PROJECT DOCUMENTATION</div>
     </header>
 
     <nav>
         <ul>
-            <li><a href="#overview">OVERVIEW</a></li>
-            <li><a href="#inspiration">PHYSICAL</a></li>
-            <li><a href="#design">FUNCTION</a></li>
-            <li><a href="#features">WEBSITE</a></li>
+            <li><a href="#overview">OUR PROJECT</a></li>
+            <li><a href="#inspiration">WEBSITE</a></li>
+            <li><a href="#design">PHYSICAL & NARRATIVE</a></li>
+            <li><a href="#features">PROCESS</a></li>
+
         </ul>
     </nav>
 
     <main>
         <section id="overview">
-            <h2>OVERVIEW</h2>
+            <h2>OUR PROJECT</h2>
             <p>All Is In Mercury is the name of a horror project featuring a mock forum website for the purpose of sharing weird happenings and experiences within the community. The website content and physical display are created with puppets and practical effects.
             </p>
             
             <div class="highlight-box">
-                <h3>h3</h3>
+                <h3>Why?</h3>
                 <ul>
-                    <li><strong>should i put anything</strong> here</li>
+                    <p>The internet is its own medium—a fusion of image, video, sound, and story. <br><br>
+                        Internet experiences aren't new—mysteries and horrors have long lurked in the corners of the web, waiting to be discovered.<br><br>
+                        This is one of those experiences.
+                    </p>
                 </ul>
             </div>
             
-            <img src="/api/placeholder/800/400" alt="Y2Horror Website Homepage Screenshot" class="screenshot">
             
-            <p>text</p>
+            <!-- <p>text</p> -->
         </section>
 
         <section id="inspiration">
-            <h2>Inspiration & Research</h2>
-            <p>This project was inspired by the unique horror storytelling approach that emerged in the early 2000s internet culture. During this formative period of internet history, creepypastas, forum-based horror stories, and "cursed" websites created a new form of digital folklore.</p>
+            <h2>WEBSITE</h2>
+            <!-- <p></p> -->
             
-            <h3>Key Inspirations</h3>
-            <ul>
-                <li>Early creepypastas and forum horror stories</li>
-                <li>Alternate reality games (ARGs) of the early 2000s</li>
-                <li>The aesthetic of GeoCities and Angelfire websites</li>
-                <li>"Cursed" image and video content that circulated in the early web</li>
-                <li>Glitch art and datamoshing techniques</li>
-                <li>Low-fi web graphics and the deliberate use of compression artifacts</li>
-            </ul>
+            <h3>Setting the scene</h3>
+                <p>Our design inspiration comes from early 2000s websites like Myspace and Neocities. Both of these resources allow users to customize their virtual space, so the designs were very distinct, themed, and personal.<br><br>
+                    We lean into beginner HTML/CSS/JS styles to reflect the story of a small creator just building something for himself and a few friends—something that accidentally grew into a tight-knit community.</p>
+
             
-            <button class="collapsible">Research Resources</button>
-            <div class="content">
-                <p>The project involved extensive research into:</p>
-                <ul>
-                    <li>Web design trends from 1999-2005</li>
-                    <li>Early Flash animation horror content</li>
-                    <li>Horror storytelling techniques unique to digital media</li>
-                    <li>Technical limitations of early 2000s browsers</li>
-                    <li>Visual language of early internet horror</li>
-                </ul>
-            </div>
+            <img src="assets/documentation/introBetter.gif" alt="intro screen" width="100%">
+
+            <h3>Interactive elements</h3>
+            <p>The goal is to make each user feel like they're having a unique experience—one that's different even from the person who visited the site just before them. To start, the site prompts them to create an account.
+            </p>
+            <img src="assets/documentation/login.gif" alt="intro screen" width="100%">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p>The chat feature occasionally receives strange messages—random chatter, chainmail, and even complaints about the chainmail. Users can send their own messages and will occasionally get a response, adding to the unpredictability of the experience.
+            </p>
+            <img src="assets/documentation/chatAndResponseGif.gif" alt="chatbox" width="100%">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p>The website is filled with content that branches away from the main storylines, inspired by old Reddit horror pages. Some entries are cryptic and unsettling, others are full-fledged stories. To help users navigate this chaotic archive, a “See Similar” section surfaces related content by matching keywords—offering a thread to follow through the madness.
+            </p>
+            <img src="assets/documentation/fillerSimilarAndCommentGif.gif" alt="filler" width="100%">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p> 
+                Then there are the main storylines. The deeper the user explores the site, the more they begin to notice recurring usernames and multi-part posts that thread together, revealing interconnected narratives and hauntingly consistent themes.
+            </p>
+
+            <img src="assets/documentation/storyline.gif" alt="storyline" width="100%">
+
+
         </section>
 
         <section id="design">
-            <h2>Design & Aesthetics</h2>
-            <p>The visual design of Y2Horror deliberately eschews modern web design principles in favor of an authentic early-2000s aesthetic. The project employs careful use of dated design elements without becoming a parody.</p>
+            <h2>PHYSICAL & NARRATIVE</h2>
+            <!-- <p>The visual design of Y2Horror deliberately eschews modern web design principles in favor of an authentic early-2000s aesthetic. The project employs careful use of dated design elements without becoming a parody.</p>
             
             <h3>Visual Elements</h3>
             <ul>
@@ -393,55 +532,20 @@
             <h3>User Experience Design</h3>
             <p>The user experience was designed to be deliberately disorienting at times, with navigation that sometimes feels broken or leads to unexpected places. This approach enhances the horror elements by creating a sense of digital unease.</p>
             
-            <img src="/api/placeholder/800/400" alt="Design Elements Showcase" class="screenshot">
+            <img src="/api/placeholder/800/400" alt="Design Elements Showcase" class="screenshot"> -->
         </section>
 
         <section id="features">
-            <h2>Key Features</h2>
+            <h2>PROCESS</h2>
             
-            <h3>Interactive Storytelling</h3>
-            <p>The project tells a fragmented horror narrative through scattered content across various "pages" of the website. Users must explore to piece together the story.</p>
+            <h3>Website iterations</h3>
+            <p>ermmm</p>
             
-            <h3>"Cursed" Browser Effects</h3>
-            <p>Special JavaScript effects simulate browser glitches, weird scrolling behavior, and page elements that seem to "watch" or follow the user.</p>
+            <h3>Narrative planning</h3>
+            <p>well</p>
             
-            <h3>Hidden Content</h3>
-            <p>The site contains numerous secrets only discoverable through specific user actions, viewing page source code, or solving embedded puzzles.</p>
-            
-            <h3>Reactive Environment</h3>
-            <p>Elements of the site react to user behavior, creating the impression that the website itself is sentient or haunted.</p>
-            
-            <h3>Era-Authentic Multimedia</h3>
-            <p>Audio and video content formatted to mimic the quality and style of early 2000s digital media.</p>
-            
-            <button class="collapsible">Secret Feature Documentation (Spoilers)</button>
-            <div class="content">
-                <ul>
-                    <li><strong>Hidden Visitor Counter:</strong> Tracks actual visitors but occasionally jumps to ominous numbers</li>
-                    <li><strong>Cursor Anomalies:</strong> Cursor occasionally duplicates or lags when hovering specific elements</li>
-                    <li><strong>Message Embedding:</strong> Hidden text in page metadata and HTML comments</li>
-                    <li><strong>Webcam Spoof:</strong> Page that falsely claims to access the user's webcam</li>
-                    <li><strong>Audio Trigger:</strong> Hidden audio that plays at specific navigation points</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="technical">
-            <h2>Technical Implementation</h2>
-            <p>While the website appears outdated by design, it's built using a combination of modern web technologies that simulate the look and behavior of early 2000s web pages.</p>
-            
-            <h3>Front-End Technologies</h3>
-            <ul>
-                <li><strong>HTML5:</strong> Core structure with deliberate use of deprecated-looking markup</li>
-                <li><strong>CSS3:</strong> Used to recreate early 2000s styling without actually using outdated methods</li>
-                <li><strong>JavaScript:</strong> Powers the interactive elements and "glitch" effects</li>
-            </ul>
-            
-            <h3>Back-End Technologies</h3>
-            <ul>
-                <li><strong>PHP:</strong> Handles user interaction tracking and dynamic content generation</li>
-                <li><strong>Local Storage:</strong> Tracks user progress through the experience</li>
-            </ul>
+            <h3>hiii</h3>
+            <p>hii</p>
             
             <h3>Code Example: Glitch Effect</h3>
             <pre>
