@@ -8,6 +8,12 @@
 
     <style>
         /* Base Styles */
+        .flex{
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            column-gap: 60px;
+        }
         * {
             margin: 0;
             padding: 0;
@@ -136,8 +142,15 @@
         }
 
         p {
+
             margin-bottom: 1rem;
             text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+        }
+
+        .red-line{
+            border-top: 1px solid #c62734;
+            padding-top:20px;
+
         }
 
         ul, ol {
@@ -243,6 +256,42 @@
             color: #c62734;;
         }
 
+        
+
+        .carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+
+    /* Add a fixed height and hide overflow */
+    height: 400px; /* Adjust as needed */
+    overflow: hidden;
+    position: relative;
+  }
+  .text{
+    height: 500px; /* Adjust as needed */
+
+  }
+
+  .carousel img {
+    max-height: 100%;
+    width: auto;
+    object-fit: contain; /* Ensures entire image is visible */
+  }
+
+  .carousel button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #c62734;
+    z-index: 1;
+  }
+
         /* Button */
         .btn {
             display: inline-block;
@@ -313,6 +362,12 @@
     text-transform: uppercase;
     position: relative;
     text-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+  }
+  .fake-inline{
+    display:inline;
+  }
+  img{
+    margin-top:15px;
   }
   
   /* Create two text copies for the glitch effect */
@@ -443,7 +498,8 @@
             <li><a href="#overview">OUR PROJECT</a></li>
             <li><a href="#inspiration">WEBSITE</a></li>
             <li><a href="#design">PHYSICAL & NARRATIVE</a></li>
-            <li><a href="#features">PROCESS</a></li>
+            <li><a href="#features">IN ACTION</a></li>
+            <li><a href="#challenges">TEAM</a></li>
 
         </ul>
     </nav>
@@ -472,42 +528,80 @@
             <h2>WEBSITE</h2>
             <!-- <p></p> -->
             
-            <h3>Setting the scene</h3>
-                <p>Our design inspiration comes from early 2000s websites like Myspace and Neocities. Both of these resources allow users to customize their virtual space, so the designs were very distinct, themed, and personal.<br><br>
+            <h3>Setting the Scene</h3>
+            <p>Our design inspiration comes from early 2000s websites like Myspace and Neocities. Both of these resources allow users to customize their virtual space, so the designs were very distinct, themed, and personal.<br><br>
                     We lean into beginner HTML/CSS/JS styles to reflect the story of a small creator just building something for himself and a few friends—something that accidentally grew into a tight-knit community.</p>
 
             
             <img src="assets/documentation/introBetter.gif" alt="intro screen" width="100%">
 
-            <h3>Interactive elements</h3>
+            <br>
+            <br>
+            <br>
+
+            <h3>Design Iterations</h3>
+            <h4>Early Mockups</h4>
+            <p>The earliest designs were mainly for testing what functions could appear where rather than on the actual design.</p>
+            <img src="assets/documentation/earlySite/image1.png" alt="intro screen" width="50%">
+
+            <br>
+            <br>
+            <br>
+
+            <p>The first significant design matched an early 2000s cyber aesthetic and was created on figma and then interated on within the HTML, CSS, and JS. Although we moved away from this design, it helped create the spacing which remains relatively similar.</p>
+
+            <img src="assets/documentation/earlySite/image2.png" alt="intro screen" width="45%">
+            <img src="assets/documentation/earlySite/image10.png" alt="intro screen" width="45%">
+
+            <br>
+            <br>
+            <br>
+
+            <h3>Development Challenges</h3>            
+            <table>
+                <tr>
+                    <th>Challenge</th>
+                    <th>Solution</th>
+                </tr>
+                <tr>
+                    <td>Creating authentic "dated" aesthetics without overly frustrating users</td>
+                    <td>Conducted user testing with a range of aesthetics looking for a middle ground where users wanted to stay on the site but still felt it was oudated</td>
+                </tr>
+                <tr>
+                    <td>Simulating a site with multiple users</td>
+                    <td>Developed chat scripts and utilized localStorage to make the user feel as if they are creating an account, chatting, and adding friends</td>
+                </tr>
+                <tr>
+                    <td>Populating potentially hundreds of post pages</td>
+                    <td>Implemented dynamic post rendering by parsing URL query parameters and data-id attributes to load new info</td>
+                </tr>
+                
+            </table>
+
+            <h3>Final Gifs</h3>
             <p>The goal is to make each user feel like they're having a unique experience—one that's different even from the person who visited the site just before them. To start, the site prompts them to create an account.
             </p>
             <img src="assets/documentation/login.gif" alt="intro screen" width="100%">
             <br>
             <br>
             <br>
-            <br>
-            <br>
-            <br>
+
             <p>The chat feature occasionally receives strange messages—random chatter, chainmail, and even complaints about the chainmail. Users can send their own messages and will occasionally get a response, adding to the unpredictability of the experience.
             </p>
             <img src="assets/documentation/chatAndResponseGif.gif" alt="chatbox" width="100%">
             <br>
             <br>
             <br>
-            <br>
-            <br>
-            <br>
+
+
             <p>The website is filled with content that branches away from the main storylines, inspired by old Reddit horror pages. Some entries are cryptic and unsettling, others are full-fledged stories. To help users navigate this chaotic archive, a “See Similar” section surfaces related content by matching keywords—offering a thread to follow through the madness.
             </p>
             <img src="assets/documentation/fillerSimilarAndCommentGif.gif" alt="filler" width="100%">
             <br>
             <br>
             <br>
-            <br>
-            <br>
-            <br>
-            <p> 
+
+            <p>
                 Then there are the main storylines. The deeper the user explores the site, the more they begin to notice recurring usernames and multi-part posts that thread together, revealing interconnected narratives and hauntingly consistent themes.
             </p>
 
@@ -518,25 +612,458 @@
 
         <section id="design">
             <h2>PHYSICAL & NARRATIVE</h2>
-            <!-- <p>The visual design of Y2Horror deliberately eschews modern web design principles in favor of an authentic early-2000s aesthetic. The project employs careful use of dated design elements without becoming a parody.</p>
+            <h3>Narrative</h3>
+            <h4>Inspiration</h4>
+            <p>Initial sketches and discussions were used to brainstorm for the narrative. Playlists were made to capture the aesthetic and themes I hoped to capture.
+            </p>
+
+            <img src="assets/documentation/Narrative/playlist1.JPG" alt="intro screen" width="30%">
+            <img src="assets/documentation/Narrative/playlist2.JPG" alt="intro screen" width="30%">
+            <img src="assets/documentation/Narrative/playlist3.JPG" alt="intro screen" width="30%">
+            <br>
+            <br>
+            <br>
+
+
+            <h4>Mapping it Out</h4>
+            <p>Rough storyboards were drawn out to communicate the intended structure of the story.
+
+            </p>
+            <img src="assets/documentation/Narrative/storyboard1.jpg" alt="intro screen" width="45%">
+            <img src="assets/documentation/Narrative/storyboard2.jpg" alt="intro screen" width="45%">
+            <br>
+            <br>
+            <br>
+            <p>These storyboards were continued in more depth using programs such as FigJam and Obsidian.</p>
+
+            <div class="carousel">
+              <button class="prev">&#10094;</button>
+              <img id="carousel-image" src="assets/documentation/Narrative/figjam1.jpg" alt="Storyboard" width="90%">
+              <button class="next">&#10095;</button>
+            </div>
+            <br>
+            <br>
+            <br>
+
+            <h4>Dialogue</h4>
+            <p>A series of profiles were created using the Discord bot <a href="https://tupperbox.app/">Tupperbox</a> to represent the different characters in the story, along with other functional elements. The dialogue and organization of the posts featured could then be assembled as mock-posts in discord.
+
+            </p>
+
+            <br>
+            <br>
+            <br>
+
+
+            <h4>Blood Boy Dialogue</h4>
+
+            <div class="carousel text">
+                <button class="prev2">&#10094;</button>
+                <img id="carousel-image2" src="assets/documentation/Narrative/diaA1.JPG" alt="Storyboard" width="90%">
+                <button class="next2">&#10095;</button>
+              </div>
+
+
+            <br>
+            <br>
+            <br>
+
+            <h4>Poker Night Dialogue</h4>
+
+
+
+            <img src="assets/documentation/Narrative/diaB1.JPG" alt="intro screen" width="70%">
+            <img src="assets/documentation/Narrative/diaB2.JPG" alt="intro screen" width="70%">
+
+
+            <br>
+            <br>
+            <br>
+
+            <h4>Lover's Roots Dialogue</h4>
+
+            <img src="assets/documentation/Narrative/diaC1.JPG" alt="intro screen" width="70%">
+            <img src="assets/documentation/Narrative/diaC2.JPG" alt="intro screen" width="70%">
+
+
+            <br>
+            <br>
+            <br>
+
+            <h3>"Blood Boy" Story</h3>
+            <h4>Planning</h4>
+            <p>Several mockups were made to plan the composition of the final video.
+
+            </p>
+
+            <img src="assets/documentation/Blood Boy/mockup1.jpg" alt="intro screen" width="45%">
+            <img src="assets/documentation/Blood Boy/mockup2.jpg" alt="intro screen" width="45%">
+            <br>
+            <br>
+            <br>
+
+
+            <h4>Physical Elements: Electronics</h4>
+            <p>A water pump component was controlled by an Arduino Uno to pump water on and off at a repeated interval. Adaptors were 3D printed with TPU to attach the tubing to the water pump.
+            </p>
+
+            <img src="assets/documentation/Blood Boy/pump1.jpg" alt="intro screen" width="45%">
+            <img src="assets/documentation/Blood Boy/pump2.jpg" alt="intro screen" width="45%">
+            <img src="assets/documentation/Blood Boy/pump3.jpg" alt="intro screen" width="45%">
+            <img src="assets/documentation/Blood Boy/pump4.JPG" alt="intro screen" width="45%">
+            <video width="400" height="360" controls>
+                <source src="assets/documentation/Blood Boy/pump5.MOV" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <video width="400" height="360" controls>
+                <source src="assets/documentation/Blood Boy/pump6.MOV" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <img src="assets/documentation/Blood Boy/pump7.JPG" alt="intro screen" width="45%">
+              <video width="640" height="360" controls>
+                <source src="assets/documentation/Blood Boy/pump8.MOV" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            <br>
+            <br>
+            <br>
+
+            <h4>Physical Elements: Body</h4>
+            <p>The silhouette of a volunteer was traced onto folded fabric that was then cut out and sewn together. Prior to sewing the dummy body shut, a wire skeleton was sculpted and placed inside so that the body could be posed, and finally the body was stuffed. A plastic tub was combined with tubing to store and pump the fake blood through the tubings that went inside the dummy’s arms and neck and out into blood bags.
+
+            </p>
+
+            <img src="assets/documentation/Blood Boy/body1.jpg" alt="intro screen" width="45%">
+            <img src="assets/documentation/Blood Boy/body2.jpg" alt="intro screen" width="45%">
+
+            <br>
+            <br>
+            <br>
+
+            <h4>Physical Elements: Blood</h4>
+            <p>Sheets of plastic from Ziploc bags were cut down and ironed together to make blood bags. Duct tape labels were placed on each bag with the symbols for “life” “blood” and “mercury” from alchemy written along them. SFX makeup blood mixed with water was used to create fake blood.
+
+
+            </p>
+
+            <img src="assets/documentation/Blood Boy/bag1.JPG" alt="intro screen" width="30%">
+            <img src="assets/documentation/Blood Boy/bag2.JPG" alt="intro screen" width="30%">
+            <img src="assets/documentation/Blood Boy/bag3.JPG" alt="intro screen" width="30%">
+
+            <br>
+            <br>
+            <br>
+
+            <h4>Physical Elements: Makeup</h4>
+            <p>SFX makeup was applied to a volunteer’s back to mimic the bruises that come after donating blood.
+
+
+
+            </p>
+
+            <img src="assets/documentation/Blood Boy/bruise1.png" alt="intro screen" width="50%">
+
+
+            <br>
+            <br>
+            <br>
+
+
+            <h4>Digital Elements: Models</h4>
+            <p>Two adaptors were created to attach the tubing to the water pump component; one to accommodate for two tubes, and a second to accommodate for three tubes. All models are made from scratch.
+            </p>
+
+            <img src="assets/documentation/Blood Boy/Yadapt1.JPG" alt="intro screen" width="45%">
+            <img src="assets/documentation/Blood Boy/yadapt2.JPG" alt="intro screen" width="45%">
+            <img src="assets/documentation/Blood Boy/yadapt3.JPG" alt="intro screen" width="45%">
+            <img src="assets/documentation/Blood Boy/yadapt4.JPG" alt="intro screen" width="45%">
+            <img src="assets/documentation/Blood Boy/yadapt5.JPG" alt="intro screen" width="45%">
+            <img src="assets/documentation/Blood Boy/yadapt6.JPG" alt="intro screen" width="45%">
+            <img src="assets/documentation/Blood Boy/3adapt1.JPG" alt="intro screen" width="45%">
+            <img src="assets/documentation/Blood Boy/3adapt2.JPG" alt="intro screen" width="45%">
+            <img src="assets/documentation/Blood Boy/3adapt3.JPG" alt="intro screen" width="45%">
+            <img src="assets/documentation/Blood Boy/3adapt4.JPG" alt="intro screen" width="45%">
+            <img src="assets/documentation/Blood Boy/3adapt5.JPG" alt="intro screen" width="45%">
+            <img src="assets/documentation/Blood Boy/3adapt6.JPG" alt="intro screen" width="45%">
+
+
+            <br>
+            <br>
+            <br>
+
+            <h4>Digital Elements: Edits</h4>
+            <p>Fake text, snapchat, and app pictures were created with photoshop.
+
+            </p>
+
+            <img src="assets/documentation/Blood Boy/final1.jpeg" alt="intro screen" width="30%">
+            <img src="assets/documentation/Blood Boy/final2.png" alt="intro screen" width="30%">
+            <img src="assets/documentation/Blood Boy/final3.png" alt="intro screen" width="30%">
+
+            <br>
+            <br>
+            <br>
+
+            <h4>Digital Elements: Footage</h4>
+            <p>A group of volunteers were assembled to create a party scene where various shots originated from. In a different location, the body was posed on a bed with the pump powered on to capture that shot.
+
+
+            </p>
+
+            <video width="640" height="360" controls>
+                <source src="assets/documentation/Blood Boy/vid1.mov" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>              <video width="640" height="360" controls>
+                <source src="assets/documentation/Blood Boy/vid2.mov" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+
+            <br>
+            <br>
+            <br>
+
+            <h3>"Poker Night" Story</h3>
+            <h4>Planning</h4>
+            <p>Various sketches and mockups were created to convey the differing web aesthetics.
+
+
+            </p>
+
+            <img src="assets/documentation/Poker Night/mockup1.png" alt="intro screen" width="45%">
+            <img src="assets/documentation/Poker Night/mockup2.png" alt="intro screen" width="45%">
+            <img src="assets/documentation/Poker Night/mockup3.png" alt="intro screen" width="45%">
+            <img src="assets/documentation/Poker Night/mockup4.JPG" alt="intro screen" width="45%">
+
+            <br>
+            <br>
+            <br>
+
+            <h4>Physical Elements</h4>
+            <p>The organs from a <a href="https://www.thingiverse.com/thing:258112/files">Frog Dissection Kit</a> model were printed with TPU and then painted with spray paint and acrylic paints. While these organs did not make it into the final website, they were placed in specimen jars and used in the final display.
+
+
+            </p>
+
+            <img src="assets/documentation/Poker Night/organs1.jpg" alt="intro screen" width="45%">
+            <img src="assets/documentation/Poker Night/organs2.jpg" alt="intro screen" width="45%">
+
+
+            <br>
+            <br>
+            <br>
+
             
-            <h3>Visual Elements</h3>
-            <ul>
-                <li><strong>Color Scheme:</strong> High-contrast colors, monochromatic text on black backgrounds, red accents for warnings and scares</li>
-                <li><strong>Typography:</strong> System fonts like Times New Roman and Courier, deliberately pixelated text</li>
-                <li><strong>Layout:</strong> Fixed-width layouts, table-based design, frameset structure in certain sections</li>
-                <li><strong>Graphics:</strong> Low-resolution JPEGs, animated GIFs, deliberate compression artifacts</li>
-                <li><strong>UI Elements:</strong> Windows 98/XP inspired buttons and dialogs</li>
-            </ul>
-            
-            <h3>User Experience Design</h3>
-            <p>The user experience was designed to be deliberately disorienting at times, with navigation that sometimes feels broken or leads to unexpected places. This approach enhances the horror elements by creating a sense of digital unease.</p>
-            
-            <img src="/api/placeholder/800/400" alt="Design Elements Showcase" class="screenshot"> -->
+            <h4>Digital Elements: Podcast</h4>
+            <p>Volunteers recorded lines from a script and were photographed for website visuals. The pictures were edited to add a cartoonish intensity to them. A fake ad banner was created as well.
+
+
+
+            </p>
+
+            <img src="assets/documentation/Poker Night/pod1.jpg" alt="intro screen" width="45%">
+            <img src="assets/documentation/Poker Night/pod2.jpg" alt="intro screen" width="45%">
+            <img src="assets/documentation/Poker Night/final1.png" alt="intro screen" width="30%">
+            <img src="assets/documentation/Poker Night/final2.png" alt="intro screen" width="10%">
+            <img src="assets/documentation/Poker Night/final3.png" alt="intro screen" width="45%">
+
+
+
+            <br>
+            <br>
+            <br>
+
+            <h4>Digital Elements: Footage</h4>
+            <p>Several volunteers were recorded while performing a gesture of their choosing (they chose one that references Pink Floyd).
+            </p>
+
+            <video width="640" height="360" controls>
+                <source src="assets/documentation/Poker Night/vid1.MOV" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>     
+            <br>
+            <br>
+            <br>
+
+
+            <h3>"Lover's Roots" Story</h3>
+            <h4>Planning</h4>
+            <p>Mockups were made to convey the design for the physical effect, as well as the urban legend image.
+            </p>
+
+            <img src="assets/documentation/Lover_s Roots/Sketch1.jpg" alt="intro screen" width="45%">
+            <img src="assets/documentation/Lover_s Roots/mockup1.jpg" alt="intro screen" width="45%">
+            <img src="assets/documentation/Lover_s Roots/render1.png" alt="intro screen" width="45%">
+            <img src="assets/documentation/Lover_s Roots/render2.png" alt="intro screen" width="45%">
+
+            <br>
+            <br>
+            <br>
+
+            <h4>Physical Elements: Mold Making</h4>
+            <p>An alginate mold was made of a volunteer’s face, with a plaster and gauze mother mold. A face cast was then made with plaster. A new mold was made of the plaster cast, using <a href="https://bbdino.com/products/bbdino-super-elastic-silicone-mold-making-rubber-platinum-1-gallon-kit?srsltid=AfmBOor1_Smy7quWLQokRYyjG8G9MQHQ8x7FmPVOazqvG5TyAjJwJXWo">BBDINO Silicone</a>. The final cast was made with liquid latex and strips of an absorbent fabric to prevent tearing, and the cured silicone was coated in baby powder to prevent sticking. The cast was colored using SFX makeup.
+
+            </p>
+
+            <img src="assets/documentation/Lover_s Roots/mold1.jpg" alt="intro screen" width="30%">
+            <img src="assets/documentation/Lover_s Roots/mold2.jpg" alt="intro screen" width="30%">
+            <img src="assets/documentation/Lover_s Roots/mold3.jpg" alt="intro screen" width="30%">
+            <img src="assets/documentation/Lover_s Roots/mold4.jpg" alt="intro screen" width="30%">
+            <img src="assets/documentation/Lover_s Roots/mold5.jpg" alt="intro screen" width="30%">
+            <img src="assets/documentation/Lover_s Roots/mold6.jpg" alt="intro screen" width="30%">
+            <img src="assets/documentation/Lover_s Roots/cast1.png" alt="intro screen" width="30%">
+            <img src="assets/documentation/Lover_s Roots/cast2.jpg" alt="intro screen" width="30%">
+            <img src="assets/documentation/Lover_s Roots/cast3.jpg" alt="intro screen" width="30%">
+            <img src="assets/documentation/Lover_s Roots/cast4.jpg" alt="intro screen" width="30%">
+            <img src="assets/documentation/Lover_s Roots/cast5.jpg" alt="intro screen" width="30%">
+
+
+
+            <br>
+            <br>
+            <br>
+
+            <h4>Physical Elements: Moving Arm</h4>
+            <p>Dowels had holes drilled through the side and into the top of them allowing string to be looped through and secured, effectively making the joints/structure of the moving arm. A tube was sewn and filled with weighted pellets, then sewn off again to make two separate weights, which were then attached to the ends of each dowel, adding weight to the arm’s movement. Foam pieces were carved to fit the weights, and all elements were attached.
+
+
+            </p>
+
+            <img src="assets/documentation/Lover_s Roots/arm1.jpg" alt="intro screen" width="30%">
+            <img src="assets/documentation/Lover_s Roots/arm2.jpg" alt="intro screen" width="30%">
+            <img src="assets/documentation/Lover_s Roots/arm3.jpg" alt="intro screen" width="30%">
+            <img src="assets/documentation/Lover_s Roots/arm4.jpg" alt="intro screen" width="30%">
+            <img src="assets/documentation/Lover_s Roots/arm5.jpg" alt="intro screen" width="30%">
+     
+
+
+
+            <br>
+            <br>
+            <br>
+
+            <h4>Physical Elements: Tree</h4>
+            <p>A wooden structure was made to ensure the size of the tree stump, and then chicken wire was placed to ensure the shape. A paper-mache like technique was used to cover the frame in cheap fabric and paper. The clay purchased was quite tough, and needed to be melted and mixed with petroleum jelly before it could be worked with. While in a liquid state, clay was placed over the paper-mache base, providing thickness and texture. Clay that had begun to cool was placed into the stamp mold and then along the tree stump. Once the tree was fully covered, it was spray painted, and some colorful details were added with SFX makeup. Foam was sculpted and painted to create a face, arm, and shoulder (the shoulder also acted as an anchor for the movement) to be added to the stump. Clay details were removed so that the foam pieces could be glued to the stump, and then another layer of paint was added all over to ensure consistent coloring. Fishing line was secured to the joints of the arm to allow easy control of the movement. The previously cast latex face was added to the foam base. Once all elements were secured, an uneven surface in the dirt was created for the stump to be placed on and partially buried. Organic elements such as grass and flowers were added to complete the look.
+            </p>
+
+            <img src="assets/documentation/Lover_s Roots/tree1.jpg" alt="intro screen" width="30%">
+            <img src="assets/documentation/Lover_s Roots/tree2.jpg" alt="intro screen" width="30%">
+            <img src="assets/documentation/Lover_s Roots/tree3.jpg" alt="intro screen" width="30%">
+            <img src="assets/documentation/Lover_s Roots/tree4.jpg" alt="intro screen" width="30%">
+            <img src="assets/documentation/Lover_s Roots/tree5.jpg" alt="intro screen" width="30%">
+            <img src="assets/documentation/Lover_s Roots/tree6.jpg" alt="intro screen" width="30%">
+            <img src="assets/documentation/Lover_s Roots/tree7.jpg" alt="intro screen" width="30%">
+            <img src="assets/documentation/Lover_s Roots/tree8.jpg" alt="intro screen" width="30%">
+            <img src="assets/documentation/Lover_s Roots/tree9.jpg" alt="intro screen" width="30%">
+            <img src="assets/documentation/Lover_s Roots/tree10.jpg" alt="intro screen" width="30%">
+            <img src="assets/documentation/Lover_s Roots/tree11.jpg" alt="intro screen" width="30%">
+
+            <video width="640" height="360" controls>
+                <source src="assets/documentation/Lover_s Roots/tree12.MOV" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>              <video width="640" height="360" controls>
+                <source src="assets/documentation/Lover_s Roots/tree13.MOV" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>  
+            <br>
+            <br>
+            <br>
+
+            <h4>Digital Elements</h4>
+            <p>A picture of the final stump effect was edited and paired with the urban legend poem to create the post that would be shared.
+
+
+
+            </p>
+
+            <img src="assets/documentation/Lover_s Roots/final1.JPG" alt="intro screen" width="45%">
+            <img src="assets/documentation/Lover_s Roots/final2.png" alt="intro screen" width="45%">
+
+     
+
+
+
+            <br>
+            <br>
+            <br>
+
+
+            <h3>Display</h3>
+            <p>A laptop was displayed on an old desk, where it was surrounded by decorations and the desk drawers were filled with visually interesting items that related to the narrative.
+
+            </p>
+
+            <img src="assets/documentation/Display/full1.jpg" alt="intro screen" width="45%">
+            <img src="assets/documentation/Display/full2.jpg" alt="intro screen" width="45%">
+            <img src="assets/documentation/Display/draw1.jpg" alt="intro screen" width="45%">
+            <img src="assets/documentation/Display/draw2.jpg" alt="intro screen" width="45%">
+            <img src="assets/documentation/Display/draw3.jpg" alt="intro screen" width="45%">
+            <img src="assets/documentation/Display/draw4.jpg" alt="intro screen" width="45%">
+
+  
+
+            <br>
+            <br>
+            <br>
+
+            <h4>Layout: Framed Pictures</h4>
+            <p>Old pictures of two featured volunteers were edited to look sun/water damaged, and then displayed in frames.
+
+
+            </p>
+
+            <img src="assets/documentation/Display/pic1.png" alt="intro screen" width="45%">
+            <img src="assets/documentation/Display/pic2.png" alt="intro screen" width="45%">
+
+
+  
+
+            <br>
+            <br>
+            <br>
+
+            <h4>Layout: Head in a Vase</h4>
+            <p>To display the details of the tree stump effect, the face and bark casts were placed inside of a frosted vase to create the effect of a head being inside the vase.
+
+
+            </p>
+
+            <img src="assets/documentation/Display/head1.jpg" alt="intro screen" width="45%">
+            <img src="assets/documentation/Display/head2.jpg" alt="intro screen" width="45%">
+            <img src="assets/documentation/Display/head3.jpg" alt="intro screen" width="45%">
+            <img src="assets/documentation/Display/head4.jpg" alt="intro screen" width="45%">
+            <img src="assets/documentation/Display/head5.jpg" alt="intro screen" width="45%">
+
+
+  
+
+            <br>
+            <br>
+            <br>
+
+        
         </section>
 
         <section id="features">
-            <h2>PROCESS</h2>
+            <h2>IN ACTION</h2>
+
+            <img src="assets/documentation/Display/people3.jpg" alt="intro screen" width="45%">
+            <img src="assets/documentation/Display/people6.jpg" alt="intro screen" width="45%">
+
+
+            <br>
+            <br>
+            <br>
+            <h3>Trailer Video</h3>
+            <iframe 
+            src="https://player.vimeo.com/video/1081351617" 
+            width="640" 
+            height="360" 
+            frameborder="0" 
+            allow="autoplay; fullscreen; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+
+            <!-- <h2>IN ACTION</h2>
             
             <h3>Website iterations</h3>
             <p>ermmm</p>
@@ -582,85 +1109,46 @@ function createGlitchEffect(element) {
     
     // Apply glitch randomly
     setInterval(applyGlitch, 2000);
-}</pre>
+}</pre> -->
         </section>
 
         <section id="challenges">
-            <h2>Development Challenges</h2>
-            <p>Creating an authentic 2000s web horror experience while using modern development practices presented several unique challenges:</p>
+            <h2>TEAM</h2>
+            <div class="flex">
+            <div>
+            <h3>Ashley Stafford</h3>
+            <p>Ashley was responsible for the physical effects, video production, and narrative of the project. Their inspiration for the story came from a variety of horror projects, such as ARGs and movies, that are referenced in bits and pieces all throughout the project. Many of the effects were designed with the intention to provide experience with mold making, electronics, and puppetry, and as a result Ashley’s experience with such topics is greatly enhanced. With this project has come a variety of portfolio pieces that showcase Ashley’s ability to work with diverse materials in novel ways, creating engaging and innovative visuals to bring the narrative to life. 
+            </p>
+            </div>
+            <img src="assets/documentation/Ash.jpg" width="50%">
+            </div>
+            <br>
+            <br>
+            <br>
+  
+            <div class="flex">
+            <img src="assets/documentation/lila.jpeg" width="50%">
+            <div>
+            <h3>Lila Anson</h3>
+
+            <p>Lila was responsible for the technical development, user interaction design, and website architecture of the project. She built the forum-based web experience from scratch using HTML, CSS, and JavaScript, implementing subtle unsettling elements and designs to support the horror narrative. Throughout the process, Lila navigated challenges related to data binding, handing large amounts of media, and simulating a functional yet eerie interface. The project became a space to deepen her understanding of JavaScript and overall web development while crafting a uniquely immersive digital experience.
+            </p>
+            </div>
+            </div>
+            <br>
+            <br>
+            <br>
+
+
             
-            <table>
-                <tr>
-                    <th>Challenge</th>
-                    <th>Solution</th>
-                </tr>
-                <tr>
-                    <td>Creating authentic "dated" aesthetics without poor usability</td>
-                    <td>Carefully balanced nostalgic design elements with enough modern usability to prevent frustration</td>
-                </tr>
-                <tr>
-                    <td>Simulating browser quirks without actual browser bugs</td>
-                    <td>Created JavaScript routines that mimic the behavior of old browser rendering issues</td>
-                </tr>
-                <tr>
-                    <td>Making intentional "broken" features while maintaining site stability</td>
-                    <td>Implemented controlled chaos - elements that appear broken but function as designed</td>
-                </tr>
-                <tr>
-                    <td>Creating "unsettling" content while maintaining accessibility</td>
-                    <td>Added content warnings and escape options while preserving the horror elements</td>
-                </tr>
-                <tr>
-                    <td>Balancing nostalgic references with original content</td>
-                    <td>Created original story elements that pay homage to early web horror without directly copying</td>
-                </tr>
-            </table>
             
-            <h3>Accessibility Considerations</h3>
-            <p>Despite the intentionally "broken" aesthetic, efforts were made to ensure the site remains accessible:</p>
-            <ul>
-                <li>All disturbing content is preceded by warnings</li>
-                <li>Alternative navigation options for users who can't engage with the primary interface</li>
-                <li>Escape buttons on pages with intense effects</li>
-                <li>All critical content remains accessible even when visual effects are active</li>
-            </ul>
+          
         </section>
 
-        <section id="gallery">
-            <h2>Project Gallery</h2>
-            
-            <div class="gallery">
-                <div class="gallery-item">
-                    <img src="/api/placeholder/300/200" alt="Homepage Design">
-                    <div class="gallery-caption">Homepage with "Warning" splash</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="/api/placeholder/300/200" alt="Main Navigation">
-                    <div class="gallery-caption">Main navigation interface</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="/api/placeholder/300/200" alt="Story Fragment">
-                    <div class="gallery-caption">Journal entry story fragment</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="/api/placeholder/300/200" alt="Glitch Effect">
-                    <div class="gallery-caption">Text glitch effect in action</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="/api/placeholder/300/200" alt="Hidden Message">
-                    <div class="gallery-caption">Hidden message revealed</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="/api/placeholder/300/200" alt="Error Page">
-                    <div class="gallery-caption">Custom 404 error page</div>
-                </div>
-            </div>
-        </section>
+       
     </main>
 
-    <footer>
-        <p>Y2Horror Capstone Project Documentation &copy; 2025</p>
-    </footer>
+
 
     <script>
         // Toggle collapsible sections
@@ -704,6 +1192,51 @@ function createGlitchEffect(element) {
             }
             
             setInterval(applyGlitch, 3000);
+        });
+
+        const images = [
+            "assets/documentation/Narrative/figjam1.jpg",
+            "assets/documentation/Narrative/figjam2.jpg",
+            "assets/documentation/Narrative/figjam3.jpg",
+            "assets/documentation/Narrative/figjam4.jpg",
+            "assets/documentation/Narrative/figjam5.jpg",
+            "assets/documentation/Narrative/storyboard3.JPG"
+        ];
+        const images2 = [
+            "assets/documentation/Narrative/diaA1.jpg",
+            "assets/documentation/Narrative/diaA2.jpg",
+            "assets/documentation/Narrative/diaA3.jpg",
+            "assets/documentation/Narrative/diaA4.jpg",
+ 
+        ];
+
+        let currentIndex = 0;
+        let currentIndex2 = 0;
+
+        const imgElement = document.getElementById("carousel-image");
+        const imgElement2 = document.getElementById("carousel-image2");
+
+
+
+
+        document.querySelector(".next").addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            imgElement.src = images[currentIndex];
+        });
+
+        document.querySelector(".prev").addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            imgElement.src = images[currentIndex];
+        });
+
+        document.querySelector(".next2").addEventListener("click", () => {
+            currentIndex2 = (currentIndex2 + 1) % images2.length;
+            imgElement2.src = images2[currentIndex2];
+        });
+
+        document.querySelector(".prev2").addEventListener("click", () => {
+            currentIndex2 = (currentIndex2 - 1 + images2.length) % images2.length;
+            imgElement2.src = images2[currentIndex2];
         });
     </script>
 </body>
